@@ -46,12 +46,12 @@ class Login
     {
         // check login form contents
         if (empty($_POST['user_name'])) {
-            $this->errors[] = "Username field was empty.";
+            $this->errors[] = "Client Card Number field was empty.";
         } elseif (empty($_POST['user_password'])) {
             $this->errors[] = "Password field was empty.";
         } elseif (!empty($_POST['user_name']) && !empty($_POST['user_password'])) {
 
-            // create a database connection, using the constants from config/db.php (which we loaded in index.php)
+            /*// create a database connection, using the constants from config/db.php (which we loaded in index.php)
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
             // change character set to utf8 and check it
@@ -95,7 +95,9 @@ class Login
                 }
             } else {
                 $this->errors[] = "Database connection problem.";
-            }
+            }*/
+            $_SESSION['user_name'] = 'testUser';
+            $_SESSION['user_login_status'] = 1;
         }
     }
 
@@ -107,7 +109,7 @@ class Login
         // delete the session of the user
         $_SESSION = array();
         session_destroy();
-        // return a little feeedback message
+        // return a little feedback message
         $this->messages[] = "You have been logged out.";
 
     }

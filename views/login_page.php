@@ -17,7 +17,7 @@ if (isset($login)) {
 <!-- login form box -->
 <form method="post" action="index.php" name="loginform">
 
-    <label for="login_input_username">Username</label>
+    <label for="login_input_username">Client Card Number</label>
     <input id="login_input_username" class="login_input" type="text" name="user_name" required />
 
     <label for="login_input_password">Password</label>
