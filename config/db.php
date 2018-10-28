@@ -11,12 +11,7 @@
  * DB_USER: user for your database. the user needs to have rights for SELECT, UPDATE, DELETE and INSERT.
  * DB_PASS: the password of the above user
  */
-/*define("DB_HOST", "vdc353.encs.concordia.ca");
+define("DB_HOST", "vdc353.encs.concordia.ca");
 define("DB_NAME", "vdc353_2");
 define("DB_USER", "vdc353_2");
-define("DB_PASS", "jrssv353");*/
-
-define("DB_HOST", "localhost");
-define("DB_NAME", "soen353");
-define("DB_USER", "root");
-define("DB_PASS", "Squ1rrel!!!");
+define("DB_PASS", "jrssv353");
