@@ -13,26 +13,86 @@ if (isset($registration)) {
     }
 }
 ?>
-
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
 <!-- register form -->
-<form method="post" action="register.php" name="registerform">
+<div class="col-md-12 well" style="position:absolute; top:10%; left:30%; width:40%;">
+<!-- register form -->
+<form method="post" action="register.php" name="registerform" class="form-horizontal">
+<div class="row" style="padding:20px;">
+    <div class="col-md-6 form-group">
+        <fieldset>
+            <legend>Personal information:</legend>
+            <p>
+                <label for="register_input_name">Name</label><br>
+                <input id="register_input_name" class="login_input" type="text" pattern="[a-zA-Z]{2,64}" name="name" required />
+            </p>
+            <p>
+                <label for="register_input_dob">Date of Birth</label><br>
+                <input id="register_input_dob" class="login_input" type="date" name="dob" required />
+            </p>
+            <p>
+                <label for="register_input_address">Address</label><br>
+                <input id="register_input_address" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="address" required />
+            </p>
+            <p>
+                <label for="register_input_phone">Phone Number</label><br>
+                <input id="register_input_phone" class="login_input" type="tel" name="phone" required />
+            </p>
+            <p>
+                <label for="register_input_email">Email</label><br>
+                <input id="register_input_email" class="register_input" type="email" name="email" required />
+            </p>
+            <p>
+                <label for="register_input_password_new">Password (min. 6 characters)</label><br>
+                <input id="register_input_password_new" class="register_input" type="password" name="password_new" pattern=".{6,}" required autocomplete="off" />
+            </p>
+            <p>
+                <label for="register_input_password_repeat">Repeat password</label><br>
+                <input id="register_input_password_repeat" class="register_input" type="password" name="password_repeat" pattern=".{6,}" required autocomplete="off" />
+            </p>
+            <p>
+                <label for="register_input_branch">Branch</label><br>
+                <input id="register_input_branch" class="register_input" type="password" name="password_repeat" pattern=".{6,}" required autocomplete="off" />
+            </p>
+        </fieldset>
+    </div>
+    <div class="col-md-6 form-group">
+        <fieldset>
+            <legend>Account information:</legend>
+            <p>
+                <label for="register_input_acc_type">Account Type</label><br>
+                <input id="register_input_name" class="login_input" type="text" pattern="[a-zA-Z]{2,64}" name="acc_type" required />
+            </p>
+            <p>
+                <label for="register_input_service">Service Type</label><br>
+                <input id="register_input_service" class="login_input" type="text" name="service" required />
+            </p>
+            <p>
+                <label for="register_input_level">Level of Banking</label><br>
+                <input id="register_input_level" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="level" required />
+            </p>
+            <p>
+                <label for="register_input_option">Option</label><br>
+                <input id="register_input_option" class="login_input" type="text" name="option" required />
+            </p>
+        </fieldset>
+    </div>
 
-    <!-- the user name input field uses a HTML5 pattern check -->
-    <label for="login_input_username">Username (only letters and numbers, 2 to 64 characters)</label>
-    <input id="login_input_username" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required />
 
-    <!-- the email input field uses a HTML5 email type check -->
-    <label for="login_input_email">User's email</label>
-    <input id="login_input_email" class="login_input" type="email" name="user_email" required />
-
-    <label for="login_input_password_new">Password (min. 6 characters)</label>
-    <input id="login_input_password_new" class="login_input" type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" />
-
-    <label for="login_input_password_repeat">Repeat password</label>
-    <input id="login_input_password_repeat" class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
-    <input type="submit"  name="register" value="Register" />
-
+</div>
+    <div>
+        <input type="submit"  name="register" value="Register" />
+    </div>
 </form>
+    <!-- backlink -->
+    <a href="index.php">Back to Login Page</a>
 
-<!-- backlink -->
-<a href="index.php">Back to Login Page</a>
+</div>
+
+
+</body>
+</html>
