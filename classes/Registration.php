@@ -36,35 +36,81 @@ class Registration
      */
     private function registerNewUser()
     {
-        if (empty($_POST['user_name'])) {
-            $this->errors[] = "Empty Username";
-        } elseif (empty($_POST['user_password_new']) || empty($_POST['user_password_repeat'])) {
+        /*
+         * Form validation for parameters to create the client.
+         * */
+        if (empty($_POST['name'])) {
+            $this->errors[] = "Empty Name";
+        } elseif (!preg_match('/^[a-zA-Z]+( [a-zA-Z]+)*$/i', $_POST['name'])) {
+            $this->errors[] = "Name does not fit the name scheme: only a-Z are allowed";
+        } elseif (empty($_POST['password_new']) || empty($_POST['password_repeat'])) {
             $this->errors[] = "Empty Password";
-        } elseif ($_POST['user_password_new'] !== $_POST['user_password_repeat']) {
+        } elseif ($_POST['password_new'] !== $_POST['password_repeat']) {
             $this->errors[] = "Password and password repeat are not the same";
-        } elseif (strlen($_POST['user_password_new']) < 6) {
+        } elseif (strlen($_POST['password_new']) < 6) {
             $this->errors[] = "Password has a minimum length of 6 characters";
-        } elseif (strlen($_POST['user_name']) > 64 || strlen($_POST['user_name']) < 2) {
-            $this->errors[] = "Username cannot be shorter than 2 or longer than 64 characters";
-        } elseif (!preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name'])) {
-            $this->errors[] = "Username does not fit the name scheme: only a-Z and numbers are allowed, 2 to 64 characters";
-        } elseif (empty($_POST['user_email'])) {
+        } elseif (strlen($_POST['name']) > 64) {
+            $this->errors[] = "Name cannot be longer than 64 characters";
+        } elseif (empty($_POST['email'])) {
             $this->errors[] = "Email cannot be empty";
-        } elseif (strlen($_POST['user_email']) > 64) {
+        } elseif (strlen($_POST['email']) > 64) {
             $this->errors[] = "Email cannot be longer than 64 characters";
-        } elseif (!filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $this->errors[] = "Your email address is not in a valid email format";
-        } elseif (!empty($_POST['user_name'])
-            && strlen($_POST['user_name']) <= 64
-            && strlen($_POST['user_name']) >= 2
-            && preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name'])
-            && !empty($_POST['user_email'])
-            && strlen($_POST['user_email']) <= 64
-            && filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)
-            && !empty($_POST['user_password_new'])
-            && !empty($_POST['user_password_repeat'])
-            && ($_POST['user_password_new'] === $_POST['user_password_repeat'])
+        } elseif (empty($_POST['address'])) {
+            $this->errors[] = "Address cannot be empty";
+        } elseif (!preg_match('/^\w+( \w+)*$/i', $_POST['address'])) {
+            $this->errors[] = "Address does not fit the name scheme: only a-Z and numbers are allowed";
+        } elseif (empty($_POST['phone'])) {
+            $this->errors[] = "Phone number cannot be empty";
+        } elseif (!preg_match('/^[1-9]\d{2}-\d{3}-\d{4}$/i', $_POST['phone'])) {
+            $this->errors[] = "Phone number does not fit the correct format: please use format ###-###-####";
+        } elseif (empty($_POST['dob'])) {
+            $this->errors[] = "Date of birth cannot be empty";
+        } elseif (empty($_POST['branch'])) {
+            $this->errors[] = "Branch cannot be empty";
+        }
+
+        /*
+         * Form validation for parameters to create the account.
+         * */
+        elseif (empty($_POST['acc_type'])) {
+            $this->errors[] = "Account type cannot be empty";
+        } elseif (empty($_POST['service'])) {
+            $this->errors[] = "Service type cannot be empty";
+        } elseif (empty($_POST['level'])) {
+            $this->errors[] = "Level of banking cannot be empty";
+        } elseif (empty($_POST['option'])) {
+            $this->errors[] = "Charge plan option cannot be empty";
+        }
+
+        /*
+         * If all validations for both parts of the form pass, then the new client and account gets created.
+         * */
+        elseif (!empty($_POST['name'])
+            && strlen($_POST['name']) <= 64
+            && preg_match('/^[a-zA-Z]+( [a-zA-Z]+)*$/i', $_POST['name'])
+            && !empty($_POST['email'])
+            && strlen($_POST['email']) <= 64
+            && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
+            && !empty($_POST['password_new'])
+            && !empty($_POST['password_repeat'])
+            && ($_POST['password_new'] === $_POST['password_repeat'])
+            && !empty($_POST['address'])
+            && preg_match('/^\w+( \w+)*$/i', $_POST['address'])
+            && !empty($_POST['phone'])
+            && preg_match('/^[1-9]\d{2}-\d{3}-\d{4}$/i', $_POST['phone'])
+            && !empty($_POST['dob'])
+            && !empty($_POST['branch'])
+            && !empty($_POST['acc_type'])
+            && !empty($_POST['service'])
+            && !empty($_POST['level'])
+            && !empty($_POST['option'])
         ) {
+
+            /*
+             * TODO: This part needs to be taken care of. Form validation is correct.
+             * */
             // create a database connection
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -80,7 +126,7 @@ class Registration
                 $user_name = $this->db_connection->real_escape_string(strip_tags($_POST['user_name'], ENT_QUOTES));
                 $user_email = $this->db_connection->real_escape_string(strip_tags($_POST['user_email'], ENT_QUOTES));
 
-                $user_password = $_POST['user_password_new'];
+                $user_password = $_POST['password_new'];
 
                 // crypt the user's password with PHP 5.5's password_hash() function, results in a 60 character
                 // hash string. the PASSWORD_DEFAULT constant is defined by the PHP 5.5, or if you are using
@@ -88,11 +134,11 @@ class Registration
                 $user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
 
                 // check if user or email address already exists
-                $sql = "SELECT * FROM users WHERE user_name = '" . $user_name . "' OR user_email = '" . $user_email . "';";
+                $sql = "SELECT * FROM client WHERE name = '" . $user_name . "' OR user_email = '" . $user_email . "';";
                 $query_check_user_name = $this->db_connection->query($sql);
 
                 if ($query_check_user_name->num_rows == 1) {
-                    $this->errors[] = "Sorry, that username / email address is already taken.";
+                    $this->errors[] = "Sorry, a client already exists with that name and email combination.";
                 } else {
                     // write new user's data into database
                     $sql = "INSERT INTO users (user_name, user_password_hash, user_email)
