@@ -1,14 +1,13 @@
 -- Branch --
 CREATE TABLE Branch (
-  branch_id INT NOT NULL AUTO_INCREMENT,
-  phone VARCHAR(12),
-  fax VARCHAR(12),
-  manager_name VARCHAR(255),
-  opening_date DATE,
-  area VARCHAR(255),
-  city VARCHAR(255),
-  payroll
-  PRIMARY KEY (branch_id)
+	branch_id INT NOT NULL AUTO_INCREMENT,
+	phone VARCHAR(12),
+	fax VARCHAR(12),
+	manager_name VARCHAR(255),
+	opening_date DATE,
+	area VARCHAR(255),
+	city VARCHAR(255),
+	PRIMARY KEY (branch_id)
 );
 
 -- Employee --
@@ -73,7 +72,6 @@ CREATE TABLE ReoccuringBills (
 	PRIMARY KEY (bill_id) REFERENCES Bills(bill_id)
 );
 
-
 -- Service --
 CREATE TABLE Service (
 	service_type VARCHAR(255),
@@ -93,16 +91,16 @@ CREATE TABLE ChargePlan (
 
 -- Account --
 CREATE TABLE Account (
-account_number INT NOT NULL AUTO_INCREMENT,
-client_id INT,
+	account_number INT NOT NULL AUTO_INCREMENT,
+	client_id INT,
 	balance DOUBLE(15,2),
-account_type VARCHAR(255),
-service_type VARCHAR(255),
-option_name VARCHAR(255),
-interest_rate INT,
-PRIMARY KEY (account_number),
-FOREIGN KEY (service_type) REFERENCES Service(service_type),
-FOREIGN KEY (client_id) REFERENCES Client(client_id)
+	account_type VARCHAR(255),
+	service_type VARCHAR(255),
+	option_name VARCHAR(255),
+	interest_rate INT,
+	PRIMARY KEY (account_number),
+	FOREIGN KEY (service_type) REFERENCES Service(service_type),
+	FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
 -- Foreign Currency --
@@ -136,9 +134,9 @@ CREATE TABLE Savings (
 	FOREIGN KEY (opt) REFERENCES ChargePlan(opt)
 );
 
-Checking
+-- Checking --
 CREATE TABLE Checking (
-account_number INT,
+	account_number INT,
 	opt VARCHAR(255),
 	PRIMARY KEY (account_number) REFERENCES Account(account_number),
 	FOREIGN KEY (opt) REFERENCES ChargePlan(opt)
