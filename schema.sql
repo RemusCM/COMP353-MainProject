@@ -66,7 +66,7 @@ CREATE TABLE Bills (
 );
 
 -- ReoccuringBills --
-CREATE TABLE ReoccuringBills (
+CREATE TABLE ReoccurringBills (
 	bill_id INT,
 	reoccurrence INT,
 	PRIMARY KEY (bill_id) REFERENCES Bills(bill_id)
