@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="#6 Bypassed login to allow commit of project base; database connection commented out for login. Renamed views to login_page and home_page for clarity.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
+    <list default="true" id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,12 +86,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="sql" value="90" />
+          <entry key="sql" value="411" />
+          <entry key="txt" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="SQL" value="90" />
+          <entry key="PLAIN_TEXT" value="79" />
+          <entry key="SQL" value="411" />
         </counts>
       </usages-collector>
     </session>
@@ -102,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schema.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+            <state relative-caret-position="505">
+              <caret line="145" column="30" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -233,16 +234,24 @@
       <workItem from="1540688029694" duration="683000" />
       <workItem from="1540689121267" duration="2273000" />
     </task>
+    <task id="LOCAL-00001" summary="#5 Wrote creation scripts for latest ER diagram with update schemas">
+      <created>1541699432277</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541699432277</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13971000" />
+    <option name="totallyTimeSpent" value="15643000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -261,7 +270,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.12017167" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.12017167" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +281,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#6 Bypassed login to allow commit of project base; database connection commented out for login. Renamed views to login_page and home_page for clarity." />
-    <option name="LAST_COMMIT_MESSAGE" value="#6 Bypassed login to allow commit of project base; database connection commented out for login. Renamed views to login_page and home_page for clarity." />
+    <MESSAGE value="#5 Wrote creation scripts for latest ER diagram with update schemas" />
+    <option name="LAST_COMMIT_MESSAGE" value="#5 Wrote creation scripts for latest ER diagram with update schemas" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/_installation/02-create-and-fill-users-table.sql" />
@@ -341,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schema.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        <state relative-caret-position="505">
+          <caret line="145" column="30" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
         </state>
       </provider>
     </entry>

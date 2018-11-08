@@ -65,11 +65,12 @@ CREATE TABLE Bills (
 	FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
--- ReoccuringBills --
+-- ReoccurringBills --
 CREATE TABLE ReoccurringBills (
 	bill_id INT,
 	reoccurrence INT,
-	PRIMARY KEY (bill_id) REFERENCES Bills(bill_id)
+	PRIMARY KEY (bill_id),
+	FOREIGN KEY (bill_id) REFERENCES Bills(bill_id)
 );
 
 -- Service --
@@ -107,15 +108,17 @@ CREATE TABLE Account (
 CREATE TABLE ForeignCurrency (
 	account_number INT,
 	currency_type VARCHAR(255),
-	PRIMARY KEY (account_number) REFERENCES Account(account_number)
+	PRIMARY KEY (account_number),
+	FOREIGN KEY (account_number) REFERENCES Account(account_number)
 );
 
 -- Credit --
 CREATE TABLE Credit (
 	account_number INT,
 	credit_limit DOUBLE(15, 2),
-	minimal_payment DOUBLE(15,2),
-	PRIMARY KEY (account_number) REFERENCES Account(account_number)
+  minimal_payment DOUBLE(15,2),
+	PRIMARY KEY (account_number),
+	FOREIGN KEY (account_number) REFERENCES Account(account_number)
 );
 
 -- Loan --
@@ -123,14 +126,16 @@ CREATE TABLE Loan (
 	account_number INT,
 	loan_limit DOUBLE(15,2),
 	type VARCHAR(255),
-	PRIMARY KEY (account_number) REFERENCES Account(account_number)
+	PRIMARY KEY (account_number),
+	FOREIGN key (account_number) REFERENCES Account(account_number)
 );
 
 -- Savings --
 CREATE TABLE Savings (
 	account_number INT,
 	opt VARCHAR(255),
-	PRIMARY KEY (account_number) REFERENCES Account(account_number),
+	PRIMARY KEY (account_number),
+	FOREIGN key (account_number) REFERENCES Account(account_number),
 	FOREIGN KEY (opt) REFERENCES ChargePlan(opt)
 );
 
@@ -138,7 +143,8 @@ CREATE TABLE Savings (
 CREATE TABLE Checking (
 	account_number INT,
 	opt VARCHAR(255),
-	PRIMARY KEY (account_number) REFERENCES Account(account_number),
+	PRIMARY KEY (account_number),
+	FOREIGN KEY (account_number) REFERENCES Account(account_number),
 	FOREIGN KEY (opt) REFERENCES ChargePlan(opt)
 );
 
