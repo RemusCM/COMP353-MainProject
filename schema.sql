@@ -120,7 +120,7 @@ CREATE TABLE Credit (
 
 -- Loan --
 CREATE TABLE Loan (
-	account_number INT,,
+	account_number INT,
 	loan_limit DOUBLE(15,2),
 	type VARCHAR(255),
 	PRIMARY KEY (account_number) REFERENCES Account(account_number)
@@ -128,7 +128,7 @@ CREATE TABLE Loan (
 
 -- Savings --
 CREATE TABLE Savings (
-	account_number INT,,
+	account_number INT,
 	opt VARCHAR(255),
 	PRIMARY KEY (account_number) REFERENCES Account(account_number),
 	FOREIGN KEY (opt) REFERENCES ChargePlan(opt)
