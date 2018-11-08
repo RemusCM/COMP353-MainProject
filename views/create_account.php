@@ -43,7 +43,7 @@
 </script>
 
 <h1>Create an Account</h1>
-<form method="post" action="" name="create-account-form">
+<form method="post" action="AccountCreated.php" name="create-account-form">
 
     <p>Select an account level</p>
     <select name="level">
@@ -95,7 +95,7 @@
 
     <div id="loan">
         <p>Select a loan type</p>
-        <select name="loan">
+        <select name="loan-type">
             <option value="loan">Loan</option>
             <option value="mortgage">Mortgage</option>
             <option value="line-of-credit">Line of credit</option>
