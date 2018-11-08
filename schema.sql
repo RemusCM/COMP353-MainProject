@@ -51,7 +51,7 @@ CREATE TABLE Client (
 	branch_id INT,
 	is_notified BIT,
 	PRIMARY KEY (client_id),
-FOREIGN KEY (branch_id) REFERENCES Branch(branch_id)
+	FOREIGN KEY (branch_id) REFERENCES Branch(branch_id)
 );
 
 -- Bills --
