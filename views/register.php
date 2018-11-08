@@ -11,18 +11,10 @@ if (isset($registration)) {
             echo $message;
         }
     }
+    $branch = $registration->fetchBranchesForForm();
+    $option = $registration->fetchOptionsForForm();
 }
 
-// TODO: Need to fetch the branches available from DB to present as options.
-$branch = array (
-    1=>"TestBranch1",
-    2=>"TestBranch2",
-);
-
-$option = array (
-    1=>"TestOption1",
-    2=>"TestOption2",
-);
 ?>
 <html>
 <head>
@@ -68,8 +60,8 @@ $option = array (
             <p>
                 <label for="register_input_branch">Branch</label><br>
                 <select id="register_input_level" class="login_input" name="branch" required>
-                    <?php foreach($branch as $key => $value) { ?>
-                        <option value="<?php echo $key ?>"><?php echo $value ?></option>
+                    <?php foreach($branch as $b) { ?>
+                        <option value="<?php echo $b->id ?>"><?php echo $b->area?>, <?php echo $b->city?></option>
                     <?php }?>
                 </select>
             </p>
@@ -104,8 +96,8 @@ $option = array (
             <p>
                 <label for="register_input_option">Charge Plan Option</label><br>
                 <select id="register_input_level" class="login_input" name="option" required>
-                    <?php foreach($option as $key => $value) { ?>
-                        <option value="<?php echo $key ?>"><?php echo $value ?></option>
+                    <?php foreach($option as $o) { ?>
+                        <option value="<?php echo $o->opt ?>"><?php echo $o->opt ?></option>
                     <?php }?>
                 </select>
             </p>
