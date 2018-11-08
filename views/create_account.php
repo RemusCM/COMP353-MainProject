@@ -5,7 +5,43 @@
  * Date: 2018-11-08
  * Time: 10:15
  */
+
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+        $(function() {
+            $('#foreign-currency').hide();
+            $('#credit-card').hide();
+            $('#loan').hide();
+            $('#account-type').change(function(){
+                if ($('#account-type').val() == 'checking' || $('#account-type').val() == 'savings') {
+                    $('#foreign-currency').hide();
+                    $('#credit-card').hide();
+                    $('#loan').hide();
+                    $('#charge-plan').show();
+                }
+                else if($('#account-type').val() == 'foreign-currency') {
+                    $('#foreign-currency').show();
+                    $('#credit-card').hide();
+                    $('#loan').hide();
+                    $('#charge-plan').hide();
+                }
+                else if($('#account-type').val() == 'credit') {
+                    $('#credit-card').show();
+                    $('#charge-plan').hide();
+                    $('#loan').hide();
+                    $('#foreign-currency').hide();
+                }
+                else if($('#account-type').val() == 'loan') {
+                    $('#credit-card').hide();
+                    $('#charge-plan').hide();
+                    $('#loan').show();
+                    $('#foreign-currency').hide();
+                }
+            });
+        });
+</script>
+
 <h1>Create an Account</h1>
 <form method="post" action="" name="create-account-form">
 
@@ -24,7 +60,7 @@
     </select>
 
     <p>Select an account type</p>
-    <select name="account-type">
+    <select name="account-type", id="account-type">
         <option value="checking">Checking</option>
         <option value="savings">Savings</option>
         <option value="foreign-currency">Foreign Currency</option>
@@ -51,12 +87,26 @@
 
     <div id="credit-card">
         <p>Select a credit card limit</p>
-        <select name="credit-limit">
-            <option value="500">500$</option>
-            <option value="1000">1000$</option>
-            <option value="5000">5000$</option>
-            <option value="10000">10000$</option>
-        </select>
+        <input type="radio", name="credit-limit", value="500" checked>500$<br>
+        <input type="radio", name="credit-limit", value="1000">1000$<br>
+        <input type="radio", name="credit-limit", value="50000">5000$<br>
+        <input type="radio", name="credit-limit", value="10000">10 000$<br>
     </div>
+
+    <div id="loan">
+        <p>Select a loan type</p>
+        <select name="loan">
+            <option value="loan">Loan</option>
+            <option value="mortgage">Mortgage</option>
+            <option value="line-of-credit">Line of credit</option>
+        </select>
+
+        <p>Select a limit type</p>
+        <input type="radio", name="loan-limit", value="5000">5000$<br>
+        <input type="radio", name="loan-limit", value="10000">10 000$<br>
+        <input type="radio", name="loan-limit", value="15000">15 000$<br>
+        <input type="radio", name="loan-limit", value="25000">25 000$<br>
+    </div><br>
+    <input type="submit">
 </form>
 
