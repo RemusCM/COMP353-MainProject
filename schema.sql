@@ -116,7 +116,7 @@ CREATE TABLE ForeignCurrency (
 CREATE TABLE Credit (
 	account_number INT,
 	credit_limit DOUBLE(15, 2),
-  minimal_payment DOUBLE(15,2),
+  	minimal_payment DOUBLE(15,2),
 	PRIMARY KEY (account_number),
 	FOREIGN KEY (account_number) REFERENCES Account(account_number)
 );
