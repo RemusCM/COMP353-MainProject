@@ -97,7 +97,7 @@ CREATE TABLE Account (
 	balance DOUBLE(15,2),
 	account_type VARCHAR(255),
 	service_type VARCHAR(255),
-	option_name VARCHAR(255),
+	level VARCHAR(255),
 	interest_rate INT,
 	PRIMARY KEY (account_number),
 	FOREIGN KEY (service_type) REFERENCES Service(service_type),
