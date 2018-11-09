@@ -98,7 +98,7 @@ CREATE TABLE Account (
 	account_type VARCHAR(255),
 	service_type VARCHAR(255),
 	level VARCHAR(255),
-	interest_rate INT,
+	interest_rate DOUBLE(15, 2),
 	PRIMARY KEY (account_number),
 	FOREIGN KEY (service_type) REFERENCES Service(service_type),
 	FOREIGN KEY (client_id) REFERENCES Client(client_id)
