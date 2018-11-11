@@ -228,8 +228,14 @@ mysqli_close($connect);
     //TODO Need to use $SESSION['joining_date'] instead and write a small function to get the difference in months with current date
     function validateForm() {
         if($('#account-type').val() == 'credit' ) {
-            if($clientJoiningDate< 6) {
+            if($clientJoiningDate < 6) {
                 alert('You cannot open a credit account unless you have been a client for at least 6 months.');
+                return false;
+            }
+        }
+        if($('#account-type').val() == 'loan' && $('#loan-type').val() == 'line-of-credit') {
+            if($clientJoiningDate < 12) {
+                alert('You cannot open a Line of Credit unless you have been a client for at least 12 months.');
                 return false;
             }
         }

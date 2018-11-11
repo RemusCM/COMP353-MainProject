@@ -45,7 +45,7 @@ include_once('./AccountCreated.php');
 
     <div id="foreign-currency">
         <p>Select a foreign currency</p>
-        <input type="radio" name="currency" value="usd">USD<br>
+        <input type="radio" name="currency" value="usd" checked>USD<br>
         <input type="radio" name="currency" value="jpy">JPY<br>
         <input type="radio" name="currency" value="eur">EUR<br>
         <input type="radio" name="currency" value="cny">CNY<br>
@@ -63,14 +63,14 @@ include_once('./AccountCreated.php');
 
     <div id="loan">
         <p>Select a loan type</p>
-        <select name="loan-type">
+        <select name="loan-type" id="loan-type">
             <option value="loan">Loan</option>
             <option value="mortgage">Mortgage</option>
             <option value="line-of-credit">Line of credit</option>
         </select>
 
         <p>Select a limit type</p>
-        <input type="radio" name="loan-limit" value="5000.00">5000$<br>
+        <input type="radio" name="loan-limit" value="5000.00" checked>5000$<br>
         <input type="radio" name="loan-limit" value="10000.00">10 000$<br>
         <input type="radio" name="loan-limit" value="15000.00">15 000$<br>
         <input type="radio" name="loan-limit" value="25000.00">25 000$<br>
