@@ -5,8 +5,62 @@
  * Date: 2018-11-08
  * Time: 10:15
  */
-include_once('./AccountCreated.php');
+//$clientJoinDate = $_SESSION['joining_date'];
+$clientJoiningDate = 4;
 ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $clientJoiningDate = <?php echo $clientJoiningDate;?>;
+    //Handling what the client sees when filling the form to create an account depending on selected elements
+    $(function() {
+        $('#foreign-currency').hide();
+        $('#credit-card').hide();
+        $('#loan').hide();
+        $('#account-type').change(function(){
+            if ($('#account-type').val() == 'checking' || $('#account-type').val() == 'savings') {
+                $('#foreign-currency').hide();
+                $('#credit-card').hide();
+                $('#loan').hide();
+                $('#charge-plan').show();
+            }
+            else if($('#account-type').val() == 'foreign-currency') {
+                $('#foreign-currency').show();
+                $('#credit-card').hide();
+                $('#loan').hide();
+                $('#charge-plan').hide();
+            }
+            else if($('#account-type').val() == 'credit' ) {
+                $('#credit-card').show();
+                $('#charge-plan').hide();
+                $('#loan').hide();
+                $('#foreign-currency').hide();
+            }
+            else if($('#account-type').val() == 'loan') {
+                $('#credit-card').hide();
+                $('#charge-plan').hide();
+                $('#loan').show();
+                $('#foreign-currency').hide();
+            }
+        });
+    });
+
+    //TODO Need to use $SESSION['joining_date'] instead and write a small function to get the difference in months with current date
+    function validateForm() {
+        if($('#account-type').val() == 'credit' ) {
+            if($clientJoiningDate < 6) {
+                alert('You cannot open a credit account unless you have been a client for at least 6 months.');
+                return false;
+            }
+        }
+        if($('#account-type').val() == 'loan' && $('#loan-type').val() == 'line-of-credit') {
+            if($clientJoiningDate < 12) {
+                alert('You cannot open a Line of Credit unless you have been a client for at least 12 months.');
+                return false;
+            }
+        }
+    }
+</script>
 
 <h1>Create an Account</h1>
 <form method="post" action="AccountCreated.php" name="create-account-form" onsubmit="return validateForm();">
