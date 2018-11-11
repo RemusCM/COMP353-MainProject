@@ -7,7 +7,6 @@
  */
 require_once('./AccountCreated.php');
 ?>
-
 <h1>Create an Account</h1>
 <form method="post" action="AccountCreated.php" name="create-account-form">
 
