@@ -5,10 +5,11 @@
  * Date: 2018-11-08
  * Time: 10:15
  */
-require_once('./AccountCreated.php');
+include_once('./AccountCreated.php');
 ?>
+
 <h1>Create an Account</h1>
-<form method="post" action="AccountCreated.php" name="create-account-form">
+<form method="post" action="AccountCreated.php" name="create-account-form" onsubmit="return validateForm();">
 
     <p>Select an account level</p>
     <select name="level">
@@ -24,7 +25,6 @@ require_once('./AccountCreated.php');
         <option value="insurance">Insurance</option>
     </select>
 
-    <!--TODO Credit should only appear if joining_date in $_SESSION is bigger than 6 months -->
     <p>Select an account type</p>
     <select name="account-type" id="account-type">
         <option value="checking">Checking</option>
@@ -75,5 +75,5 @@ require_once('./AccountCreated.php');
         <input type="radio" name="loan-limit" value="15000.00">15 000$<br>
         <input type="radio" name="loan-limit" value="25000.00">25 000$<br>
     </div><br>
-    <input type="submit">
+    <input type="submit" >
 </form>

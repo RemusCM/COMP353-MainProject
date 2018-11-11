@@ -2,7 +2,7 @@
 //Assume new account balance is always 0
 session_start();
 
-$connect = mysqli_connect("localhost", "root","","testAccount");
+$connect = mysqli_connect("localhost", "root","root","testaccount");
 
 if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
@@ -21,7 +21,7 @@ $balance = 0.00;
 //$clientJoinDate = $_SESSION['joining_date'];
 
 $client_id = 1; //Testing with fake/ hard-coded client_id until registration/login provides client info to session
-
+$clientJoiningDate = 4;//Hard-coded number of months since client has an account.
 // Course of action if user picks Checkings or savings
 if($accountType == 'checking' || $accountType == 'savings') {
     if($accountType == 'checking'){
@@ -181,17 +181,18 @@ elseif($accountType =='loan'){
 
         $query1 = "INSERT INTO Loan(account_number, loan_limit, type ) VALUES('$accountNumber', '$loanLimit', '$loanType');";
         mysqli_query($connect, $query1);
-    }
 
+    }
 }
 
 mysqli_close($connect);
 
-echo "done.";
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+    $clientJoiningDate = <?php echo $clientJoiningDate;?>;
+    //Handling what the client sees when filling the form to create an account depending on selected elements
     $(function() {
         $('#foreign-currency').hide();
         $('#credit-card').hide();
@@ -209,7 +210,7 @@ echo "done.";
                 $('#loan').hide();
                 $('#charge-plan').hide();
             }
-            else if($('#account-type').val() == 'credit') {
+            else if($('#account-type').val() == 'credit' ) {
                 $('#credit-card').show();
                 $('#charge-plan').hide();
                 $('#loan').hide();
@@ -223,5 +224,15 @@ echo "done.";
             }
         });
     });
+
+    //TODO Need to use $SESSION['joining_date'] instead and write a small function to get the difference in months with current date
+    function validateForm() {
+        if($('#account-type').val() == 'credit' ) {
+            if($clientJoiningDate< 6) {
+                alert('You cannot open a credit account unless you have been a client for at least 6 months.');
+                return false;
+            }
+        }
+    }
 </script>
 
