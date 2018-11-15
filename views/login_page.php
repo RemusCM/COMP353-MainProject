@@ -26,11 +26,11 @@ if (isset($login)) {
             <fieldset>
                 <legend>Login:</legend>
                 <p>
-                    <label for="login_input_username">Client Card Number</label>
+                    <label for="login_input_username">Client Card Number</label><br>
                     <input id="login_input_username" class="login_input" type="text" name="client_id" required />
                 </p>
                 <p>
-                    <label for="login_input_password">Password</label>
+                    <label for="login_input_password">Password</label><br>
                     <input id="login_input_password" class="login_input" type="password" name="password" autocomplete="off" required />
                 </p>
             </fieldset>

@@ -137,7 +137,7 @@ class Registration
                 $account_type = $this->db_connection->real_escape_string(strip_tags($_POST['account-type'], ENT_QUOTES));
                 $service_type = $this->db_connection->real_escape_string(strip_tags($_POST['service-type'], ENT_QUOTES));
                 $level = $this->db_connection->real_escape_string(strip_tags($_POST['level'], ENT_QUOTES));
-                $charge_plan = $this->db_connection->real_escape_string(strip_tags($_POST['charge-plam'], ENT_QUOTES));
+                $charge_plan = $this->db_connection->real_escape_string(strip_tags($_POST['charge-plan'], ENT_QUOTES));
 
                 $password = $_POST['password_new'];
 
@@ -147,54 +147,51 @@ class Registration
                 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
                 // check if user or email address already exists
-                $sql = "SELECT * FROM Client WHERE name = '" . $name . "' OR email_address = '" . $email . "';";
+                $sql = "SELECT * FROM client WHERE name = '" . $name . "' OR email_address = '" . $email . "';";
                 $query_check_exists = $this->db_connection->query($sql);
 
                 if ($query_check_exists->num_rows == 1) {
                     $this->errors[] = "Sorry, a client already exists with that name and/or email.";
                 } else {
                     // Write new user's data into database
-                    $sql = "INSERT INTO Client (name, date_of_birth, joining_date, address, category, email_address, password, phone_number, branch_id, is_notified)
-                            VALUES('" . $name . "', '" . $dob . "', '" . date("Y-m-d") . "', '" . $address . "', '" . $category . "', '" . $email . "', '" . $password_hash . "', '" . $phone . "''" . $branch . "');";
-                    $query_new_user_insert = $this->db_connection->query($sql);
+                    $sql = "INSERT INTO client(name, date_of_birth, joining_date, address, category, email_address, password, phone_number, branch_id)
+                            VALUES('" . $name . "', '" . $dob . "', '" . date("Y-m-d") . "', '" . $address . "', '" . $category . "', '" . $email . "', '" . $password_hash . "', '" . $phone . "', '" . $branch . "');";
 
                     // if user has been added successfully
-                    if ($query_new_user_insert) {
-                        // Retrieve the client_id and join_date of newly created client
-                        $sql = "SELECT client_id FROM Client WHERE name = '" . $name . "' AND email_address = '" . $email . "';";
-                        $query_search_result = $this->db_connection->query($sql);
-                        $client_id = $query_search_result->client_id;
+                    if (mysqli_query($this->db_connection,$sql)) {
+                        $client_id = mysqli_insert_id($this->db_connection);
 
                         // Create the account for the new client
                         $balance = 0.00;
                         $interestRate = $account_type == 'checking' ? 0.0 : 2.0;
-                        $sql = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
+                        $sql = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
                           VALUES('$client_id', '$balance', '$account_type', '$service_type', '$level', '$interestRate');";
 
                         if(mysqli_query($this->db_connection,$sql)) {
                             $account_number = mysqli_insert_id($this->db_connection);
                             if ($account_type == 'checking') {
-                                $sql1 = "INSERT INTO Checking(account_number, opt) VALUES('$account_number', '$charge_plan');";
+                                $sql1 = "INSERT INTO checking(account_number, opt) VALUES('$account_number', '$charge_plan');";
                                 $this->db_connection->query($sql1);
                             } else {
-                                $sql1 = "INSERT INTO Savings(account_number, opt) VALUES('$account_number', '$charge_plan');";
+                                $sql1 = "INSERT INTO savings(account_number, opt) VALUES('$account_number', '$charge_plan');";
                                 $this->db_connection->query($sql1);
                             }
-                            $this->messages[] = "Your account has been created successfully. You can now log in.";
+                            $this->messages[] = "Your account has been created successfully. You can now log in with Client Number: $client_id";
                         }
                         // If writing to Account failed, the client is deleted from DB.
                         else {
-                            $sql = "DELETE FROM Client WHERE client_id = '$client_id';";
+                            $sql = "DELETE FROM client WHERE client_id = '$client_id';";
                             $this->db_connection->query($sql);
-                            $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
+                            $this->errors[] = "Sorry, new account could not be created. Your registration failed. Please go back and try again.";
                         }
                     } else {
-                        $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
+                        $this->errors[] = "Sorry, new client could not be created. Your registration failed. Please go back and try again.";
                     }
                 }
             } else {
                 $this->errors[] = "Sorry, no database connection.";
             }
+            mysqli_close($this->db_connection);
         } else {
             $this->errors[] = "An unknown error occurred.";
         }
@@ -212,7 +209,7 @@ class Registration
 
         // if no connection errors (= working database connection)
         if (!$this->db_connection->connect_errno) {
-            $sql = "SELECT branch_id, area, city FROM Branch ;";
+            $sql = "SELECT branch_id, area, city FROM branch;";
             $query_branches = $this->db_connection->query($sql);
             $branches = array();
             if ($query_branches->num_rows == 0) {
@@ -223,7 +220,7 @@ class Registration
                     array_push($branches, $row);
                 }
             }
-            $query_branches->free();
+            mysqli_close($this->db_connection);
             return $branches;
         }
     }
@@ -240,7 +237,7 @@ class Registration
 
         // if no connection errors (= working database connection)
         if (!$this->db_connection->connect_errno) {
-            $sql = "SELECT opt FROM ChargePlan ;";
+            $sql = "SELECT opt FROM chargeplan;";
             $query_options = $this->db_connection->query($sql);
             $options = array();
             if ($query_options->num_rows == 0) {
@@ -251,7 +248,7 @@ class Registration
                     array_push($options, $row);
                 }
             }
-            $query_options->free();
+            mysqli_close($this->db_connection);
             return $options;
         }
     }
