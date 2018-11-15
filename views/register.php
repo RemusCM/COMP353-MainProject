@@ -11,6 +11,7 @@ if (isset($registration)) {
             echo $message;
         }
     }
+    // TODO: Reference proper tables and attributes once creation scripts have been set.
     $branch = $registration->fetchBranchesForForm();
     $option = $registration->fetchOptionsForForm();
 }
@@ -58,10 +59,19 @@ if (isset($registration)) {
                 <input id="register_input_password_repeat" class="register_input" type="password" name="password_repeat" pattern=".{6,}" required autocomplete="off" />
             </p>
             <p>
+                <label for="register_input_category">Category</label><br>
+                <select id="register_input_category" class="login_input" name="category" required>
+                    <option value = "Basic">Basic</option>
+                    <option value = "Premium">Premium</option>
+                    <option value = "Senior">Senior</option>
+                    <option value = "Student">Student</option>
+                </select>
+            </p>
+            <p>
                 <label for="register_input_branch">Branch</label><br>
                 <select id="register_input_level" class="login_input" name="branch" required>
                     <?php foreach($branch as $b) { ?>
-                        <option value="<?php echo $b->id ?>"><?php echo $b->area?>, <?php echo $b->city?></option>
+                        <option value="<?php echo $b->branch_id ?>"><?php echo $b->area?>, <?php echo $b->city?></option>
                     <?php }?>
                 </select>
             </p>
@@ -72,30 +82,29 @@ if (isset($registration)) {
             <legend>Account information:</legend>
             <p>
                 <label for="register_input_acc_type">Account Type</label><br>
-                <select id="register_input_service" class="login_input" name="acc_type" required>
-                    <option value = "Saving">Saving</option>
-                    <option value = "Checking">Checking</option>
-                    <option value = "Foreign Exchange">Foreign Exchange</option>
+                <select id="register_input_service" class="login_input" name="account-type" required>
+                    <option value = "savings">Saving</option>
+                    <option value = "checking">Checking</option>
                 </select>            </p>
             <p>
                 <label for="register_input_service">Service Type</label><br>
-                <select id="register_input_service" class="login_input" name="service" required>
-                    <option value = "Banking">Banking</option>
-                    <option value = "Investment">Investment</option>
-                    <option value = "Insurance">Insurance</option>
+                <select id="register_input_service" class="login_input" name="service-type" required>
+                    <option value = "banking">Banking</option>
+                    <option value = "investment">Investment</option>
+                    <option value = "insurance">Insurance</option>
                 </select>
             </p>
             <p>
                 <label for="register_input_level">Level of Banking</label><br>
                 <select id="register_input_level" class="login_input" name="level" required>
-                    <option value = "Personal">Personal</option>
-                    <option value = "Business">Business</option>
-                    <option value = "Corporate">Corporate</option>
+                    <option value = "personal">Personal</option>
+                    <option value = "business">Business</option>
+                    <option value = "corporate">Corporate</option>
                 </select>
             </p>
             <p>
                 <label for="register_input_option">Charge Plan Option</label><br>
-                <select id="register_input_level" class="login_input" name="option" required>
+                <select id="register_input_level" class="login_input" name="charge-plan" required>
                     <?php foreach($option as $o) { ?>
                         <option value="<?php echo $o->opt ?>"><?php echo $o->opt ?></option>
                     <?php }?>

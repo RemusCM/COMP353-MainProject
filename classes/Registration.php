@@ -67,6 +67,8 @@ class Registration
             $this->errors[] = "Phone number does not fit the correct format: please use format ###-###-####";
         } elseif (empty($_POST['dob'])) {
             $this->errors[] = "Date of birth cannot be empty";
+        } elseif (empty($_POST['category'])) {
+            $this->errors[] = "Category cannot be empty";
         } elseif (empty($_POST['branch'])) {
             $this->errors[] = "Branch cannot be empty";
         }
@@ -74,13 +76,13 @@ class Registration
         /*
          * Form validation for parameters to create the account.
          * */
-        elseif (empty($_POST['acc_type'])) {
+        elseif (empty($_POST['account-type'])) {
             $this->errors[] = "Account type cannot be empty";
-        } elseif (empty($_POST['service'])) {
+        } elseif (empty($_POST['service-type'])) {
             $this->errors[] = "Service type cannot be empty";
         } elseif (empty($_POST['level'])) {
             $this->errors[] = "Level of banking cannot be empty";
-        } elseif (empty($_POST['option'])) {
+        } elseif (empty($_POST['charge-plan'])) {
             $this->errors[] = "Charge plan option cannot be empty";
         }
 
@@ -101,11 +103,12 @@ class Registration
             && !empty($_POST['phone'])
             && preg_match('/^[1-9]\d{2}-\d{3}-\d{4}$/i', $_POST['phone'])
             && !empty($_POST['dob'])
+            && !empty($_POST['category'])
             && !empty($_POST['branch'])
-            && !empty($_POST['acc_type'])
-            && !empty($_POST['service'])
+            && !empty($_POST['account-type'])
+            && !empty($_POST['service-type'])
             && !empty($_POST['level'])
-            && !empty($_POST['option'])
+            && !empty($_POST['charge-plan'])
         ) {
 
             /*
@@ -123,31 +126,68 @@ class Registration
             if (!$this->db_connection->connect_errno) {
 
                 // escaping, additionally removing everything that could be (html/javascript-) code
-                $user_name = $this->db_connection->real_escape_string(strip_tags($_POST['user_name'], ENT_QUOTES));
-                $user_email = $this->db_connection->real_escape_string(strip_tags($_POST['user_email'], ENT_QUOTES));
+                $name = $this->db_connection->real_escape_string(strip_tags($_POST['name'], ENT_QUOTES));
+                $email = $this->db_connection->real_escape_string(strip_tags($_POST['email'], ENT_QUOTES));
+                $address = $this->db_connection->real_escape_string(strip_tags($_POST['address'], ENT_QUOTES));
+                $phone = $this->db_connection->real_escape_string(strip_tags($_POST['phone'], ENT_QUOTES));
+                $dob = $this->db_connection->real_escape_string(strip_tags($_POST['dob'], ENT_QUOTES));
+                $category = $this->db_connection->real_escape_string(strip_tags($_POST['category'], ENT_QUOTES));
+                $branch = $this->db_connection->real_escape_string(strip_tags($_POST['branch'], ENT_QUOTES));
 
-                $user_password = $_POST['password_new'];
+                $account_type = $this->db_connection->real_escape_string(strip_tags($_POST['account-type'], ENT_QUOTES));
+                $service_type = $this->db_connection->real_escape_string(strip_tags($_POST['service-type'], ENT_QUOTES));
+                $level = $this->db_connection->real_escape_string(strip_tags($_POST['level'], ENT_QUOTES));
+                $charge_plan = $this->db_connection->real_escape_string(strip_tags($_POST['charge-plam'], ENT_QUOTES));
+
+                $password = $_POST['password_new'];
 
                 // crypt the user's password with PHP 5.5's password_hash() function, results in a 60 character
                 // hash string. the PASSWORD_DEFAULT constant is defined by the PHP 5.5, or if you are using
                 // PHP 5.3/5.4, by the password hashing compatibility library
-                $user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
+                $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
                 // check if user or email address already exists
-                $sql = "SELECT * FROM client WHERE name = '" . $user_name . "' OR user_email = '" . $user_email . "';";
-                $query_check_user_name = $this->db_connection->query($sql);
+                $sql = "SELECT * FROM Client WHERE name = '" . $name . "' OR email_address = '" . $email . "';";
+                $query_check_exists = $this->db_connection->query($sql);
 
-                if ($query_check_user_name->num_rows == 1) {
-                    $this->errors[] = "Sorry, a client already exists with that name and email combination.";
+                if ($query_check_exists->num_rows == 1) {
+                    $this->errors[] = "Sorry, a client already exists with that name and/or email.";
                 } else {
-                    // write new user's data into database
-                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email)
-                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "');";
+                    // Write new user's data into database
+                    $sql = "INSERT INTO Client (name, date_of_birth, joining_date, address, category, email_address, password, phone_number, branch_id, is_notified)
+                            VALUES('" . $name . "', '" . $dob . "', '" . date("Y-m-d") . "', '" . $address . "', '" . $category . "', '" . $email . "', '" . $password_hash . "', '" . $phone . "''" . $branch . "');";
                     $query_new_user_insert = $this->db_connection->query($sql);
 
                     // if user has been added successfully
                     if ($query_new_user_insert) {
-                        $this->messages[] = "Your account has been created successfully. You can now log in.";
+                        // Retrieve the client_id and join_date of newly created client
+                        $sql = "SELECT client_id FROM Client WHERE name = '" . $name . "' AND email_address = '" . $email . "';";
+                        $query_search_result = $this->db_connection->query($sql);
+                        $client_id = $query_search_result->client_id;
+
+                        // Create the account for the new client
+                        $balance = 0.00;
+                        $interestRate = $account_type == 'checking' ? 0.0 : 2.0;
+                        $sql = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
+                          VALUES('$client_id', '$balance', '$account_type', '$service_type', '$level', '$interestRate');";
+
+                        if(mysqli_query($this->db_connection,$sql)) {
+                            $account_number = mysqli_insert_id($this->db_connection);
+                            if ($account_type == 'checking') {
+                                $sql1 = "INSERT INTO Checking(account_number, opt) VALUES('$account_number', '$charge_plan');";
+                                $this->db_connection->query($sql1);
+                            } else {
+                                $sql1 = "INSERT INTO Savings(account_number, opt) VALUES('$account_number', '$charge_plan');";
+                                $this->db_connection->query($sql1);
+                            }
+                            $this->messages[] = "Your account has been created successfully. You can now log in.";
+                        }
+                        // If writing to Account failed, the client is deleted from DB.
+                        else {
+                            $sql = "DELETE FROM Client WHERE client_id = '$client_id';";
+                            $this->db_connection->query($sql);
+                            $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
+                        }
                     } else {
                         $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
                     }
@@ -172,7 +212,7 @@ class Registration
 
         // if no connection errors (= working database connection)
         if (!$this->db_connection->connect_errno) {
-            $sql = "SELECT id, area, city FROM branch ;";
+            $sql = "SELECT branch_id, area, city FROM Branch ;";
             $query_branches = $this->db_connection->query($sql);
             $branches = array();
             if ($query_branches->num_rows == 0) {
@@ -200,7 +240,7 @@ class Registration
 
         // if no connection errors (= working database connection)
         if (!$this->db_connection->connect_errno) {
-            $sql = "SELECT opt FROM chargePlan ;";
+            $sql = "SELECT opt FROM ChargePlan ;";
             $query_options = $this->db_connection->query($sql);
             $options = array();
             if ($query_options->num_rows == 0) {
