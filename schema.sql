@@ -65,7 +65,7 @@ CREATE TABLE `Branch` (
 
 CREATE TABLE `ChargePlan` (
   `opt` varchar(255) NOT NULL DEFAULT '',
-  `lim` double(15,2) DEFAULT NULL,
+  `lim` INT DEFAULT NULL,
   `charge` double(15,2) DEFAULT NULL,
   `additional_charge` double(15,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -326,7 +326,7 @@ ALTER TABLE `Transaction`
 -- AUTO_INCREMENT pour la table `Account`
 --
 ALTER TABLE `Account`
-  MODIFY `account_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `account_number` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `Bills`
 --
