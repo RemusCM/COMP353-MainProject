@@ -11,17 +11,16 @@ class Account
     private $account_number;
     private $balance;
     private $account_type;
-    private $option_name;
+    private $level;
+    private $interest_rate;
 
-    public function __construct($account_number, $balance, $account_type, $option_name)
-    {
+    public function __construct($account_number, $balance, $account_type, $level, $interest_rate) {
         $this->account_number = $account_number;
         $this->balance = $balance;
         $this->account_type = $account_type;
-        $this->option_name = $option_name;
+        $this->level = $level;
+        $this->interest_rate = $interest_rate;
     }
-
-
 
 
     // GETTERS
@@ -39,9 +38,12 @@ class Account
         return $this->account_type;
     }
 
+    public function getLevel() {
+        return $this->level;
+    }
 
-    public function getOptionName() {
-        return $this->option_name;
+    public function getInterestRate() {
+        return $this->interest_rate;
     }
 
     // SETTERS
@@ -62,18 +64,24 @@ class Account
         return $this;
     }
 
-
-    public function setOptionName($option_name) {
-        $this->option_name = $option_name;
+    public function setLevel($level) {
+        $this->level = $level;
         return $this;
     }
+
+    public function setInterestRate($interest_rate) {
+        $this->interest_rate = $interest_rate;
+        return $this;
+    }
+
 
     public function toArray() {
         return array (
             'account_number' => $this->account_number,
             'balance' => $this->balance,
             'account_type' => $this->account_type,
-            'option_name' => $this->option_name
+            'level' => $this->level,
+            'interest_rate' => $this->interest_rate
         );
     }
 

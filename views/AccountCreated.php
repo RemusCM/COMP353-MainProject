@@ -2,7 +2,7 @@
 //Assume new account balance is always 0
 session_start();
 
-$connect = mysqli_connect("localhost", "root","root","testaccount");
+$connect = mysqli_connect("localhost", "root","root","testaccount", '8889');
 
 if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
@@ -27,7 +27,6 @@ if($accountType == 'checking' || $accountType == 'savings') {
     if($accountType == 'checking'){
         $interestRate = 0.0;
         $chargePlan = $_POST['charge-plan'];
-
 
         //Insert new record into Account and Checking
         $query = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
