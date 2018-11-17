@@ -44,7 +44,7 @@ if (isset($registration)) {
             </p>
             <p>
                 <label for="register_input_phone">Phone Number</label><br>
-                <input id="register_input_phone" class="login_input" type="tel" pattern="[1-9]\d{2}-\d{3}-\d{4}" name="phone" required />
+                <input id="register_input_phone" class="login_input" type="tel" pattern="[1-9]\d{2}-\d{3}-\d{4}" name="phone" placeholder="###-###-####" required />
             </p>
             <p>
                 <label for="register_input_email">Email</label><br>
