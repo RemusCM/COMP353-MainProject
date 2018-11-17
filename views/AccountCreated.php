@@ -179,7 +179,7 @@ elseif($accountType =='loan'){
 }
 
 mysqli_close($connect);
-echo "done";
+echo "Account successfully created.";
 
 
 
