@@ -1,548 +1,548 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Credit.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Credit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/AccountCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/AccountCreated.php" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1531519668">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.35" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="htaccess" value="1" />
-          <entry key="php" value="14" />
-          <entry key="sql" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PHP" value="14" />
-          <entry key="SQL" value="2" />
-          <entry key="Scratch" value="1" />
-          <entry key="htaccess" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="php" value="323" />
-          <entry key="txt" value="179" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PHP" value="323" />
-          <entry key="PLAIN_TEXT" value="179" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="13542978">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-256232608">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="ini" value="1" />
-          <entry key="php" value="10" />
-          <entry key="sql" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Ini" value="1" />
-          <entry key="PHP" value="10" />
-          <entry key="Scratch" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="php" value="4655" />
-          <entry key="txt" value="494" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PHP" value="4655" />
-          <entry key="PLAIN_TEXT" value="494" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+    <component name="ChangeListManager">
+        <list default="true" id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="">
+            <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+            <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+            <change beforePath="$PROJECT_DIR$/classes/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Account.php" afterDir="false" />
+            <change beforePath="$PROJECT_DIR$/classes/Credit.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Credit.php" afterDir="false" />
+            <change beforePath="$PROJECT_DIR$/views/AccountCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/AccountCreated.php" afterDir="false" />
+        </list>
+        <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+        <option name="SHOW_DIALOG" value="false" />
+        <option name="HIGHLIGHT_CONFLICTS" value="true" />
+        <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+        <option name="LAST_RESOLUTION" value="IGNORE" />
+    </component>
+    <component name="DatabaseView">
+        <option name="SHOW_INTERMEDIATE" value="true" />
+        <option name="GROUP_DATA_SOURCES" value="true" />
+        <option name="GROUP_SCHEMA" value="true" />
+        <option name="GROUP_CONTENTS" value="false" />
+        <option name="SORT_POSITIONED" value="false" />
+        <option name="SHOW_EMPTY_GROUPS" value="false" />
+        <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+        <option name="HIDDEN_KINDS">
+            <set />
+        </option>
+        <expand />
+        <select />
+    </component>
+    <component name="FUSProjectUsageTrigger">
+        <session id="-1531519668">
+            <usages-collector id="statistics.lifecycle.project">
+                <counts>
+                    <entry key="project.closed" value="4" />
+                    <entry key="project.open.time.15" value="1" />
+                    <entry key="project.open.time.16" value="1" />
+                    <entry key="project.open.time.18" value="1" />
+                    <entry key="project.open.time.19" value="1" />
+                    <entry key="project.open.time.28" value="1" />
+                    <entry key="project.open.time.35" value="1" />
+                    <entry key="project.open.time.5" value="1" />
+                    <entry key="project.opened" value="7" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.file.extensions.open">
+                <counts>
+                    <entry key="htaccess" value="1" />
+                    <entry key="php" value="14" />
+                    <entry key="sql" value="3" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.file.types.open">
+                <counts>
+                    <entry key="PHP" value="14" />
+                    <entry key="SQL" value="2" />
+                    <entry key="Scratch" value="1" />
+                    <entry key="htaccess" value="1" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.file.extensions.edit">
+                <counts>
+                    <entry key="php" value="323" />
+                    <entry key="txt" value="179" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.file.types.edit">
+                <counts>
+                    <entry key="PHP" value="323" />
+                    <entry key="PLAIN_TEXT" value="179" />
+                </counts>
+            </usages-collector>
+        </session>
+        <session id="13542978">
+            <usages-collector id="statistics.lifecycle.project">
+                <counts>
+                    <entry key="project.closed" value="1" />
+                    <entry key="project.open.time.2" value="1" />
+                    <entry key="project.opened" value="1" />
+                </counts>
+            </usages-collector>
+        </session>
+        <session id="-256232608">
+            <usages-collector id="statistics.file.extensions.open">
+                <counts>
+                    <entry key="ini" value="1" />
+                    <entry key="php" value="10" />
+                    <entry key="sql" value="1" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.file.types.open">
+                <counts>
+                    <entry key="Ini" value="1" />
+                    <entry key="PHP" value="10" />
+                    <entry key="Scratch" value="1" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.file.extensions.edit">
+                <counts>
+                    <entry key="php" value="4655" />
+                    <entry key="txt" value="494" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.file.types.edit">
+                <counts>
+                    <entry key="PHP" value="4655" />
+                    <entry key="PLAIN_TEXT" value="494" />
+                </counts>
+            </usages-collector>
+            <usages-collector id="statistics.lifecycle.project">
+                <counts>
+                    <entry key="project.closed" value="1" />
+                    <entry key="project.open.time.12" value="1" />
+                    <entry key="project.open.time.13" value="1" />
+                    <entry key="project.opened" value="2" />
+                </counts>
+            </usages-collector>
+        </session>
+    </component>
+    <component name="FileEditorManager">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/index.php">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="435">
+                            <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/classes/Login.php">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="1755">
+                            <caret line="117" column="42" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/views/AccountCreated.php">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="295">
+                            <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/classes/Account.php">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="938">
+                            <caret line="83" column="51" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/classes/Credit.php">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="495">
+                            <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/views/create_account.php">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="74">
+                            <caret line="65" column="109" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="109" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f5704e9-3ab6-43e7-8acc-44b554f581c2/console.sql">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/../../bin/php/php7.1.22/conf/php.ini">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="17445">
+                            <caret line="1163" selection-start-line="1163" selection-end-line="1163" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/config/db.php">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="240">
+                            <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/register.php">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+        </leaf>
+    </component>
+    <component name="FindInProjectRecents">
+        <findStrings>
+            <find>zend</find>
+        </findStrings>
+    </component>
+    <component name="Git.Settings">
+        <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    </component>
+    <component name="IdeDocumentHistory">
+        <option name="CHANGED_PATHS">
+            <list>
+                <option value="$PROJECT_DIR$/_installation/02-create-and-fill-users-table.sql" />
+                <option value="$PROJECT_DIR$/config/db.php" />
+                <option value="$PROJECT_DIR$/views/not_logged_in.php" />
+                <option value="$PROJECT_DIR$/classes/Login.php" />
+                <option value="$PROJECT_DIR$/index.php" />
+                <option value="$PROJECT_DIR$/views/home_page.php" />
+                <option value="$PROJECT_DIR$/../../bin/php/php7.1.22/conf/php.ini" />
+                <option value="$PROJECT_DIR$/views/create_account.php" />
+                <option value="$PROJECT_DIR$/views/testForm.php" />
+                <option value="$PROJECT_DIR$/views/testBackend.php" />
+                <option value="$PROJECT_DIR$/views/AccountCreated.php" />
+                <option value="$PROJECT_DIR$/classes/Account.php" />
+                <option value="$PROJECT_DIR$/classes/Credit.php" />
+            </list>
+        </option>
+    </component>
+    <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+    <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+    <component name="JsGulpfileManager">
+        <detection-done>true</detection-done>
+        <sorting>DEFINITION_ORDER</sorting>
+    </component>
+    <component name="PhpServers">
+        <servers>
+            <server host="localhost" id="c76f1878-a0d2-4daf-aee1-9c855b8d5b28" name="WebPge" port="8082" />
+        </servers>
+    </component>
+    <component name="PhpWorkspaceProjectConfiguration" interpreter_name="MAMP">
+        <include_path>
+            <path value="$PROJECT_DIR$/../../bin/php/php7.1.6/lib/php" />
+        </include_path>
+    </component>
+    <component name="ProjectFrameBounds">
+        <option name="y" value="23" />
+        <option name="width" value="1440" />
+        <option name="height" value="873" />
+    </component>
+    <component name="ProjectView">
+        <navigator proportions="" version="1">
+            <foldersAlwaysOnTop value="true" />
+        </navigator>
+        <panes>
+            <pane id="Scope" />
+            <pane id="ProjectPane">
+                <subPane>
+                    <expand>
+                        <path>
+                            <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
+                            <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
+                            <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="_support" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
+                            <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="classes" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
+                            <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="config" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
+                            <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="libraries" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
+                            <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="views" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                    </expand>
+                    <select />
+                </subPane>
+            </pane>
+        </panes>
+    </component>
+    <component name="PropertiesComponent">
+        <property name="DatabaseDriversLRU" value="mysql" />
+        <property name="SearchEverywhereHistoryKey" value="mysqli&#9;FILE&#9;jar://C:/Program Files/JetBrains/PhpStorm 2018.2.5/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php" />
+        <property name="WebServerToolWindowFactoryState" value="false" />
+        <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+        <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    </component>
+    <component name="RecentsManager">
+        <key name="MoveFile.RECENT_KEYS">
+            <recent name="$PROJECT_DIR$/.." />
+            <recent name="C:\Users\saman\Documents\github\COMP353\COMP353-MainProject" />
+        </key>
+    </component>
+    <component name="RunDashboard">
+        <option name="ruleStates">
+            <list>
+                <RuleState>
+                    <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+                </RuleState>
+                <RuleState>
+                    <option name="name" value="StatusDashboardGroupingRule" />
+                </RuleState>
+            </list>
+        </option>
+    </component>
+    <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
+        <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" singleton="true" document_root="$PROJECT_DIR$" port="8081">
+            <method v="2" />
+        </configuration>
+        <configuration name="Login.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/classes/Login.php">
+            <method v="2" />
+        </configuration>
+        <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="WebPge">
+            <method v="2" />
+        </configuration>
+        <list>
+            <item itemvalue="PHP Built-in Web Server.Unnamed" />
+            <item itemvalue="PHP Script.Login.php" />
+        </list>
+        <recent_temporary>
+            <list>
+                <item itemvalue="PHP Script.Login.php" />
+            </list>
+        </recent_temporary>
+    </component>
+    <component name="SvnConfiguration">
+        <configuration />
+    </component>
+    <component name="TaskManager">
+        <task active="true" id="Default" summary="Default task">
+            <changelist id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="" />
+            <created>1540344310620</created>
+            <option name="number" value="Default" />
+            <option name="presentableId" value="Default" />
+            <updated>1540344310620</updated>
+            <workItem from="1540344313838" duration="2853000" />
+            <workItem from="1540572876376" duration="829000" />
+            <workItem from="1540576276092" duration="3937000" />
+            <workItem from="1540585371805" duration="1109000" />
+            <workItem from="1540685862910" duration="2096000" />
+            <workItem from="1540688029694" duration="683000" />
+            <workItem from="1540689121267" duration="2273000" />
+            <workItem from="1541354626133" duration="142000" />
+            <workItem from="1541973125241" duration="172000" />
+            <workItem from="1542385537648" duration="633000" />
+        </task>
+        <task id="LOCAL-00001" summary="#10 started on frontend for opening an account. Still need to hide some div when options are selected from dropdown.">
+            <created>1541693855287</created>
+            <option name="number" value="00001" />
+            <option name="presentableId" value="LOCAL-00001" />
+            <option name="project" value="LOCAL" />
+            <updated>1541693855287</updated>
+        </task>
+        <task id="LOCAL-00002" summary="#10 Moved jquery script to AccountCreated to handle credit account constraints better.">
+            <created>1541958662099</created>
+            <option name="number" value="00002" />
+            <option name="presentableId" value="LOCAL-00002" />
+            <option name="project" value="LOCAL" />
+            <updated>1541958662099</updated>
+        </task>
+        <task id="LOCAL-00003" summary="#10 Instead of making &quot;credit&quot; only appear if member for more than 6 months, I handled it with form validation. Therefore the client cannot submit the form if Credit is selected AND he hasn't been a client for 6 months.">
+            <created>1541962413314</created>
+            <option name="number" value="00003" />
+            <option name="presentableId" value="LOCAL-00003" />
+            <option name="project" value="LOCAL" />
+            <updated>1541962413314</updated>
+        </task>
+        <task id="LOCAL-00004" summary="#10 Added same type of alert for line of credit if client has been registered for less than 12 months using hard-coded values.">
+            <created>1541962879759</created>
+            <option name="number" value="00004" />
+            <option name="presentableId" value="LOCAL-00004" />
+            <option name="project" value="LOCAL" />
+            <updated>1541962879759</updated>
+        </task>
+        <option name="localTasksCounter" value="5" />
+        <servers />
+    </component>
+    <component name="TimeTrackingManager">
+        <option name="totallyTimeSpent" value="27771000" />
+    </component>
+    <component name="ToolWindowManager">
+        <frame x="0" y="23" width="1440" height="873" extended-state="0" />
+        <editor active="true" />
+        <layout>
+            <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15879828" />
+            <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+            <window_info id="Favorites" order="2" side_tool="true" />
+            <window_info anchor="bottom" id="Message" order="0" />
+            <window_info anchor="bottom" id="Find" order="1" />
+            <window_info anchor="bottom" id="Run" order="2" weight="0.3248227" />
+            <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+            <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+            <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+            <window_info anchor="bottom" id="TODO" order="6" />
+            <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+            <window_info anchor="bottom" id="Database Changes" order="8" />
+            <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+            <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.103713185" />
+            <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+            <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32907802" />
+            <window_info anchor="bottom" id="PHP-CGI Server" order="13" />
+            <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+            <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+            <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+            <window_info anchor="right" id="Database" order="3" visible="true" weight="0.08297568" />
+        </layout>
+    </component>
+    <component name="TypeScriptGeneratedFilesManager">
+        <option name="version" value="1" />
+    </component>
+    <component name="VcsContentAnnotationSettings">
+        <option name="myLimit" value="2678400000" />
+    </component>
+    <component name="VcsManagerConfiguration">
+        <MESSAGE value="#6 Bypassed login to allow commit of project base; database connection commented out for login. Renamed views to login_page and home_page for clarity." />
+        <MESSAGE value="#10 started on frontend for opening an account. Still need to hide some div when options are selected from dropdown." />
+        <MESSAGE value="#10 Moved jquery script to AccountCreated to handle credit account constraints better." />
+        <MESSAGE value="#10 Instead of making &quot;credit&quot; only appear if member for more than 6 months, I handled it with form validation. Therefore the client cannot submit the form if Credit is selected AND he hasn't been a client for 6 months." />
+        <MESSAGE value="#10 Added same type of alert for line of credit if client has been registered for less than 12 months using hard-coded values." />
+        <option name="LAST_COMMIT_MESSAGE" value="#10 Added same type of alert for line of credit if client has been registered for less than 12 months using hard-coded values." />
+    </component>
+    <component name="editorHistoryManager">
+        <entry file="file://$PROJECT_DIR$/_installation/02-create-and-fill-users-table.sql" />
+        <entry file="file://$PROJECT_DIR$/_installation/01-create-database.sql" />
+        <entry file="file://$PROJECT_DIR$/libraries/password_compatibility_library.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1071" />
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/views/register.php">
+            <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+        <entry file="file://$PROJECT_DIR$/views/.htaccess">
+            <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-2346" />
+            </provider>
+        </entry>
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bdb83e72-5bb0-4c34-a9f9-931b83b8dce7/console.sql" />
+        <entry file="file://$PROJECT_DIR$/classes/Registration.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="930">
+                    <caret line="62" column="70" selection-start-line="62" selection-start-column="70" selection-end-line="62" selection-end-column="70" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/classes/Checking.php">
+            <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+        <entry file="file://$PROJECT_DIR$/views/home_page.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                    <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/views/login_page.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="209">
+                    <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/views/testBackend.php" />
+        <entry file="file://$PROJECT_DIR$/views/testForm.php" />
         <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-            </state>
-          </provider>
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="435">
+                    <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="117" column="42" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
-            </state>
-          </provider>
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1755">
+                    <caret line="117" column="42" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/AccountCreated.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classes/Account.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="938">
-              <caret line="83" column="51" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Credit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/create_account.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="65" column="109" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="109" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f5704e9-3ab6-43e7-8acc-44b554f581c2/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
+            <provider selected="true" editor-type-id="text-editor" />
         </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../bin/php/php7.1.22/conf/php.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17445">
-              <caret line="1163" selection-start-line="1163" selection-end-line="1163" />
-            </state>
-          </provider>
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17445">
+                    <caret line="1163" selection-start-line="1163" selection-end-line="1163" />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                    <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/register.php">
-          <provider selected="true" editor-type-id="text-editor" />
+            <provider selected="true" editor-type-id="text-editor" />
         </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>zend</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/_installation/02-create-and-fill-users-table.sql" />
-        <option value="$PROJECT_DIR$/config/db.php" />
-        <option value="$PROJECT_DIR$/views/not_logged_in.php" />
-        <option value="$PROJECT_DIR$/classes/Login.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/views/home_page.php" />
-        <option value="$PROJECT_DIR$/../../bin/php/php7.1.22/conf/php.ini" />
-        <option value="$PROJECT_DIR$/views/create_account.php" />
-        <option value="$PROJECT_DIR$/views/testForm.php" />
-        <option value="$PROJECT_DIR$/views/testBackend.php" />
-        <option value="$PROJECT_DIR$/views/AccountCreated.php" />
-        <option value="$PROJECT_DIR$/classes/Account.php" />
-        <option value="$PROJECT_DIR$/classes/Credit.php" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="PhpServers">
-    <servers>
-      <server host="localhost" id="c76f1878-a0d2-4daf-aee1-9c855b8d5b28" name="WebPge" port="8082" />
-    </servers>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="MAMP">
-    <include_path>
-      <path value="$PROJECT_DIR$/../../bin/php/php7.1.6/lib/php" />
-    </include_path>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="873" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
-              <item name="_support" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COMP353-MainProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COMP353-MainProject" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="mysqli&#9;FILE&#9;jar://C:/Program Files/JetBrains/PhpStorm 2018.2.5/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/.." />
-      <recent name="C:\Users\saman\Documents\github\COMP353\COMP353-MainProject" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
-    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" singleton="true" document_root="$PROJECT_DIR$" port="8081">
-      <method v="2" />
-    </configuration>
-    <configuration name="Login.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/classes/Login.php">
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="WebPge">
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="PHP Built-in Web Server.Unnamed" />
-      <item itemvalue="PHP Script.Login.php" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="PHP Script.Login.php" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="" />
-      <created>1540344310620</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1540344310620</updated>
-      <workItem from="1540344313838" duration="2853000" />
-      <workItem from="1540572876376" duration="829000" />
-      <workItem from="1540576276092" duration="3937000" />
-      <workItem from="1540585371805" duration="1109000" />
-      <workItem from="1540685862910" duration="2096000" />
-      <workItem from="1540688029694" duration="683000" />
-      <workItem from="1540689121267" duration="2273000" />
-      <workItem from="1541354626133" duration="142000" />
-      <workItem from="1541973125241" duration="172000" />
-      <workItem from="1542385537648" duration="633000" />
-    </task>
-    <task id="LOCAL-00001" summary="#10 started on frontend for opening an account. Still need to hide some div when options are selected from dropdown.">
-      <created>1541693855287</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1541693855287</updated>
-    </task>
-    <task id="LOCAL-00002" summary="#10 Moved jquery script to AccountCreated to handle credit account constraints better.">
-      <created>1541958662099</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1541958662099</updated>
-    </task>
-    <task id="LOCAL-00003" summary="#10 Instead of making &quot;credit&quot; only appear if member for more than 6 months, I handled it with form validation. Therefore the client cannot submit the form if Credit is selected AND he hasn't been a client for 6 months.">
-      <created>1541962413314</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1541962413314</updated>
-    </task>
-    <task id="LOCAL-00004" summary="#10 Added same type of alert for line of credit if client has been registered for less than 12 months using hard-coded values.">
-      <created>1541962879759</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1541962879759</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27771000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15879828" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3248227" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.103713185" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="13" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.08297568" />
-    </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="#6 Bypassed login to allow commit of project base; database connection commented out for login. Renamed views to login_page and home_page for clarity." />
-    <MESSAGE value="#10 started on frontend for opening an account. Still need to hide some div when options are selected from dropdown." />
-    <MESSAGE value="#10 Moved jquery script to AccountCreated to handle credit account constraints better." />
-    <MESSAGE value="#10 Instead of making &quot;credit&quot; only appear if member for more than 6 months, I handled it with form validation. Therefore the client cannot submit the form if Credit is selected AND he hasn't been a client for 6 months." />
-    <MESSAGE value="#10 Added same type of alert for line of credit if client has been registered for less than 12 months using hard-coded values." />
-    <option name="LAST_COMMIT_MESSAGE" value="#10 Added same type of alert for line of credit if client has been registered for less than 12 months using hard-coded values." />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_installation/02-create-and-fill-users-table.sql" />
-    <entry file="file://$PROJECT_DIR$/_installation/01-create-database.sql" />
-    <entry file="file://$PROJECT_DIR$/libraries/password_compatibility_library.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1071" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/register.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/.htaccess">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2346" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bdb83e72-5bb0-4c34-a9f9-931b83b8dce7/console.sql" />
-    <entry file="file://$PROJECT_DIR$/classes/Registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="70" selection-start-line="62" selection-start-column="70" selection-end-line="62" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Checking.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/testBackend.php" />
-    <entry file="file://$PROJECT_DIR$/views/testForm.php" />
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="117" column="42" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f5704e9-3ab6-43e7-8acc-44b554f581c2/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../bin/php/php7.1.22/conf/php.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17445">
-          <caret line="1163" selection-start-line="1163" selection-end-line="1163" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/AccountCreated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/create_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="65" column="109" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Credit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="938">
-          <caret line="83" column="51" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-  </component>
+        <entry file="file://$PROJECT_DIR$/views/AccountCreated.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="295">
+                    <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/views/create_account.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="74">
+                    <caret line="65" column="109" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="109" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/classes/Credit.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="495">
+                    <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/classes/Account.php">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="938">
+                    <caret line="83" column="51" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
+                </state>
+            </provider>
+        </entry>
+    </component>
 </project>
