@@ -14,7 +14,7 @@ $accountType = $_POST['account-type'];
 $interestRate = 0.0;
 $balance = 0.00;
 $client_id = $_SESSION['client_id'];
-$clientJoinDate = $_SESSION['joining_date'];
+$clientJoiningDate = $_SESSION['joining_date'];
 
 // Course of action if user picks Checkings or savings
 if($accountType == 'checking' || $accountType == 'savings') {

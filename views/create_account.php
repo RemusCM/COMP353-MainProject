@@ -5,7 +5,8 @@
  * Date: 2018-11-08
  * Time: 10:15
  */
-$clientJoinDate = $_SESSION['joining_date'];
+session_start();
+$clientJoiningDate = $_SESSION['joining_date'];
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -44,7 +45,6 @@ $clientJoinDate = $_SESSION['joining_date'];
         });
     });
 
-    //TODO Need to use $SESSION['joining_date'] instead and write a small function to get the difference in months with current date
     function validateForm() {
         if($('#account-type').val() == 'credit' ) {
             if($clientJoiningDate < 6) {
