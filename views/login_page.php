@@ -14,17 +14,40 @@ if (isset($login)) {
 }
 ?>
 
-<!-- login form box -->
-<form method="post" action="index.php" name="loginform">
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<!-- register form -->
+<div class="col-md-12 well" style="position:absolute; top:10%; left:40%; width:20%;">
+    <!-- login form -->
+    <form method="post" action="index.php" name="loginform" class="form-horizontal">
+            <fieldset>
+                <legend>Login:</legend>
+                <p>
+                    <label for="login_input_username">Client Card Number</label><br>
+                    <input id="login_input_username" class="login_input" type="text" name="client_id" required />
+                </p>
+                <p>
+                    <label for="login_input_password">Password</label><br>
+                    <input id="login_input_password" class="login_input" type="password" name="password" autocomplete="off" required />
+                </p>
+            </fieldset>
+        <div style="margin-top:20px;float:left">
+            <a href="register.php">Register</a>
 
-    <label for="login_input_username">Client Card Number</label>
-    <input id="login_input_username" class="login_input" type="text" name="user_name" required />
+        </div>
+            <div style="margin-top:20px; float:right">
+                <input type="submit"  name="login" value="Log in" />
+            </div>
 
-    <label for="login_input_password">Password</label>
-    <input id="login_input_password" class="login_input" type="password" name="user_password" autocomplete="off" required />
+    </form>
 
-    <input type="submit"  name="login" value="Log in" />
 
-</form>
+</div>
 
-<a href="register.php">Register new account</a>
+
+</body>
+</html>
+
