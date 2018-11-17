@@ -13,14 +13,8 @@ $serviceType = $_POST['service-type'];
 $accountType = $_POST['account-type'];
 $interestRate = 0.0;
 $balance = 0.00;
-
-
-//need to complete registration of a client/log-in to retrieve this
-//TODO store client_id in session once logged in. Also store joining date to see if he is able to make credit card/line of credit
-//$clientID = $_SESSION['client_id'];
-//$clientJoinDate = $_SESSION['joining_date'];
-
-$client_id = 1; //Testing with fake/ hard-coded client_id until registration/login provides client info to session
+$client_id = $_SESSION['client_id'];
+$clientJoiningDate = $_SESSION['joining_date'];
 
 // Course of action if user picks Checkings or savings
 if($accountType == 'checking' || $accountType == 'savings') {
@@ -185,7 +179,7 @@ elseif($accountType =='loan'){
 }
 
 mysqli_close($connect);
-echo "done";
+echo "Account successfully created.";
 
 
 
