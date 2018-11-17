@@ -5,8 +5,7 @@
  * Date: 2018-11-08
  * Time: 10:15
  */
-//$clientJoinDate = $_SESSION['joining_date'];
-$clientJoiningDate = 4;
+$clientJoinDate = $_SESSION['joining_date'];
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
