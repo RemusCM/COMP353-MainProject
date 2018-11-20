@@ -2,7 +2,7 @@
 //Assume new account balance is always 0
 session_start();
 
-$connect = mysqli_connect("localhost", "root","","testAccount");
+$connect = mysqli_connect("localhost", "root","root","testAccount");
 
 if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
