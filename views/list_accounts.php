@@ -2,9 +2,35 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script>
+        $(document).ready(function() {
+            $(".hidden-content-reveal").click(function() {
+                $(this).children().toggleClass('toggler');
+
+                $(this).next('.table').slideToggle();
+                return false;
+            });
+        });
+
+    </script>
+    <style>
+        table {
+            display: none;
+        }
+
+        a:link{
+          color:black;
+          text-decoration: none;
+        }
+
+        a:hover, a:active, a:visited{
+            color:darkgray;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="col-md-12 well" style="position:absolute; top:10%; ">
+    <div class="col-md-12" style="top:10%;">
         <?php
         /**
          * Created by PhpStorm.
@@ -21,9 +47,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-
-        //TODO retrieve data from Loan, Credit and Foreign Currency and display it "' . $_SESSION['user'] . '"
-        //TODO Make sure that what is displayed in the table is for the client that is logged in.
+        //TODO Add loan accounts
 
         //Checking accounts query
         $sql_checking = "SELECT DISTINCT checking.account_number, client_id, opt, balance, service_type, level FROM account, checking WHERE client_id = '" . $_SESSION['client_id'] . "' AND checking.account_number = account.account_number;";
@@ -34,12 +58,18 @@
         $result_savings = $conn->query($sql_savings);
 
         //Credit accounts query
-        $sql_credit = "SELECT DISTINCT credit.account_number, client_id, credit_limit, minimal_payment, service_type FROM account, credit, WHERE client_id = '" . $_SESSION['client_id'] . "' AND savings.account_number = account.account_number;";
+        $sql_credit = "SELECT DISTINCT credit.account_number, client_id, credit_limit, minimal_payment, service_type, balance, level FROM account, credit WHERE client_id = '" . $_SESSION['client_id'] . "' AND credit.account_number = account.account_number;";
         $result_credit = $conn->query($sql_credit);
+
+        //Foreign currency accounts query
+        $sql_foreignCurrency = "SELECT DISTINCT foreigncurrency.account_number, client_id, currency_type, service_type, level FROM account, foreigncurrency WHERE client_id = '" . $_SESSION['client_id'] . "' AND foreigncurrency.account_number = account.account_number;";
+        $result_foreignCurrency = $conn->query($sql_foreignCurrency);
+
 
         //Displaying checking accounts
         if ($result_checking->num_rows > 0) {
-            echo "<table class='table'><caption>Checking Accounts</caption><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Checking accounts details</h3></a>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
             // output data of each row
             while($row = $result_checking->fetch_assoc()) {
                 echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
@@ -51,7 +81,8 @@
 
         //Displaying savings accounts
         if ($result_savings->num_rows > 0 ) {
-            echo "<table class='table'><caption>Savings Accounts</caption><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Savings accounts details</h3></a>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
             // output data of each row
             while($row = $result_savings->fetch_assoc()) {
                 echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
@@ -59,9 +90,12 @@
             echo "</table>";
         }
 
+        echo "<hr class='style2'>";
+
         //Displaying credit accounts
         if ($result_credit->num_rows > 0) {
-            echo "<table class='table'><caption>Credit Accounts</caption><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Credit Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th scope=\"col\">Minimal Payment</th>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Credit accounts details</h3></a>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Credit Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th scope=\"col\">Minimal Payment</th>";
             // output data of each row
             while($row = $result_credit->fetch_assoc()) {
                 echo "<tr><td>".$row["account_number"]."</td><td>".$row["credit_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td>".$row["minimal_payment"]."</td></tr>";
@@ -69,10 +103,25 @@
             echo "</table>";
         }
 
+        echo "<hr class='style2'>";
+
+        //Displaying foreign currency accounts
+        if ($result_foreignCurrency->num_rows > 0) {
+            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Foreign Currency accounts details</h3></a>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Currency Type</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            // output data of each row
+            while($row = $result_foreignCurrency->fetch_assoc()) {
+                echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["currency_type"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
+            }
+            echo "</table>";
+        }
+
+        //Displaying loan accounts
+
+
         else {
             echo "";
         }
-
 
         $conn->close();
         ?>
