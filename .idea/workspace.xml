@@ -1,36 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="#6 Bypassed login to allow commit of project base; database connection commented out for login. Renamed views to login_page and home_page for clarity.">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/Account.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/AccountCreated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/Checking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/Client.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/Credit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/ForeignCurrency.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/Loan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/ManageClients.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/Savings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create_account.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/population_scripts.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view_clients.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/create_account.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/view_clients.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/COMP353-MainProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/COMP353-MainProject.iml" afterDir="false" />
+    <list default="true" id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/home_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/menu.css" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,14 +90,14 @@
           <entry key="css" value="14" />
           <entry key="php" value="45" />
           <entry key="sql" value="3437" />
-          <entry key="txt" value="89" />
+          <entry key="txt" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="14" />
           <entry key="PHP" value="45" />
-          <entry key="PLAIN_TEXT" value="89" />
+          <entry key="PLAIN_TEXT" value="130" />
           <entry key="SQL" value="3437" />
         </counts>
       </usages-collector>
@@ -175,7 +148,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/population_scripts.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1683" />
+            <state relative-caret-position="289">
+              <caret line="116" column="1" lean-forward="true" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -398,15 +373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1542316644364</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="#17 pop scripts merge master">
+      <created>1542910266373</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542910266373</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28256000" />
+    <option name="totallyTimeSpent" value="29602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14008097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -421,7 +402,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3291815" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="13" />
@@ -442,7 +423,8 @@
     <MESSAGE value="style in css file, added html tags, removed hey username" />
     <MESSAGE value="removed message" />
     <MESSAGE value="#17 pop scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="#17 pop scripts" />
+    <MESSAGE value="#17 pop scripts merge master" />
+    <option name="LAST_COMMIT_MESSAGE" value="#17 pop scripts merge master" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/_installation/02-create-and-fill-users-table.sql" />
@@ -533,7 +515,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/population_scripts.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1683" />
+        <state relative-caret-position="289">
+          <caret line="116" column="1" lean-forward="true" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+        </state>
       </provider>
     </entry>
   </component>
