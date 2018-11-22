@@ -42,7 +42,7 @@
 
         session_start();
         // Create connection
-        $conn = mysqli_connect("localhost", "root","mysql","testaccount");
+        $conn = mysqli_connect("vdc353.encs.concordia.ca", "vdc353_2","jrssv353","vdc353_2");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
