@@ -232,7 +232,7 @@ CREATE TABLE `Transaction` (
 -- Index pour la table `Account`
 --
 ALTER TABLE `Admin`
-  ADD PRIMARY KEY (`admin_id`),
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Index pour la table `Account`
