@@ -350,3 +350,8 @@ INSERT INTO Transaction VALUES (37, 10, '2016-03-27', 6520.00);
 INSERT INTO Transaction VALUES (38, 4, '2017-12-20', 5100.00);
 
 
+--admin
+
+INSERT INTO Admin VALUES(1, '1234qwe');
+INSERT INTO Admin VALUES(2, '4321qwe');
+INSERT INTO Admin VALUES(3, '1234ewq');
