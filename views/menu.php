@@ -1,31 +1,59 @@
+<?php
+session_start();
+$admin = $_SESSION['admin_id'];
+if($admin){
+    $isAdmin = true;
+} else {
+    $isAdmin = false;
+}
+
+?>
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="menu.css">
+    <style>
+        .navigationLinks {
+            float: right;
+        }
+        .navbar {
+            background-color: #f5f5f5;
+        }
+        .nav-link {
+            float: left;
+            height: 50px;
+            padding: 15px 15px;
+            font-size: 14px;
+            line-height: 20px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<div class="menu">
-    <ul>
-        <li>
-            <a href="home_page.php">Accounts</a>
-        </li>
-        <li>
-            <a href="">Open Account</a>
-        </li>
-        <li>
-            <a href="">Transfer Money</a>
-        </li>
-        <li>
-            <a href="">Pay Bills</a>
-        </li>
-        <li>
-            <a href="">E-Transfer</a>
-        </li>
-        <li style="float:right">
-            <!-- because people were asking: "index.php?logout" is just my simplified form of "index.php?logout=true" -->
-            <a href="index.php?logout">Logout</a>
-        </li>
-    </ul>
-</div>
+<?php
+if($isAdmin){
+    ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.php">Bank</a>
+        <div class="navigationLinks">
+            <a class="nav-item nav-link active" href="../index.php">Home</a>
+            <a class="nav-item nav-link" href="view_clients.php">View Clients</a>
+            <a class="nav-item nav-link" href="../index.php?logout">Logout</a>
+        </div>
+    </nav>
+    <?
+}else{
+    ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.php">Bank</a>
+        <div class="navigationLinks">
+            <a class="nav-item nav-link active" href="../index.php">Accounts</a>
+            <a class="nav-item nav-link" href="create_account.php">Create an Account</a>
+            <a class="nav-item nav-link" href="../index.php?logout">Logout</a>
+        </div>
+    </nav>
+
+    <?
+}
+?>
 </body>
 </html>
