@@ -41,7 +41,7 @@
 
         session_start();
         // Create connection
-        $conn = mysqli_connect("localhost", "root","root","testaccount");
+        $conn = mysqli_connect("localhost", "root","mysql","testaccount");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -65,6 +65,11 @@
         $sql_foreignCurrency = "SELECT DISTINCT foreigncurrency.account_number, client_id, currency_type, service_type, level FROM account, foreigncurrency WHERE client_id = '" . $_SESSION['client_id'] . "' AND foreigncurrency.account_number = account.account_number;";
         $result_foreignCurrency = $conn->query($sql_foreignCurrency);
 
+        //Loan accounts query
+        $sql_loan = "SELECT DISTINCT loan.account_number, client_id, type, loan_limit, service_type,  level FROM account, loan WHERE client_id = '" . $_SESSION['client_id'] . "' AND loan.account_number = account.account_number;";
+        $result_loan = $conn->query($sql_loan);
+
+
 
         //Displaying checking accounts
         if ($result_checking->num_rows > 0) {
@@ -75,9 +80,10 @@
                 echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
             }
             echo "</table>";
+            echo "<hr class='style2'>";
         }
 
-        echo "<hr class='style2'>";
+
 
         //Displaying savings accounts
         if ($result_savings->num_rows > 0 ) {
@@ -88,9 +94,10 @@
                 echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
             }
             echo "</table>";
+            echo "<hr class='style2'>";
         }
 
-        echo "<hr class='style2'>";
+
 
         //Displaying credit accounts
         if ($result_credit->num_rows > 0) {
@@ -101,9 +108,10 @@
                 echo "<tr><td>".$row["account_number"]."</td><td>".$row["credit_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td>".$row["minimal_payment"]."</td></tr>";
             }
             echo "</table>";
+            echo "<hr class='style2'>";
         }
 
-        echo "<hr class='style2'>";
+
 
         //Displaying foreign currency accounts
         if ($result_foreignCurrency->num_rows > 0) {
@@ -114,10 +122,20 @@
                 echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["currency_type"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
             }
             echo "</table>";
+            echo "<hr class='style2'>";
         }
 
         //Displaying loan accounts
-
+        if ($result_loan->num_rows > 0) {
+            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Loan accounts details</h3></a>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Loan type</th><th scope=\"col\">Loan Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            // output data of each row
+            while($row = $result_loan->fetch_assoc()) {
+                echo "<tr><td>".$row["account_number"]."</td><td>".$row["type"]."</td><td>".$row["loan_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
+            }
+            echo "</table>";
+            echo "<hr class='style2'>";
+        }
 
         else {
             echo "";
