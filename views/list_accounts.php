@@ -18,15 +18,16 @@
             display: none;
         }
 
-        a:link{
+        a:link, a:visited{
           color:black;
           text-decoration: none;
         }
 
-        a:hover, a:active, a:visited{
+        a:hover, a:active{
             color:darkgray;
             text-decoration: none;
         }
+
     </style>
 </head>
 <body>
@@ -74,10 +75,11 @@
         //Displaying checking accounts
         if ($result_checking->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Checking accounts details</h3></a>";
-            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_checking->fetch_assoc()) {
-                echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
+                $account_number = $row["account_number"];
+                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -88,10 +90,11 @@
         //Displaying savings accounts
         if ($result_savings->num_rows > 0 ) {
             echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Savings accounts details</h3></a>";
-            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_savings->fetch_assoc()) {
-                echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
+                $account_number = $row["account_number"];
+                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -102,10 +105,11 @@
         //Displaying credit accounts
         if ($result_credit->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Credit accounts details</h3></a>";
-            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Credit Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th scope=\"col\">Minimal Payment</th>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Credit Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th scope=\"col\">Minimal Payment</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_credit->fetch_assoc()) {
-                echo "<tr><td>".$row["account_number"]."</td><td>".$row["credit_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td>".$row["minimal_payment"]."</td></tr>";
+                $account_number = $row["account_number"];
+                echo "<tr><td>".$account_number."</td><td>".$row["credit_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td>".$row["minimal_payment"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -116,10 +120,11 @@
         //Displaying foreign currency accounts
         if ($result_foreignCurrency->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Foreign Currency accounts details</h3></a>";
-            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Currency Type</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Currency Type</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_foreignCurrency->fetch_assoc()) {
-                echo "<tr><td>".$row["account_number"]."</td><td>".$row["balance"]."</td><td>".$row["currency_type"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
+                $account_number = $row["account_number"];
+                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["currency_type"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -128,10 +133,11 @@
         //Displaying loan accounts
         if ($result_loan->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Loan accounts details</h3></a>";
-            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Loan type</th><th scope=\"col\">Loan Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Loan type</th><th scope=\"col\">Loan Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_loan->fetch_assoc()) {
-                echo "<tr><td>".$row["account_number"]."</td><td>".$row["type"]."</td><td>".$row["loan_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td></tr>";
+                $account_number = $row["account_number"];
+                echo "<tr><td>".$account_number."</td><td>".$row["type"]."</td><td>".$row["loan_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
