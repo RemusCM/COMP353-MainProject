@@ -32,12 +32,6 @@
 </head>
 <body>
     <div class="col-md-12">
-        <form method='post' action='list_accounts.php'>I want to received notifications about my accounts
-            <select name='notified' id='notified'>
-                <option value='yes'<?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'yes' && $_SESSION['is_notified'] == 1)) ? 'selected="selected"' : ''; ?>>Yes</option>
-                <option value='no' <?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'no' && $_SESSION['is_notified'] == 0)) ? 'selected="selected"' : ''; ?> >No</option>
-            </select><br>
-            <input type='submit' name='submit' id='submit' value="Save"></form>
         <?php
         /**
          * Created by PhpStorm.
@@ -148,6 +142,12 @@
 
         $conn->close();
         ?>
+        <form method='post'>I want to received notifications about my accounts
+            <select name='notified' id='notified'>
+                <option value='yes'<?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'yes' && $_SESSION['is_notified'] == 1)) ? 'selected="selected"' : ''; ?>>Yes</option>
+                <option value='no' <?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'no' && $_SESSION['is_notified'] == 0)) ? 'selected="selected"' : ''; ?> >No</option>
+            </select><br>
+            <input type='submit' name='submit' id='submit' value="Save"></form>
     </div>
 </body>
 </html>
