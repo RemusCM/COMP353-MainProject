@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e56e794-e135-419c-9264-3cf16c7d5777" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/list_accounts.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/list_accounts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/transactions.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/transactions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,27 +149,27 @@
     <session id="1496373995">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="20" />
+          <entry key="php" value="23" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="20" />
+          <entry key="PHP" value="23" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="4877" />
-          <entry key="txt" value="342" />
+          <entry key="php" value="4915" />
+          <entry key="txt" value="392" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="PHP" value="4875" />
-          <entry key="PLAIN_TEXT" value="342" />
+          <entry key="PHP" value="4913" />
+          <entry key="PLAIN_TEXT" value="392" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -190,11 +187,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/list_accounts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="65" />
+            <state relative-caret-position="297">
+              <caret line="149" column="9" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/transactions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -218,15 +224,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Account.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="83" column="51" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/db.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -238,8 +235,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/ClientNotified.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="210">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -263,15 +260,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/transactions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/create_account.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1638">
@@ -279,6 +267,15 @@
               <folding>
                 <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client_account_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="24" selection-start-line="24" selection-end-line="24" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -311,11 +308,12 @@
         <option value="$PROJECT_DIR$/views/list_accounts2.php" />
         <option value="$PROJECT_DIR$/views/AccountCreated.php" />
         <option value="$PROJECT_DIR$/transactions.php" />
-        <option value="$PROJECT_DIR$/views/transactions.php" />
         <option value="$PROJECT_DIR$/list_accounts.php" />
         <option value="$PROJECT_DIR$/classes/ClientNotified.php" />
         <option value="$PROJECT_DIR$/schema.sql" />
         <option value="$PROJECT_DIR$/config/db.php" />
+        <option value="$PROJECT_DIR$/client_account_list.php" />
+        <option value="$PROJECT_DIR$/views/transactions.php" />
         <option value="$PROJECT_DIR$/views/list_accounts.php" />
       </list>
     </option>
@@ -445,7 +443,7 @@
       <workItem from="1542730488917" duration="12291000" />
       <workItem from="1542766294562" duration="208000" />
       <workItem from="1542766538683" duration="1229000" />
-      <workItem from="1420070496729" duration="12694000" />
+      <workItem from="1420070496729" duration="13784000" />
     </task>
     <task id="LOCAL-00001" summary="#10 started on frontend for opening an account. Still need to hide some div when options are selected from dropdown.">
       <created>1541693855287</created>
@@ -524,11 +522,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542934284418</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="#8 Changed db connections">
+      <created>1542934396253</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1542934396253</updated>
+    </task>
+    <task id="LOCAL-00013" summary="#8 Changed db connections and formatted code better.">
+      <created>1542984262614</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1542984262614</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69433000" />
+    <option name="totallyTimeSpent" value="70523000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -611,7 +623,9 @@
     <MESSAGE value="#8 Added right db connection" />
     <MESSAGE value="Merge branch 'master' of https://github.com/samantha-kerr/COMP353-MainProject into list-accounts&#10;&#10;# Conflicts:&#10;#&#9;.gitignore&#10;#&#9;views/AccountCreated.php" />
     <MESSAGE value="#8 added functionality for client to select if they want to be notified or not (stores value to db too)" />
-    <option name="LAST_COMMIT_MESSAGE" value="#8 added functionality for client to select if they want to be notified or not (stores value to db too)" />
+    <MESSAGE value="#8 Changed db connections" />
+    <MESSAGE value="#8 Changed db connections and formatted code better." />
+    <option name="LAST_COMMIT_MESSAGE" value="#8 Changed db connections and formatted code better." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/_installation/02-create-and-fill-users-table.sql" />
@@ -688,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/transactions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/transactions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -751,10 +758,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/list_accounts.php">
+    <entry file="file://$PROJECT_DIR$/views/create_account.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="65" />
+        <state relative-caret-position="-1638">
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_account_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="24" selection-start-line="24" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ClientNotified.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/transactions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -765,20 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ClientNotified.php">
+    <entry file="file://$PROJECT_DIR$/views/list_accounts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/create_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1638">
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="297">
+          <caret line="149" column="9" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
         </state>
       </provider>
     </entry>

@@ -149,10 +149,6 @@
             echo "<hr class='style2'>";
         }
 
-        else {
-            echo "";
-        }
-
         $conn->close();
         ?>
     </div>
