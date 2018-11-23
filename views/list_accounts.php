@@ -18,12 +18,12 @@
             display: none;
         }
 
-        a:link, a:visited{
+        a.hidden-content-reveal:link, a.hidden-content-reveal:visited{
           color:black;
           text-decoration: none;
         }
 
-        a:hover, a:active{
+        a.hidden-content-reveal:hover, a.hidden-content-reveal:active{
             color:darkgray;
             text-decoration: none;
         }
@@ -32,10 +32,10 @@
 </head>
 <body>
     <div class="col-md-12">
-        <form method='post' action='list_accounts.php'>I want to notifications about my accounts
+        <form method='post' action='list_accounts.php'>I want to received notifications about my accounts
             <select name='notified' id='notified'>
-                <option value='yes'<?php echo (isset($_POST['submit']) && $_POST['notified'] == 'yes' && $_SESSION['is_notified'] ==1) ? 'selected="selected"' : ''; ?>>Yes</option>
-                <option value='no' <?php echo (isset($_POST['submit']) && $_POST['notified'] == 'no' && $_SESSION['is_notified'] == 0) ? 'selected="selected"' : ''; ?> >No</option>
+                <option value='yes'<?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'yes' && $_SESSION['is_notified'] == 1)) ? 'selected="selected"' : ''; ?>>Yes</option>
+                <option value='no' <?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'no' && $_SESSION['is_notified'] == 0)) ? 'selected="selected"' : ''; ?> >No</option>
             </select><br>
             <input type='submit' name='submit' id='submit' value="Save"></form>
         <?php
@@ -53,9 +53,6 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-
-
-
         //Checking accounts query
         $sql_checking = "SELECT DISTINCT checking.account_number, client_id, opt, balance, service_type, level FROM account, checking WHERE client_id = '" . $_SESSION['client_id'] . "' AND checking.account_number = account.account_number;";
         $result_checking = $conn->query($sql_checking);
