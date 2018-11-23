@@ -46,7 +46,7 @@ if($isAdmin){
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../index.php">Bank</a>
         <div class="navigationLinks">
-            <a class="nav-item nav-link active" href="../index.php">Accounts</a>
+            <a class="nav-item nav-link active" href="./list_accounts.php">Accounts</a>
             <a class="nav-item nav-link" href="create_account.php">Create an Account</a>
             <a class="nav-item nav-link" href="../index.php?logout">Logout</a>
         </div>
