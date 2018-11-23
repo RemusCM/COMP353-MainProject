@@ -40,7 +40,7 @@
          * Time: 17:54
          */
 
-        session_start();
+
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER,DB_PASS,DB_NAME);
         // Check connection
@@ -142,6 +142,7 @@
 
         $conn->close();
         ?>
+
         <form method='post'>I want to received notifications about my accounts
             <select name='notified' id='notified'>
                 <option value='yes'<?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'yes' && $_SESSION['is_notified'] == 1)) ? 'selected="selected"' : ''; ?>>Yes</option>

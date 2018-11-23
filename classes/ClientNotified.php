@@ -10,7 +10,7 @@ class ClientNotified
 {
     public function __construct()
     {
-        session_start();
+
         if (isset($_POST["submit"])) {
             $this->clientGetsNotified();
         }
@@ -29,6 +29,7 @@ class ClientNotified
             $query = "UPDATE client SET is_notified = 1 WHERE client_id = '".$_SESSION['client_id']."' ";
             if ($conn->query($query) === TRUE) {
                 echo "<script>alert('Saved')</script>";
+                $_SESSION['is_notified']= 1;
             } else {
                 echo "Error: " . $query . "<br>" . $conn->error;
             }
@@ -37,6 +38,7 @@ class ClientNotified
             $query = "UPDATE client SET is_notified = 0 WHERE client_id = '".$_SESSION['client_id']."' ";
             if ($conn->query($query) === TRUE) {
                 echo "<script>alert('Saved')</script>";
+                $_SESSION['is_notified']= 1;
             } else {
                 echo "Error: " . $query . "<br>" . $conn->error;
             }
