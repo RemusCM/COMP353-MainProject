@@ -32,6 +32,8 @@ $login = new Login();
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
     // the user is logged in.
+    session_start();
+    include("views/menu.php");
     include("views/home_page.php");
 
 } else {

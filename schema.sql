@@ -5,6 +5,16 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Admin`
+--
+
+CREATE TABLE `Admin` (
+  `admin_id` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   PRIMARY KEY (`account_number`),
   KEY `service_type` (`service_type`),
   KEY `client_id` (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -61,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `branch` (
   `area` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`branch_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -101,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `is_notified` bit(1) DEFAULT NULL,
   PRIMARY KEY (`client_id`),
   KEY `branch_id` (`branch_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -198,6 +208,7 @@ CREATE TABLE IF NOT EXISTS `transaction` (
   `transaction_number` int(11) NOT NULL AUTO_INCREMENT,
   `account_number` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
+
   `amount` double(15,2) DEFAULT NULL,
   PRIMARY KEY (`transaction_number`),
   KEY `account_number` (`account_number`)
