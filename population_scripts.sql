@@ -16,18 +16,18 @@ INSERT INTO Branch VALUES (11, '514-123-1234', '514-123-1255', 'Tina Turner', '1
 -- account
 
 INSERT INTO Account VALUES(1, 1, 10000.00, 'Checking', 'Personal Banking', 'Senior', 0.0);
-INSERT INTO Account VALUES(2, 1, 10000000.00, 'Saving', 'Corporate Investment', 'Basic', 2.0);
-INSERT INTO Account VALUES(3, 2, 3333333.17, 'Saving', 'Business Banking','Basic', 1.5);
+INSERT INTO Account VALUES(2, 1, 10000000.00, 'Savings', 'Corporate Investment', 'Basic', 2.0);
+INSERT INTO Account VALUES(3, 2, 3333333.17, 'Savings', 'Business Banking','Basic', 1.5);
 INSERT INTO Account VALUES(4, 4, 25000.00,'Line of Credit','Corporate Banking', 'Premium', 4.5);
 INSERT INTO Account VALUES(5, 5, 50000.00, 'Line of Credit' , 'Personal Insurance', 'Student', 5.5);
 INSERT INTO Account VALUES(6, 3, 0.01, 'Line of Credit', 'Personal Investment', 'Student', 5.5);
 INSERT INTO Account VALUES(7, 6, 17.34, 'Line of Credit', 'Personal Banking', 'Student', 5.5);
-INSERT INTO Account VALUES(8, 4, 99.99 , 'Saving', 'Personal Insurance', 'Student', 2.0);
-INSERT INTO Account VALUES(9, 5, 17171717.17 ,'Saving', 'Business Investment', 'Basic', 3.5);
-INSERT INTO Account VALUES(10, 3, 17.17, 'Saving', 'Corporate Banking', 'Premium', 1.5);
-INSERT INTO Account VALUES(11, 7, 40.00, 'Saving', 'Business Banking', 'Student', 2.0);
+INSERT INTO Account VALUES(8, 4, 99.99 , 'Savings', 'Personal Insurance', 'Student', 2.0);
+INSERT INTO Account VALUES(9, 5, 17171717.17 ,'Savings', 'Business Investment', 'Basic', 3.5);
+INSERT INTO Account VALUES(10, 3, 17.17, 'Savings', 'Corporate Banking', 'Premium', 1.5);
+INSERT INTO Account VALUES(11, 7, 40.00, 'Savings', 'Business Banking', 'Student', 2.0);
 INSERT INTO Account VALUES(12, 7, 1200.00, 'Checking', 'Personal Banking', 'Student', 0.0);
-INSERT INTO Account VALUES(13, 6, 40000000.00, 'Saving', 'Business Insurance', 'Basic', 2.4);
+INSERT INTO Account VALUES(13, 6, 40000000.00, 'Savings', 'Business Insurance', 'Basic', 2.4);
 INSERT INTO Account VALUES(14, 1, 50000.00, 'Line of Credit', 'Personal Investment', 'Senior', 6.0);
 INSERT INTO Account VALUES(15, 7, 11000.00, 'Line of Credit', 'Corporate Banking', 'Student', 5.5);
 INSERT INTO Account VALUES(16, 2, 1000.00, 'Line of Credit', 'Personal Banking', 'Student', 4.5);
