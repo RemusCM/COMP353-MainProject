@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$connect = mysqli_connect("localhost", "root","","testAccount");
+$connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS,DB_NAME);
 
 if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
