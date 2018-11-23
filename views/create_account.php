@@ -5,7 +5,6 @@
  * Date: 2018-11-08
  * Time: 10:15
  */
-session_start();
 $clientJoiningDate = $_SESSION['joining_date'];
 ?>
 
@@ -67,7 +66,7 @@ $clientJoiningDate = $_SESSION['joining_date'];
 <div class="col-md-12 well" style="position:absolute; top:10%; left:40%; width:20%;">
 
     <h3>Create an account</h3>
-    <form method="post" action="AccountCreated.php" class="form-horizontal" name="create-account-form" onsubmit="return validateForm();">
+    <form method="post" action="create_account.php" class="form-horizontal" name="create-account-form" onsubmit="return validateForm();">
 
         <br><label>Select an account level</label><br>
         <select name="level">
@@ -131,7 +130,7 @@ $clientJoiningDate = $_SESSION['joining_date'];
             <input type="radio" name="loan-limit" value="15000.00"> 15 000$<br>
             <input type="radio" name="loan-limit" value="25000.00"> 25 000$<br>
         </div><br>
-        <input type="submit" >
+        <input name="create_account" type="submit">
     </form>
 </div>
 </html>

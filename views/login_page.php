@@ -26,7 +26,7 @@ if (isset($login)) {
             <fieldset>
                 <legend>Login:</legend>
                 <p>
-                    <label for="login_input_username">Client Card Number</label><br>
+                    <label for="login_input_username">Card Number</label><br>
                     <input id="login_input_username" class="login_input" type="text" name="client_id" required />
                 </p>
                 <p>

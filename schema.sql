@@ -10,6 +10,16 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Admin`
+--
+
+CREATE TABLE `Admin` (
+  `admin_id` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -218,6 +228,11 @@ CREATE TABLE `Transaction` (
 --
 -- Index pour les tables déchargées
 --
+
+-- Index pour la table `Account`
+--
+ALTER TABLE `Admin`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Index pour la table `Account`

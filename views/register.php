@@ -11,7 +11,6 @@ if (isset($registration)) {
             echo $message;
         }
     }
-    // TODO: Reference proper tables and attributes once creation scripts have been set.
     $branch = $registration->fetchBranchesForForm();
     $option = $registration->fetchOptionsForForm();
 }
