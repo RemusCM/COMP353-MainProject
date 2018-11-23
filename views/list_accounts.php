@@ -31,7 +31,8 @@
     </style>
 </head>
 <body>
-    <div class="col-md-12" style="top:10%;">
+    <div class="col-md-12">
+        <form method='post' action='list_accounts.php'>I want to notifications about my accounts <select name='notified' id='notified'><option value='yes'<?php echo (isset($_POST['submit']) && $_POST['notified'] == 'yes' && $_SESSION['is_notified'] ==1) ? 'selected="selected"' : ''; ?>>Yes</option><option value='no' <?php echo (isset($_POST['submit']) && $_POST['notified'] == 'no' && $_SESSION['is_notified'] == 0) ? 'selected="selected"' : ''; ?> >No</option></select><br><input type='submit' name='submit' id='submit' value="Save"></form>
         <?php
         /**
          * Created by PhpStorm.
@@ -42,13 +43,13 @@
 
         session_start();
         // Create connection
-        $conn = mysqli_connect("vdc353.encs.concordia.ca", "vdc353_2","jrssv353","vdc353_2");
+        $conn = mysqli_connect(DB_HOST, DB_USER,DB_PASS,DB_NAME);
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        //TODO Add loan accounts
+
 
         //Checking accounts query
         $sql_checking = "SELECT DISTINCT checking.account_number, client_id, opt, balance, service_type, level FROM account, checking WHERE client_id = '" . $_SESSION['client_id'] . "' AND checking.account_number = account.account_number;";
@@ -75,11 +76,11 @@
         //Displaying checking accounts
         if ($result_checking->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Checking accounts details</h3></a>";
-            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
+            echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th scope=\"col\">Transaction Details</th>";
             // output data of each row
             while($row = $result_checking->fetch_assoc()) {
                 $account_number = $row["account_number"];
-                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
+                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">View</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -94,7 +95,7 @@
             // output data of each row
             while($row = $result_savings->fetch_assoc()) {
                 $account_number = $row["account_number"];
-                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
+                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["opt"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">View</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -109,7 +110,7 @@
             // output data of each row
             while($row = $result_credit->fetch_assoc()) {
                 $account_number = $row["account_number"];
-                echo "<tr><td>".$account_number."</td><td>".$row["credit_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td>".$row["minimal_payment"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
+                echo "<tr><td>".$account_number."</td><td>".$row["credit_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td>".$row["minimal_payment"]."</td><td><a href=\"transactions.php?id=$account_number\">View</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -124,7 +125,7 @@
             // output data of each row
             while($row = $result_foreignCurrency->fetch_assoc()) {
                 $account_number = $row["account_number"];
-                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["currency_type"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
+                echo "<tr><td>".$account_number."</td><td>".$row["balance"]."</td><td>".$row["currency_type"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">View</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";
@@ -137,7 +138,7 @@
             // output data of each row
             while($row = $result_loan->fetch_assoc()) {
                 $account_number = $row["account_number"];
-                echo "<tr><td>".$account_number."</td><td>".$row["type"]."</td><td>".$row["loan_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">Transactions</a></td></tr>";
+                echo "<tr><td>".$account_number."</td><td>".$row["type"]."</td><td>".$row["loan_limit"]."</td><td>".$row["service_type"]."</td><td>".$row["level"]."</td><td><a href=\"transactions.php?id=$account_number\">View</a></td></tr>";
             }
             echo "</table>";
             echo "<hr class='style2'>";

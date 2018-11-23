@@ -15,3 +15,5 @@ define("DB_HOST", "vdc353.encs.concordia.ca");
 define("DB_NAME", "vdc353_2");
 define("DB_USER", "vdc353_2");
 define("DB_PASS", "jrssv353");
+
+

@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="col-md-12" style="top:10%;">
+    <div class="col-md-12">
         <?php
         /**
          * Created by PhpStorm.
@@ -14,7 +14,7 @@
          */
         session_start();
         // Create connection
-        $conn = mysqli_connect("vdc353.encs.concordia.ca", "vdc353_2","jrssv353","vdc353_2");
+        $conn = mysqli_connect("localhost", "root","mysql","testaccount");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -41,6 +41,9 @@
                 echo "<tr><td>".$row["transaction_number"]."</td><td>".$row["date"]."</td><td>".$row["amount"]."</td></tr>";
             }
             echo "</table>";
+        }
+        else {
+            echo "There are no transactions for this account yet.";
         }
         ?>
     </div>
