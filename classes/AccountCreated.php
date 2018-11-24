@@ -41,7 +41,7 @@ class AccountCreated
                 $chargePlan = $_POST['charge-plan'];
 
                 //Insert new record into Account and Checking
-                $query = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
+                $query = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
                                   VALUES('$client_id', '$balance', '$accountType', '$serviceType', '$level', '$interestRate');";
 
 
@@ -49,7 +49,7 @@ class AccountCreated
                 //Retrieve first the last inserted ID.
                 if (mysqli_query($connect, $query)) {
                     $accountNumber = mysqli_insert_id($connect);
-                    $query1 = "INSERT INTO Checking(account_number, opt) VALUES('$accountNumber', '$chargePlan');";
+                    $query1 = "INSERT INTO checking(account_number, opt) VALUES('$accountNumber', '$chargePlan');";
                     mysqli_query($connect, $query1);
                 }
 
@@ -58,7 +58,7 @@ class AccountCreated
                 $chargePlan = $_POST['charge-plan'];
 
                 //Insert new record into account
-                $query = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
+                $query = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
                                   VALUES('$client_id', '$balance', '$accountType', '$serviceType', '$level', '$interestRate');";
 
 
@@ -66,7 +66,7 @@ class AccountCreated
                 //The if statement actually executes the query, no need to execute before
                 if (mysqli_query($connect, $query)) {
                     $accountNumber = mysqli_insert_id($connect);
-                    $query1 = "INSERT INTO Savings(account_number, opt) VALUES('$accountNumber', '$chargePlan');";
+                    $query1 = "INSERT INTO savings(account_number, opt) VALUES('$accountNumber', '$chargePlan');";
                     mysqli_query($connect, $query1);
                     echo 'success?';
                 }
@@ -81,13 +81,13 @@ class AccountCreated
             $currency = $_POST['currency'];
 
             //Insert a new record into account
-            $query = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
+            $query = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
                                   VALUES('$client_id', '$balance', '$accountType', '$serviceType', '$level', '$interestRate');";
             //Insert a new record into Foreign currency
             if (mysqli_query($connect, $query)) {
                 $accountNumber = mysqli_insert_id($connect);
 
-                $query1 = "INSERT INTO ForeignCurrency(account_number, currency_type ) VALUES('$accountNumber', '$currency');";
+                $query1 = "INSERT INTO foreigncurrency(account_number, currency_type ) VALUES('$accountNumber', '$currency');";
                 mysqli_query($connect, $query1);
             }
 
@@ -118,13 +118,13 @@ class AccountCreated
                 $minimumPayment = 10.00;
             }
             //Insert a new record into account
-            $query = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
+            $query = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
                                   VALUES('$client_id', '$balance', '$accountType', '$serviceType', '$level', '$interestRate');";
             //Insert a new record into credit
             if (mysqli_query($connect, $query)) {
                 $accountNumber = mysqli_insert_id($connect);
 
-                $query1 = "INSERT INTO Credit(account_number, credit_limit, minimal_payment ) VALUES('$accountNumber', '$creditLimit', '$minimumPayment');";
+                $query1 = "INSERT INTO credit(account_number, credit_limit, minimal_payment ) VALUES('$accountNumber', '$creditLimit', '$minimumPayment');";
                 mysqli_query($connect, $query1);
             }
         } //Course of action for loan
@@ -166,13 +166,13 @@ class AccountCreated
             }
 
             //Insert a new record into account
-            $query = "INSERT INTO Account(client_id, balance, account_type, service_type, level, interest_rate)
+            $query = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
                                   VALUES('$client_id', '$balance', '$accountType', '$serviceType', '$level', '$interestRate');";
             //Insert a new record into Loan
             if (mysqli_query($connect, $query)) {
                 $accountNumber = mysqli_insert_id($connect);
 
-                $query1 = "INSERT INTO Loan(account_number, loan_limit, type ) VALUES('$accountNumber', '$loanLimit', '$loanType');";
+                $query1 = "INSERT INTO loan(account_number, loan_limit, type ) VALUES('$accountNumber', '$loanLimit', '$loanType');";
                 mysqli_query($connect, $query1);
 
             }
