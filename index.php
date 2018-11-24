@@ -35,10 +35,13 @@ $login = new Login();
 if ($login->isUserLoggedIn() == true) {
     // the user is logged in.
 
-    $clientNotified = new ClientNotified();
     include("views/menu.php");
     include("views/home_page.php");
-    include("views/list_accounts.php");
+
+    if (!$login->isUserAdmin()) {
+        $clientNotified = new ClientNotified();
+        include("views/list_accounts.php");
+    }
 
 } else {
     // the user is not logged in.
