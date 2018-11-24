@@ -5,16 +5,8 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
--- --------------------------------------------------------
 
---
--- Structure de la table `Admin`
---
 
-CREATE TABLE `Admin` (
-  `admin_id` int(11) NOT NULL,
-  `password` varchar(255) NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
