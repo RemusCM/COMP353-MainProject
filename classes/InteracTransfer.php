@@ -74,7 +74,17 @@ class InteracTransfer
                         $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
 
                         if($conn->query($sql_updateTarget)){
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$account_numberUsed."', CURRENT_DATE() ,'".$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             if($conn->query($sql_updateClient)) {
+
+                                $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$from."', CURRENT_DATE() ,'".-$amount."')";
+
+                                $conn->query($sql_enter_transaction);
                                 echo "Money Transferred.";
                                 return;
                             }
@@ -90,8 +100,22 @@ class InteracTransfer
 
                         $sql_updateTarget = "UPDATE account SET balance = balance + '".$amount."' WHERE account_number ='".$account_numberUsed."' ";
                         $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
+
+
                         if($conn->query($sql_updateTarget)){
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$account_numberUsed."', CURRENT_DATE() ,'".$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             if($conn->query($sql_updateClient)) {
+
+                                $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$from."', CURRENT_DATE() ,'".-$amount."')";
+
+                                $conn->query($sql_enter_transaction);
+
                                 echo "Money Transferred.";
                                 return;
                             }
@@ -138,7 +162,19 @@ class InteracTransfer
                     $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
 
                     if($conn->query($sql_updateTarget)){
+
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$account_numberUsed."', CURRENT_DATE() ,'".$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if($conn->query($sql_updateClient)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$from."', CURRENT_DATE() ,'".-$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             echo "Money Transferred.";
                             return;
                         }
@@ -155,7 +191,19 @@ class InteracTransfer
                     $sql_updateTarget = "UPDATE account SET balance = balance + '".$amount."' WHERE account_number ='".$account_numberUsed."' ";
                     $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
                     if($conn->query($sql_updateTarget)){
+
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$account_numberUsed."', CURRENT_DATE() ,'".$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if($conn->query($sql_updateClient)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$from."', CURRENT_DATE() ,'".-$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             echo "Money Transferred.";
                             return;
                         }
@@ -198,7 +246,17 @@ class InteracTransfer
                     $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
 
                     if($conn->query($sql_updateTarget)){
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$account_numberUsed."', CURRENT_DATE() ,'".$amount."')";
+
+                        $conn->query($sql_enter_transaction);
                         if($conn->query($sql_updateClient)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$from."', CURRENT_DATE() ,'".-$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             echo "Monies Transferred Successfully";
                             return;
                         }
@@ -215,7 +273,18 @@ class InteracTransfer
                     $sql_updateTarget = "UPDATE account SET balance = balance + '".$amount."' WHERE account_number ='".$account_numberUsed."' ";
                     $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
                     if($conn->query($sql_updateTarget)){
+
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$account_numberUsed."', CURRENT_DATE() ,'".$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if($conn->query($sql_updateClient)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$from."', CURRENT_DATE() ,'".-$amount."')";
+
+                            $conn->query($sql_enter_transaction);
                             echo "Monies Transferred Successfully.";
                             return;
                         }

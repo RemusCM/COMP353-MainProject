@@ -58,7 +58,16 @@ class AccountMoneyTransfer
                     $sql_origin_balance = "UPDATE account SET balance = balance - '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
 
                     if ($conn->query($sql_target_balance)) {
-                        if ($conn->query($sql_origin_balance)) {
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
+                            if ($conn->query($sql_origin_balance)) {
+                                $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberFrom."', CURRENT_DATE() ,'".-$amount."')";
+
+                                $conn->query($sql_enter_transaction);
                             echo "Succesfully Transferred Money.";
                             return;
                         }
@@ -74,7 +83,17 @@ class AccountMoneyTransfer
                     $sql_origin_balance = "UPDATE account SET balance = balance - '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
 
                     if ($conn->query($sql_target_balance)) {
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".-$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if ($conn->query($sql_origin_balance)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberFrom."', CURRENT_DATE() ,'".-$amount."')";
+
+                            $conn->query($sql_enter_transaction);
                             echo "Succesfully Transferred Money.";
                             return;
                         }
@@ -118,7 +137,18 @@ class AccountMoneyTransfer
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
 
                     if ($conn->query($sql_target_balance)) {
+
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if ($conn->query($sql_origin_balance)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberFrom."', CURRENT_DATE() ,'".$amount."')";
+
+                            $conn->query($sql_enter_transaction);
                             echo "Succesfully Transferred Money.";
                             return;
                         }
@@ -134,7 +164,19 @@ class AccountMoneyTransfer
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
 
                     if ($conn->query($sql_target_balance)) {
+
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".-$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if ($conn->query($sql_origin_balance)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberFrom."', CURRENT_DATE() ,'".$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             echo "Succesfully Transferred Money.";
                             return;
                         }
@@ -171,7 +213,19 @@ class AccountMoneyTransfer
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
 
                     if ($conn->query($sql_target_balance)) {
+
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if ($conn->query($sql_origin_balance)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             echo "Succesfully Transferred Money.";
                             return;
                         }
@@ -187,7 +241,19 @@ class AccountMoneyTransfer
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
 
                     if ($conn->query($sql_target_balance)) {
+
+                        $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".-$amount."')";
+
+                        $conn->query($sql_enter_transaction);
+
                         if ($conn->query($sql_origin_balance)) {
+
+                            $sql_enter_transaction = "INSERT INTO transaction(account_number, date, amount)
+                          VALUES ('".$accountNumberTo."', CURRENT_DATE() ,'".$amount."')";
+
+                            $conn->query($sql_enter_transaction);
+
                             echo "Succesfully Transferred Money.";
                             return;
                         }
