@@ -143,4 +143,13 @@ class Login
         // default return
         return false;
     }
+
+    public function isUserAdmin()
+    {
+        if (isset($_SESSION['admin_id'])) {
+            return true;
+        }
+        // default return
+        return false;
+    }
 }
