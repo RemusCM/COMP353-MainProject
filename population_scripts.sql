@@ -333,6 +333,6 @@ INSERT INTO transaction VALUES (38, 4, '2017-12-20', 5100.00);
 
 --admin
 
-INSERT INTO admin VALUES(1, '1234qwe');
-INSERT INTO admin VALUES(2, '4321qwe');
-INSERT INTO admin VALUES(3, '1234ewq');
+INSERT INTO admin VALUES(1, 'adminpass1');
+INSERT INTO admin VALUES(2, 'adminpass2');
+INSERT INTO admin VALUES(3, 'adminpass3');

@@ -5,6 +5,7 @@ if (isset($manageEmployees)) {
     $branches = $manageEmployees->fetchBranchesForForm();
 }
 ?>
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,13 +15,14 @@ if (isset($manageEmployees)) {
         td, th { padding:5px 15px 0 15px; }
     </style>
 </head>
-<html>
-<div class="col-md-12 well" style="position:absolute; top:10%; left:5%; width:90%;">
+<body>
+<div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
     <table width="100%">
         <tr>
-            <td colspan="10">Employees</td>
-            <td></td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add">Add</button></td>
+            <td colspan="10" style="padding-bottom: 20px;"><h4>Employees</h4></td>
+            <td align="right">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add">Add</button>
+            </td>
         </tr>
         <tr>
             <th>Title</th>
@@ -41,14 +43,16 @@ if (isset($manageEmployees)) {
                 <td><?php echo $e->name ?></td>
                 <td><?php echo $e->address ?></td>
                 <td><?php echo $e->start_date ?></td>
-                <td><?php echo $e->salary ?>?</td>
+                <td><?php echo $e->salary ?>$</td>
                 <td><?php echo $e->email_address ?></td>
                 <td><?php echo $e->phone_number ?></td>
                 <td><?php echo $e->holidays ?></td>
                 <td><?php echo $e->sick_days ?></td>
                 <td><?php echo $e->branch_id ?></td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $e->employee_id;?>">Edit</button></td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete<?php echo $e->employee_id;?>">Delete</button></td>
+                <td align="right" width="180px">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $e->employee_id;?>">Edit</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete<?php echo $e->employee_id;?>">Delete</button>
+                </td>
             </tr>
 
             <!-- Update employee modal opens when clicking edit button -->
@@ -213,4 +217,5 @@ if (isset($manageEmployees)) {
     </div>
 
 </div>
+</body>
 </html>

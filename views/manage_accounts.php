@@ -24,13 +24,15 @@ function selectedClientAccount($accounts) {
     </style>
 </head>
 <body>
-<div class="col-md-12 well" style="position:absolute; top:10%; left:5%; width:90%;">
+<div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
     <table width="100%">
         <tr>
-            <td colspan="7">Accounts</td>
-            <td colspan="2">
+            <td colspan="8" style="padding-bottom: 20px;"><h4>Accounts</h4></td>
+        </tr>
+        <tr>
+            <td colspan="8">
                 <form action="manage_accounts.php" method="POST">
-                    View by Client:
+                    Filter by Client:
                     <select id="clientSelection" class="client" name="clientSelection" onchange="submit()" required>
                         <option value='' disabled selected>
                             <?php
@@ -45,7 +47,8 @@ function selectedClientAccount($accounts) {
                             <option value="<?php echo $c->client_id ?>"><?php echo $c->client_id?></option>
                         <?php }?>
                     </select>
-                </form>            </td>
+                </form>
+            </td>
         </tr>
         <tr>
             <th>Account Number</th>
@@ -55,6 +58,7 @@ function selectedClientAccount($accounts) {
             <th>Service</th>
             <th>Level</th>
             <th>Interest Rate</th>
+            <th></th>
         </tr>
         <?php foreach($accounts as $a) { ?>
             <tr>
@@ -65,8 +69,10 @@ function selectedClientAccount($accounts) {
                 <td><?php echo $a->service_type ?></td>
                 <td><?php echo $a->level ?></td>
                 <td><?php echo $a->interest_rate ?>%</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $a->account_number;?>">Edit</button></td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete<?php echo $a->account_number;?>">Delete</button></td>
+                <td align="right">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $a->account_number;?>">Edit</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete<?php echo $a->account_number;?>">Delete</button>
+                </td>
             </tr>
 
             <!-- Update account modal opens when clicking edit button -->

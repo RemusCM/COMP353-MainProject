@@ -36,7 +36,7 @@ else {
 if($isAdmin){
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.php">Bank</a>
+        <a class="navbar-brand" href="../index.php">Bank of Concordia</a>
         <div class="navigationLinks">
             <a class="nav-item nav-link active" href="../index.php">Home</a>
             <a class="nav-item nav-link" href="manage_clients.php">Manage Clients</a>
@@ -49,7 +49,7 @@ if($isAdmin){
 }else{
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.php">Bank</a>
+        <a class="navbar-brand" href="../index.php">Bank of Concordia</a>
         <div class="navigationLinks">
             <a class="nav-item nav-link active" href="../index.php">Accounts</a>
             <a class="nav-item nav-link" href="create_account.php">Create an Account</a>
