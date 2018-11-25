@@ -1,17 +1,13 @@
 <?php
 $result = $_POST['from'];
 $result_explode = explode('|', $result);
-echo "1: ". $result_explode[0]."<br>";
-
-echo "2:". $result_explode[1]."<br>";
-echo "3:". $result_explode[2]."<br>";
 
 
 $from = (int)$result_explode[0];
 $account_type = (string)$result_explode[2];
 $balance = number_format(floatval($result_explode[1]), 2,'.','');
 $amount = number_format(floatval($_POST['amount']), 2,'.','');
-echo $balance;
+
 require_once("config/db.php");
 require_once("classes/Login.php");
 
