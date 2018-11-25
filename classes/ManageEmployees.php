@@ -24,7 +24,7 @@ class ManageEmployees
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         if (!$this->db_connection->connect_errno) {
-            $sql = "SELECT employee_id, title, name, address, start_date, salary, email_address, phone_number, holidays, sick_days, branch_id FROM Employee;";
+            $sql = "SELECT employee_id, title, name, address, start_date, salary, email_address, phone_number, holidays, sick_days, branch_id FROM employee;";
             $query_employees = $this->db_connection->query($sql);
             $employees = array();
             if ($query_employees->num_rows == 0) {
@@ -61,7 +61,7 @@ class ManageEmployees
             $sick_days = $this->db_connection->real_escape_string(strip_tags($_POST['sick_days'], ENT_QUOTES));
             $branch_id = $this->db_connection->real_escape_string(strip_tags($_POST['branch_id'], ENT_QUOTES));
 
-            $sql = "UPDATE Employee SET title = '" . $title . "', name = '" . $name . "', address = '" . $address . "', start_date = '" . $start_date . "', salary = '" . $salary . "', email_address = '" . $email_address . "', phone_number = '" . $phone_number . "', holidays ='" . $holidays . "', sick_days = '" . $sick_days . "', branch_id = '" . $branch_id . "' WHERE employee_id = '" . $employee_id . "';";
+            $sql = "UPDATE employee SET title = '" . $title . "', name = '" . $name . "', address = '" . $address . "', start_date = '" . $start_date . "', salary = '" . $salary . "', email_address = '" . $email_address . "', phone_number = '" . $phone_number . "', holidays ='" . $holidays . "', sick_days = '" . $sick_days . "', branch_id = '" . $branch_id . "' WHERE employee_id = '" . $employee_id . "';";
             $query_employees = $this->db_connection->query($sql);
             if ($query_employees->num_rows == 0) {
                 $this->messages[] = "Employee updated.";
@@ -83,7 +83,9 @@ class ManageEmployees
         if (!$this->db_connection->connect_errno) {
             $employee_id = $this->db_connection->real_escape_string(strip_tags($_POST['employee_id'], ENT_QUOTES));
 
-            $sql = "DELETE FROM Employee WHERE employee_id = '" . $employee_id . "';";
+            $schedule_sql = "DELETE FROM schedule WHERE employee_id = '" . $employee_id . "';";
+            $this->$this->db_connection->query($schedule_sql);
+            $sql = "DELETE FROM employee WHERE employee_id = '" . $employee_id . "';";
             $query_employees = $this->db_connection->query($sql);
             if ($query_employees->num_rows == 0) {
                 $this->messages[] = "Employee was deleted.";
@@ -114,11 +116,21 @@ class ManageEmployees
             $sick_days = 0;
             $branch_id = $this->db_connection->real_escape_string(strip_tags($_POST['branch_id'], ENT_QUOTES));
 
-            $sql = "INSERT INTO Employee(title, name, address, start_date, salary, email_address, phone_number, holidays, sick_days, branch_id)
+            $sql = "INSERT INTO employee(title, name, address, start_date, salary, email_address, phone_number, holidays, sick_days, branch_id)
                                   VALUES('$title', '$name', '$address', '$start_date', '$salary', '$email_address', '$phone_number', '$holidays', '$sick_days', '$branch_id');";
 
             $query_employees = $this->db_connection->query($sql);
-            if ($query_employees->num_rows == 0) {
+            if ($query_employees->num_rows == 1) {
+                $new_employee_query = "SELECT employee_id, title, name, address, start_date, salary, email_address, phone_number, holidays, sick_days, branch_id FROM employee 
+                                  WHERE email_address = '\" . $email_address . \"';";
+                $id = $this->db_connection->query($new_employee_query)->fetch_assoc()['employee_id'];
+                $schedule = "INSERT INTO schedule(employee_id, day, start_time, end_time)
+                                VALUES('$id', 'Monday', '9:00', '17:00'),
+                                      ('$id', 'Tuesday', '9:00', '17:00'),
+                                      ('$id', 'Wednesday', '9:00', '17:00'),
+                                      ('$id', 'Thursday', '9:00', '17:00'),
+                                      ('$id', 'Friday', '9:00', '17:00');";
+                $this->db_connection->query($schedule);
                 $this->messages[] = "Employee was added.";
             } else {
                 $this->errors[] = "Employee was not added.";
