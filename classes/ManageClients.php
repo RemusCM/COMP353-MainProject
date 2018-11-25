@@ -78,6 +78,38 @@ class ManageClients
         if (!$this->db_connection->connect_errno) {
             $client_id = $this->db_connection->real_escape_string(strip_tags($_POST['client_id'], ENT_QUOTES));
 
+            $accounts_query = "SELECT account_number, account_type FROM account WHERE client_id = '" . $client_id . "';";
+            $accounts = $this->db_connection->query($accounts_query);
+            while($row = mysqli_fetch_object($accounts)) {
+                $account_to_delete = null;
+                if ($row->account_type == "Checking") {
+                    $account_to_delete = "DELETE FROM checking WHERE account_number = '" . $row->account_number . "';";
+                }
+                else if ($row->account_type == "Savings") {
+                    $account_to_delete = "DELETE FROM savings WHERE account_number = '" . $row->account_number . "';";
+                }
+                else if ($row->account_type == "Credit Card") {
+                    $account_to_delete = "DELETE FROM credit WHERE account_number = '" . $row->account_number . "';";
+                }
+                else if ($row->account_type == "Loan" || $row->account_type == "Mortgage" || $row->account_type == "Line of Credit") {
+                    $account_to_delete = "DELETE FROM loan WHERE account_number = '" . $row->account_number . "';";
+                }
+                else if ($row->account_type == "Foreign Currency") {
+                    $account_to_delete = "DELETE FROM foreigncurrency WHERE account_number = '" . $row->account_number . "';";
+                }
+                if ($account_to_delete != null) {
+                    $this->db_connection->query($account_to_delete);
+                }
+            }
+
+            while($row = mysqli_fetch_object($accounts)) {
+                $transaction_to_delete = "DELETE FROM transaction WHERE account_number = '" . $row->account_number . "';";
+                $this->db_connection->query($transaction_to_delete);
+            }
+
+            $acc_to_delete = "DELETE FROM account WHERE client_id = '" . $client_id . "';";
+            $this->db_connection->query($acc_to_delete);
+
             $sql = "DELETE FROM client WHERE client_id = '" . $client_id . "';";
             $query_clients = $this->db_connection->query($sql);
             if ($query_clients->num_rows == 0) {
