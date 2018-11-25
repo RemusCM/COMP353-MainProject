@@ -108,6 +108,8 @@ INSERT INTO account VALUES(34, 13, 1000.00, 'Credit Card', 'Banking', 'Personal'
 INSERT INTO account VALUES(35, 14, 200000.00, 'Loan', 'Investment', 'Corporate', 5.0);
 INSERT INTO account VALUES(36, 15, 4000.00, 'Credit Card', 'Banking', 'Personal', 19.0);
 INSERT INTO account VALUES(37, 16, 800.00, 'Credit Card', 'Banking', 'Personal', 21.0);
+INSERT INTO account VALUES(38, 5, 4995.00, 'Foreign Currency', 'Banking', 'Personal', 21.0);
+INSERT INTO account VALUES(39, 7, 80000.00, 'Foreign Currency', 'Banking', 'Corporate', 21.0);
 
 
 --charge plan
@@ -173,8 +175,8 @@ INSERT INTO credit VALUES(37, 1000.0, 10.0);
 
 --foreignCurrency
 
-INSERT INTO foreigncurrency VALUES(12, 'Yen');
-INSERT INTO foreigncurrency VALUES(22, 'Rupees');
+INSERT INTO foreigncurrency VALUES(38, 'Yen');
+INSERT INTO foreigncurrency VALUES(39, 'Rupees');
 
 
 --loan
