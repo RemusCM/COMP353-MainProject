@@ -1,6 +1,5 @@
 <?php
 if (isset($manageAccounts)) {
-    $branches = $manageAccounts->fetchBranchesForForm();
     $clients = $manageAccounts->fetchClients();
     $accounts = $manageAccounts->fetchAccounts();
 }
