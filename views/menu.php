@@ -36,11 +36,12 @@ else {
 if($isAdmin){
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.php">Bank</a>
+        <a class="navbar-brand" href="../index.php">Bank</a>
         <div class="navigationLinks">
             <a class="nav-item nav-link active" href="../index.php">Home</a>
             <a class="nav-item nav-link" href="manage_clients.php">Manage Clients</a>
             <a class="nav-item nav-link" href="manage_accounts.php">Manage Accounts</a>
+            <a class="nav-item nav-link" href="manage_employees.php">Manage Employees</a>
             <a class="nav-item nav-link" href="../index.php?logout">Logout</a>
         </div>
     </nav>
