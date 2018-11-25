@@ -26,8 +26,8 @@ DROP TABLE IF EXISTS `foreigncurrency`;
 DROP TABLE IF EXISTS `credit`;
 DROP TABLE IF EXISTS `account`;
 DROP TABLE IF EXISTS `service`;
-DROP TABLE IF EXISTS `employee`;
 DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `employee`;
 DROP TABLE IF EXISTS `chargeplan`;
 DROP TABLE IF EXISTS `client`;
 DROP TABLE IF EXISTS `branch`;
@@ -270,6 +270,9 @@ ALTER TABLE `service`
 
 ALTER TABLE `transaction`
   ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`account_number`) REFERENCES `account` (`account_number`);
+  
+ALTER TABLE `admin`
+  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `employee` (`employee_id`);
 COMMIT;
 
 
