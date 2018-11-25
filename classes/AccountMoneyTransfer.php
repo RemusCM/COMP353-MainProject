@@ -49,7 +49,7 @@ class AccountMoneyTransfer
                 return;
             }
 
-            if ($balanceFrom > $amount) {
+            if ($balanceFrom >= $amount) {
                 //we can successfully transfer money from that account.
                 //Now it depends to what type of account we transfer (checking/savings or credit/loan)
                 if ($accountTypeTo == 'checking' || $accountTypeTo == 'savings') {
