@@ -188,15 +188,13 @@ CREATE TABLE IF NOT EXISTS `savings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-
 CREATE TABLE IF NOT EXISTS `schedule` (
   `employee_id` int(11) NOT NULL AUTO_INCREMENT,
   `day` varchar(255) NOT NULL,
   `start_time` varchar(12) DEFAULT NULL,
   `end_time` varchar(12) DEFAULT NULL,
-  PRIMARY KEY (`employee_id`) USING BTREE
+  PRIMARY KEY (`employee_id`,`day`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 
 CREATE TABLE IF NOT EXISTS `service` (
