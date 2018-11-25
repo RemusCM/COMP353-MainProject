@@ -37,25 +37,22 @@ class ManageAccounts
 
     public function fetchAccounts()
     {
-//        // create a database connection
-//        $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-//        if (!$this->db_connection->connect_errno) {
-//            $client = $this->db_connection->real_escape_string(strip_tags($_GET['client'], ENT_QUOTES));
-//            $sql = "SELECT client_id FROM client WHERE branch_id='" . $branch . "';";
-//            $query_clients = $this->db_connection->query($sql);
-//            $clients = array();
-//            if ($query_clients->num_rows == 0) {
-//                $this->errors[] = "No clients exist.";
-//            } else {
-//                // read branch data from database
-//                while($row = mysqli_fetch_object($query_clients)) {
-//                    array_push($clients, $row);
-//                }
-//            }
-//            mysqli_close($this->db_connection);
-//            $this->clientsFromSelectedBranch = $clients;
-//        }
-        return null;
+        $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        if (!$this->db_connection->connect_errno) {
+            $sql = "SELECT client_id, balance, account_type, service_type, level, interest_rate FROM account;";
+            $query_accounts = $this->db_connection->query($sql);
+            $accounts = array();
+            if ($query_accounts->num_rows == 0) {
+                $this->errors[] = "No accounts exist.";
+            } else {
+                // read branch data from database
+                while($row = mysqli_fetch_object($query_accounts)) {
+                    array_push($accounts, $row);
+                }
+            }
+            mysqli_close($this->db_connection);
+            return $accounts;
+        }
     }
 
     public function updateAccount()
