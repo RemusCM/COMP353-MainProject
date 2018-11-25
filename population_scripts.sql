@@ -19,11 +19,11 @@ INSERT INTO employee VALUES(1, 'President', 'Rupaul Charles', '123 de Maisonneuv
 INSERT INTO employee VALUES(2, 'General Manager', 'Blair St-Clair', '345 Mont-Royal St. Montreal', '2000-01-02', 100000.00, 'blairstclair@gmail.com', '514-222-2222', 5, 2, 1);
 INSERT INTO employee VALUES(3, 'General Manager', 'Miss Vanjie', '678 Ste-Catherine St. Montreal', '2000-02-03', 150000.00, 'vanjie@gmail.com' ,  '514-333-3333', 5, 6, 1);
 INSERT INTO employee VALUES(4, 'General Manager', 'Sasha Velour', '910 Peel St.  Montreal', '2001-02-03', 120000.00, 'sashavelour@gmail.com', '514-123-4567', 7, 4, 1);
-INSERT INTO employee VALUES(5, 'General Manager', 'Shae Coulée', '765 Sherbrook blvd.  Montreal', '2002-03-04', 80000.00, 'shaecoulee@gmail.com', '514-321-3322', 3, 2, 1);
-INSERT INTO employee VALUES(6, 'General Manager', 'Jasmine Latendresse', '432 Masson St. Mascouche', '2010-01-03', 250000.00, 'jasminelatendresse@gmail.com', '450-543-4433', 4, 5, 1);
-INSERT INTO employee VALUES(7, 'General Manager', 'Buzz Lightyear', '101 Infinity St. Montreal', '2003-03-04', 91000.00, 'buzzlightyear@gmail.com', '514-555-5555', 5, 6, 1);
-INSERT INTO employee VALUES(8, 'General Manager', 'Filbert Squirrel', '231 Animal Crossing St.  Montreal', '2011-11-30', 50000.00, 'filbertsquirrel@gmail.com', '514-888-9999', 4, 3, 1);
-INSERT INTO employee VALUES(9, 'General Manager', 'Sakura CardCaptor', '108 Desautels St. Montreal', '2013-12-29', 400000.00, 'cardcaptorsakura@gmail.com', '514-890-8090', 2, 6, 1);
+INSERT INTO employee VALUES(5, 'Custumer Service Representative', 'Shae Coulee', '765 Sherbrook blvd.  Montreal', '2002-03-04', 80000.00, 'shaecoulee@gmail.com', '514-321-3322', 3, 2, 1);
+INSERT INTO employee VALUES(6, 'Custumer Service Representative', 'Jasmine Latendresse', '432 Masson St. Mascouche', '2010-01-03', 250000.00, 'jasminelatendresse@gmail.com', '450-543-4433', 4, 5, 2);
+INSERT INTO employee VALUES(7, 'Custumer Service Representative', 'Buzz Lightyear', '101 Infinity St. Montreal', '2003-03-04', 91000.00, 'buzzlightyear@gmail.com', '514-555-5555', 5, 6, 5);
+INSERT INTO employee VALUES(8, 'Custumer Service Representative', 'Filbert Squirrel', '231 Animal Crossing St.  Montreal', '2011-11-30', 50000.00, 'filbertsquirrel@gmail.com', '514-888-9999', 4, 3, 3);
+INSERT INTO employee VALUES(9, 'Custumer Service Representative', 'Sakura CardCaptor', '108 Desautels St. Montreal', '2013-12-29', 400000.00, 'cardcaptorsakura@gmail.com', '514-890-8090', 2, 6, 4);
 INSERT INTO employee VALUES(10, 'General Manager', 'Sailor Moon', '44 Moon St. Terrebonne', '1999-05-14', 300000.00, 'sailormoon@gmail.com', '450-423-2345', 4, 8, 1);
 INSERT INTO employee VALUES(11, 'Manager', 'Sally Hanson', '54 Doggos St. Mascouche', '1994-05-13', 200000.00, 'sallyhanson@gmail.com', '450-654-3323', 5, 7, 1);
 INSERT INTO employee VALUES(12, 'Manager', 'Don Knotts', '252 Tate St. Saskatoon', '2008-04-20', 210000.00, 'donknotts@gmail.com', '450-987-5555', 3, 6, 2);
@@ -40,7 +40,7 @@ INSERT INTO employee VALUES(21, 'Manager', 'Tina Turner', '354 Tanner St. Montre
 --client
 
 INSERT INTO client VALUES(1, 'Cherry Neval', '1935-11-12', '1995-12-01', '123 St-Catherine E. Montreal', 'Senior' , 'cherryneval@gmail.com', '1234qwe', '514-687-5723', 1, 0);
-INSERT INTO client VALUES(2, 'Roberto Nial', '1957-06-23', '2001-05-13', '627 Trade Street, Montreal', 'Basic', 'robertonial@gmail.com', '4321qwe', '514-672-9824', 11, 0 );
+INSERT INTO client VALUES(2, 'Roberto Nial', '1957-06-23', '2001-05-13', '627 Trade Street, Montreal', 'Basic', 'robertonial@gmail.com', '4321qwe', '514-672-9824', 11, 0);
 INSERT INTO client VALUES(3, 'Naomi Kimber', '1956-05-31', '2017-03-14', '1585 St Ambroise Street, Montreal', 'Basic', 'naomikimber@gmail.com', '2134qwe', '514-175-3759', 11, 1);
 INSERT INTO client VALUES(4, 'Natasha Bier', '1975-02-16', '2010-07-07', '1938 Sherbrooke, Saskatoon', 'Premium', 'natashabier@gmail.com', 'ewq1243', '514-850-2748', 2, 0);
 INSERT INTO client VALUES(5, 'Justin Turtle', '1996-11-12', '1999-12-01', '123 North Street. Edmonton', 'Student', 'justinturtle@gmail.com', 'rew234', '514-239-2348', 3, 0);
@@ -55,19 +55,13 @@ INSERT INTO client VALUES(13, 'Penny Jack', '1979-03-19', '2001-05-13', '938 Rue
 INSERT INTO client VALUES(14, 'Hal Blue', '1930-12-01', '1996-11-07', '154 Rue Pine, Montreal', 'Senior', 'halblue@gmail.com', 'gsf5131', '514-524-3372', 5, 1);
 INSERT INTO client VALUES(15, 'Carl Manning', '1989-02-16', '2005-10-10', '238 Rue Mary, Montreal', 'Student', 'carlmanning@gmail.com', 'fda6135', '514-804-2009', 11, 0);
 INSERT INTO client VALUES(16, 'Connie Yam', '1985-11-21', '2008-10-17', '136 Rue Meadow, Montreal', 'Student', 'connieyam@gmail.com', 'bzcv135', '514-434-3152', 11, 0);
-INSERT INTO client VALUES(17, 'Guy Flower', '1946-09-19', '1990-01-01', '1863 Rue Tab, Montreal', 'Senior', 'guyflower@gmail.com', 'vzd251' '514-901-2882', 11, 0);
-
+INSERT INTO client VALUES(17, 'Guy Flower', '1946-09-19', '1990-01-01', '1863 Rue Tab, Montreal', 'Senior', 'guyflower@gmail.com', 'vzd251', '514-901-2882', 11, 0);
 
 --service
 
-INSERT INTO service VALUES('Banking', 3);
-INSERT INTO service VALUES('Investment', 4);
 INSERT INTO service VALUES('Banking', 2);
-INSERT INTO service VALUES('Investment', 5);
-INSERT INTO service VALUES('Insurance', 6);
-INSERT INTO service VALUES('Insurance', 7);
-INSERT INTO service VALUES('Banking', 8);
-
+INSERT INTO service VALUES('Investment', 3);
+INSERT INTO service VALUES('Insurance', 4);
 
 -- account
 
@@ -88,7 +82,7 @@ INSERT INTO account VALUES(14, 1, 50000.00, 'Line of Credit', 'Investment', 'Per
 INSERT INTO account VALUES(15, 7, 11000.00, 'Line of Credit', 'Banking', 'Corporate', 5.5);
 INSERT INTO account VALUES(16, 2, 1000.00, 'Line of Credit', 'Banking', 'Personal', 4.5);
 INSERT INTO account VALUES(17, 1, 12000.00, 'Credit Card', 'Insurance', 'Business', 20.0);
-INSERT INTO account VALUES(18, 2, 20000.00, 'Checking', 'Banking', 'Personal' 0.0);
+INSERT INTO account VALUES(18, 2, 20000.00, 'Checking', 'Banking', 'Personal', 0.0);
 INSERT INTO account VALUES(19, 3, 100000.00, 'Checking', 'Banking', 'Personal', 0.0);
 INSERT INTO account VALUES(20, 4, 25000.00, 'Checking', 'Banking', 'Personal', 0.0);
 INSERT INTO account VALUES(21, 5, 35000.00, 'Checking', 'Banking', 'Personal', 0.0);
@@ -111,7 +105,6 @@ INSERT INTO account VALUES(37, 16, 800.00, 'Credit Card', 'Banking', 'Personal',
 INSERT INTO account VALUES(38, 5, 4995.00, 'Foreign Currency', 'Banking', 'Personal', 21.0);
 INSERT INTO account VALUES(39, 7, 80000.00, 'Foreign Currency', 'Banking', 'Corporate', 21.0);
 
-
 --charge plan
 
 INSERT INTO chargeplan VALUES ('Student', 5, 5.00, 3.00);
@@ -119,8 +112,6 @@ INSERT INTO chargeplan VALUES ('Premium', 100, 15.00, 1.00);
 INSERT INTO chargeplan VALUES ('Basic', 10, 10.00, 5.00);
 INSERT INTO chargeplan VALUES ('Platinum', 1000, 30.00, 1.00);
 INSERT INTO chargeplan VALUES ('Senior', 15, 0.00, 1.00);
-
-
 
 --checking
 
@@ -139,7 +130,6 @@ INSERT INTO checking VALUES (29, 'Student');
 INSERT INTO checking VALUES (30, 'Student');
 INSERT INTO checking VALUES (31, 'Student');
 INSERT INTO checking VALUES (32, 'Student');
-
 
 -- bills
 
@@ -178,7 +168,6 @@ INSERT INTO credit VALUES(37, 1000.0, 10.0);
 INSERT INTO foreigncurrency VALUES(38, 'Yen');
 INSERT INTO foreigncurrency VALUES(39, 'Rupees');
 
-
 --loan
 
 INSERT INTO loan VALUES(4, 50000.0, 'Line of Credit');
@@ -191,14 +180,11 @@ INSERT INTO loan VALUES(16, 10000.0, 'Line of Credit');
 INSERT INTO loan VALUES(33, 1000000.0, 'Mortgage');
 INSERT INTO loan VALUES(35, 250000.0, 'Loan');
 
-
-
 --reocurringbills
 
-INSERT INTO reoccuringbills VALUES(17, 4);
-INSERT INTO reoccuringbills VALUES(19, 12);
-INSERT INTO reoccuringbills VALUES(20, 6);
-
+INSERT INTO reoccurringbills VALUES(17, 4);
+INSERT INTO reoccurringbills VALUES(19, 12);
+INSERT INTO reoccurringbills VALUES(20, 6);
 
 --savings
 
@@ -210,7 +196,6 @@ INSERT INTO savings VALUES(11, 'Student');
 INSERT INTO savings VALUES(13, 'Basic');
 INSERT INTO savings VALUES(24, 'Student');
 INSERT INTO savings VALUES(25, 'Senior');
-
 
 --schedule
 
@@ -305,7 +290,6 @@ INSERT INTO schedule VALUES(21, 'Wednesday', '09:00', '17:00');
 INSERT INTO schedule VALUES(21, 'Thursday', '09:00', '17:00');
 INSERT INTO schedule VALUES(21, 'Friday', '09:00', '17:00');
 
-
 --transaction
 
 INSERT INTO transaction VALUES (1, 1, '2018-01-01', 10000.00);
@@ -346,7 +330,6 @@ INSERT INTO transaction VALUES (35, 7, '2017-09-14', 51.00);
 INSERT INTO transaction VALUES (36, 9, '2018-09-19', 3000.00);
 INSERT INTO transaction VALUES (37, 10, '2016-03-27', 6520.00);
 INSERT INTO transaction VALUES (38, 4, '2017-12-20', 5100.00);
-
 
 --admin
 

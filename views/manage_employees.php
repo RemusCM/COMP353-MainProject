@@ -41,7 +41,7 @@ if (isset($manageEmployees)) {
                 <td><?php echo $e->name ?></td>
                 <td><?php echo $e->address ?></td>
                 <td><?php echo $e->start_date ?></td>
-                <td><?php echo $e->salary ?></td>
+                <td><?php echo $e->salary ?>?</td>
                 <td><?php echo $e->email_address ?></td>
                 <td><?php echo $e->phone_number ?></td>
                 <td><?php echo $e->holidays ?></td>
@@ -68,7 +68,7 @@ if (isset($manageEmployees)) {
                                             <option value = "President">President</option>
                                             <option value = "General Manager">General Manager</option>
                                             <option value = "Manager">Manager</option>
-                                            <option value = "Customer Service Representative">Costumer Service Representative</option>
+                                            <option value = "Customer Service Representative">Custumer Service Representative</option>
                                         </select>
                                     </p>
                                     <p>

@@ -39,7 +39,7 @@ class ManageAccounts
     {
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if (!$this->db_connection->connect_errno) {
-            $sql = "SELECT client_id, balance, account_type, service_type, level, interest_rate FROM account;";
+            $sql = "SELECT account_number, client_id, balance, account_type, service_type, level, interest_rate FROM account;";
             $query_accounts = $this->db_connection->query($sql);
             $accounts = array();
             if ($query_accounts->num_rows == 0) {
