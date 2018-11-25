@@ -86,12 +86,39 @@ class ManageAccounts
         }
         if (!$this->db_connection->connect_errno) {
             $account_number = $this->db_connection->real_escape_string(strip_tags($_POST['account_number'], ENT_QUOTES));
+
+            // Find the account
+            $sql_account = "SELECT account_number, client_id, balance, account_type, service_type, level, interest_rate FROM account;";
+            $query_accounts = $this->db_connection->query($sql_account);
+            $result_row_account = $query_accounts->fetch_object();
+
+            // Delete the account type instance based on account type.
+            $account_type = null;
+            if($result_row_account->account_type == 'Savings'){
+                $account_type = 'savings';
+            } else if($result_row_account->account_type == 'Checking'){
+                $account_type = 'checking';
+            } else if($result_row_account->account_type == 'Credit'){
+                $account_type = 'credit';
+            } else if($result_row_account->account_type == 'Foreign Currency'){
+                $account_type = 'foreigncurrency';
+            } else if($result_row_account->account_type == 'Loan'){
+                $account_type = 'loan';
+            }
+            $sql_type_delete = "DELETE FROM " . $account_type . " WHERE account_number = '" . $account_number . "';";
+            $this->db_connection->query($sql_type_delete);
+
+            // Delete the transactions of the account
+            $sql_transaction_delete = "DELETE FROM transaction WHERE account_number = '" . $account_number . "';";
+            $this->db_connection->query($sql_transaction_delete);
+
+            // Delete the account.
             $sql = "DELETE FROM account WHERE account_number = '" . $account_number . "';";
             $query_clients = $this->db_connection->query($sql);
             if ($query_clients->num_rows == 0) {
-                $this->messages[] = "Account was deleted.";
+                $this->messages[] = "Account was not deleted.";
             } else {
-                $this->errors[] = "Account was not deleted.";
+                $this->errors[] = "Account was deleted.";
             }
             mysqli_close($this->db_connection);
         }
