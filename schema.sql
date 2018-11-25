@@ -8,14 +8,31 @@ SET time_zone = "+00:00";
 
 
 
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
 
-
+DROP TABLE IF EXISTS `transaction`;
+DROP TABLE IF EXISTS `schedule`;
+DROP TABLE IF EXISTS `checking`;
+DROP TABLE IF EXISTS `savings`;
+DROP TABLE IF EXISTS `reoccurringbills`;
+DROP TABLE IF EXISTS `bills`;
+DROP TABLE IF EXISTS `loan`;
+DROP TABLE IF EXISTS `foreigncurrency`;
+DROP TABLE IF EXISTS `credit`;
 DROP TABLE IF EXISTS `account`;
+DROP TABLE IF EXISTS `service`;
+DROP TABLE IF EXISTS `employee`;
+DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `chargeplan`;
+DROP TABLE IF EXISTS `client`;
+DROP TABLE IF EXISTS `branch`;
+
+
 CREATE TABLE IF NOT EXISTS `account` (
   `account_number` int(11) NOT NULL AUTO_INCREMENT,
   `client_id` int(11) DEFAULT NULL,
@@ -31,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 
 
 
-DROP TABLE IF EXISTS `admin`;
+
 CREATE TABLE IF NOT EXISTS `admin` (
   `admin_id` int(11) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -40,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 
 
-DROP TABLE IF EXISTS `bills`;
+
 CREATE TABLE IF NOT EXISTS `bills` (
   `bill_id` int(11) NOT NULL AUTO_INCREMENT,
   `amount` double(15,2) DEFAULT NULL,
@@ -53,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `bills` (
 
 
 
-DROP TABLE IF EXISTS `branch`;
+
 CREATE TABLE IF NOT EXISTS `branch` (
   `branch_id` int(11) NOT NULL AUTO_INCREMENT,
   `phone` varchar(12) DEFAULT NULL,
@@ -67,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `branch` (
 
 
 
-DROP TABLE IF EXISTS `chargeplan`;
+
 CREATE TABLE IF NOT EXISTS `chargeplan` (
   `opt` varchar(255) NOT NULL,
   `lim` int(11) DEFAULT NULL,
@@ -78,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `chargeplan` (
 
 
 
-DROP TABLE IF EXISTS `checking`;
+
 CREATE TABLE IF NOT EXISTS `checking` (
   `account_number` int(11) NOT NULL,
   `opt` varchar(255) DEFAULT NULL,
@@ -88,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `checking` (
 
 
 
-DROP TABLE IF EXISTS `client`;
+
 CREATE TABLE IF NOT EXISTS `client` (
   `client_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -107,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 
 
-DROP TABLE IF EXISTS `credit`;
+
 CREATE TABLE IF NOT EXISTS `credit` (
   `account_number` int(11) NOT NULL,
   `credit_limit` double(15,2) DEFAULT NULL,
@@ -117,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `credit` (
 
 
 
-DROP TABLE IF EXISTS `employee`;
+
 CREATE TABLE IF NOT EXISTS `employee` (
   `employee_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
@@ -145,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `foreigncurrency` (
 
 
 
-DROP TABLE IF EXISTS `loan`;
+
 CREATE TABLE IF NOT EXISTS `loan` (
   `account_number` int(11) NOT NULL,
   `loan_limit` double(15,2) DEFAULT NULL,
@@ -155,7 +172,6 @@ CREATE TABLE IF NOT EXISTS `loan` (
 
 
 
-DROP TABLE IF EXISTS `reoccurringbills`;
 CREATE TABLE IF NOT EXISTS `reoccurringbills` (
   `bill_id` int(11) NOT NULL,
   `reoccurrence` int(11) DEFAULT NULL,
@@ -164,7 +180,6 @@ CREATE TABLE IF NOT EXISTS `reoccurringbills` (
 
 
 
-DROP TABLE IF EXISTS `savings`;
 CREATE TABLE IF NOT EXISTS `savings` (
   `account_number` int(11) NOT NULL,
   `opt` varchar(255) DEFAULT NULL,
@@ -174,7 +189,6 @@ CREATE TABLE IF NOT EXISTS `savings` (
 
 
 
-DROP TABLE IF EXISTS `schedule`;
 CREATE TABLE IF NOT EXISTS `schedule` (
   `employee_id` int(11) NOT NULL AUTO_INCREMENT,
   `day` varchar(255) NOT NULL,
@@ -185,7 +199,6 @@ CREATE TABLE IF NOT EXISTS `schedule` (
 
 
 
-DROP TABLE IF EXISTS `service`;
 CREATE TABLE IF NOT EXISTS `service` (
   `service_type` varchar(255) NOT NULL,
   `manager_id` int(11) NOT NULL,
@@ -195,7 +208,6 @@ CREATE TABLE IF NOT EXISTS `service` (
 
 
 
-DROP TABLE IF EXISTS `transaction`;
 CREATE TABLE IF NOT EXISTS `transaction` (
   `transaction_number` int(11) NOT NULL AUTO_INCREMENT,
   `account_number` int(11) DEFAULT NULL,

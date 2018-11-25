@@ -1,11 +1,14 @@
 <?php
-session_start();
-$admin = $_SESSION['admin_id'];
-if($admin){
-    $isAdmin = true;
-} else {
-    $isAdmin = false;
+
+if(isset($_SESSION['admin_id'])) {
+    $admin = $_SESSION['admin_id'];
+    if ($admin) {
+        $isAdmin = true;
+    }
 }
+else {
+        $isAdmin = false;
+    }
 
 ?>
 <html>
@@ -37,10 +40,11 @@ if($isAdmin){
         <div class="navigationLinks">
             <a class="nav-item nav-link active" href="../index.php">Home</a>
             <a class="nav-item nav-link" href="manage_clients.php">Manage Clients</a>
+            <a class="nav-item nav-link" href="manage_employees.php">Manage Employees</a>
             <a class="nav-item nav-link" href="../index.php?logout">Logout</a>
         </div>
     </nav>
-    <?
+    <?php
 }else{
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -52,8 +56,9 @@ if($isAdmin){
         </div>
     </nav>
 
-    <?
+    <?php
 }
 ?>
+
 </body>
 </html>
