@@ -75,7 +75,7 @@ class InteracTransfer
 
                         if($conn->query($sql_updateTarget)){
                             if($conn->query($sql_updateClient)) {
-                                echo "success";
+                                echo "Money Transferred.";
                                 return;
                             }
                         }
@@ -92,7 +92,7 @@ class InteracTransfer
                         $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
                         if($conn->query($sql_updateTarget)){
                             if($conn->query($sql_updateClient)) {
-                                echo "success";
+                                echo "Money Transferred.";
                                 return;
                             }
                         }
@@ -139,7 +139,7 @@ class InteracTransfer
 
                     if($conn->query($sql_updateTarget)){
                         if($conn->query($sql_updateClient)) {
-                            echo "success";
+                            echo "Money Transferred.";
                             return;
                         }
                     }
@@ -156,7 +156,7 @@ class InteracTransfer
                     $sql_updateClient = "UPDATE account SET balance = balance -'".$amount."' WHERE account_number= '".$from."'";
                     if($conn->query($sql_updateTarget)){
                         if($conn->query($sql_updateClient)) {
-                            echo "success";
+                            echo "Money Transferred.";
                             return;
                         }
                     }

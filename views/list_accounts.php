@@ -274,7 +274,7 @@
                                 $account_number = $row["account_number"];
                                 $balance = $row["balance"];
                                 $account_type = $row["account_type"];
-                                echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type </option>";
+                                echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type  --- " . $row["type"] . "</option>";
                             }
                         }
                         ?>
