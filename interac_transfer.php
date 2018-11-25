@@ -35,22 +35,25 @@ include("views/menu.php");
 </head>
 <body>
 
-    <form method = "post" action="#" id="e-transfer"  name="e-transfer"><h1>Interac Transfer</h1>
+    <form method = "post" action="index.php" id="e-transfer"  name="e-transfer"><h1>Interac Transfer</h1>
         <hr>
         <div id="fromRow" class="form-group row">
-            <label  class="col-sm-2 col-form-label" value = <?php echo "'$from'"; ?>>From Account #: <?php echo "$from"?></label>
+            <label name="from" id="from" class="col-sm-2 col-form-label" value = <?php echo "'$from'"; ?>>From Account #: <?php echo "$from"?></label>
+            <input type="hidden" name="fromTable" id="fromTable"value = <?php echo "'$from'"; ?>>
         </div>
         <div id="amountRow" class="form-group row">
-            <label  class="col-sm-2 col-form-label"value = <?php echo "'$amount'"; ?>>Amount to transfer: <?php echo "$amount"?></label>
+            <label name="amountToTransfer" id="amountToTransfer" class="col-sm-2 col-form-label" value = <?php echo "'$amount'"; ?>>Amount to transfer: <?php echo "$amount"?></label>
+            <input type="hidden" name="amountToTransfer" id="amountToTransfer" value = <?php echo "'$amount'"; ?>>
+
         </div>
 
         <?php
-        if($balance<$amount){
-            echo "Please go back, you are trying to send money you don't have.";
+        if($balance<$amount && ($account_type == 'checking' ||$account_type == 'savings')){
+            echo "Please go <a href='index.php'>back</a>, you are trying to send money you don't have.";
         }
 
         else if($account_type == 'credit' || $account_type == 'loan'){
-            echo "Can't be giving money you don't own.";
+            echo "Can't be giving money you don't own. Go <a href='index.php'>back</a> ";
         }
         else{
 
@@ -64,6 +67,7 @@ include("views/menu.php");
 
             echo"<br>
             <p>OR</p>
+            <br>
             <div id=\"mobileRow\" class=\"form-group row\">
             <label for=\"mobile\"class=\"col-sm-1 col-form-label\">Cellphone Number</label>
                 <div class=\"col-sm-2\">
@@ -71,7 +75,7 @@ include("views/menu.php");
                 </div>
             </div>";
 
-            echo "<button type=\"submit\" class=\"btn btn-primary\" id=\"transfer\" onclick='return validateForm()' name=\"transfer\">Transfer Money</button>";
+            echo "<button type=\"submit\" class=\"btn btn-primary\" id=\"etransfer\" onclick='return validateForm()' name=\"etransfer\">Transfer Money</button>";
 
         }
         ?>
