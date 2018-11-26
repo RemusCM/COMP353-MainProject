@@ -31,6 +31,8 @@ require_once("classes/AccountMoneyTransfer.php");
 
 require_once("classes/InteracTransfer.php");
 
+require_once("classes/PayBills.php");
+
 // create a login object. when this object is created, it will do all login/logout stuff automatically
 // so this single line handles the entire login process. in consequence, you can simply ...
 $login = new Login();
@@ -47,6 +49,7 @@ if ($login->isUserLoggedIn() == true) {
         $clientNotified = new ClientNotified();
         $clientMoneyTransfer = new AccountMoneyTransfer();
         $clientInteracTransfer = new InteracTransfer();
+        $clientPayBills = new payBills;
         include("views/list_accounts.php");
     }
 
