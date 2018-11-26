@@ -84,34 +84,31 @@ class Login
                         $_SESSION['user_login_status'] = 1;
 
                     } else {
-                        $this->errors[] = "Wrong password. Try again.";
-                    }
-                } else {
-                    // database query, getting all the info of the selected user (allows login via email address in the
-                    // username field)
-                    $sql = "SELECT client_id, password, joining_date FROM client WHERE client_id = '" . $client_id . "' AND client_id = '" . $client_id . "';";
-                    $result_of_login_check = $this->db_connection->query($sql);
+                        // database query, getting all the info of the selected user
+                        $sql = "SELECT client_id, password, joining_date FROM client WHERE client_id = '" . $client_id . "';";
+                        $result_of_login_check = $this->db_connection->query($sql);
 
-                    // if this user exists
-                    if ($result_of_login_check->num_rows == 1) {
+                        // if this user exists
+                        if ($result_of_login_check->num_rows == 1) {
 
-                        // get result row (as an object)
-                        $result_row = $result_of_login_check->fetch_object();
+                            // get result row (as an object)
+                            $result_row = $result_of_login_check->fetch_object();
 
-                        // using PHP 5.5's password_verify() function to check if the provided password fits
-                        // the hash of that user's password
-                        if (password_verify($_POST['password'], $result_row->password)) {
+                            // using PHP 5.5's password_verify() function to check if the provided password fits
+                            // the hash of that user's password
+                            if ($_POST['password'] == $result_row->password) {
 
-                            // write user data into PHP SESSION (a file on your server)
-                            $_SESSION['client_id'] = $result_row->client_id;
-                            $_SESSION['user_login_status'] = 1;
-                            $_SESSION['joining_date'] = $result_row->joining_date;
+                                // write user data into PHP SESSION (a file on your server)
+                                $_SESSION['client_id'] = $result_row->client_id;
+                                $_SESSION['user_login_status'] = 1;
+                                $_SESSION['joining_date'] = $result_row->joining_date;
 
+                            } else {
+                                $this->errors[] = "Wrong password. Try again.";
+                            }
                         } else {
-                            $this->errors[] = "Wrong password. Try again.";
+                            $this->errors[] = "This user does not exist.";
                         }
-                    } else {
-                        $this->errors[] = "This user does not exist.";
                     }
                 }
             } else {
