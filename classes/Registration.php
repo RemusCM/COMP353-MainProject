@@ -147,11 +147,11 @@ class Registration
                 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
                 // check if user or email address already exists
-                $sql = "SELECT * FROM client WHERE name = '" . $name . "' OR email_address = '" . $email . "';";
+                $sql = "SELECT * FROM client WHERE name = '" . $name . "' OR email_address = '" . $email . "' OR phone_number = '".$phone."';";
                 $query_check_exists = $this->db_connection->query($sql);
 
                 if ($query_check_exists->num_rows == 1) {
-                    $this->errors[] = "Sorry, a client already exists with that name and/or email.";
+                    $this->errors[] = "Sorry, a client already exists with that name and/or email and/or phone_number.";
                 } else {
                     // Write new user's data into database
                     $sql = "INSERT INTO client(name, date_of_birth, joining_date, address, category, email_address, password, phone_number, branch_id)
