@@ -5,6 +5,8 @@ if (isset($manageClients)) {
     $branches = $manageClients->fetchBranchesForForm();
 }
 ?>
+
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,10 +16,12 @@ if (isset($manageClients)) {
         td, th { padding:5px 15px 0 15px; }
     </style>
 </head>
-<html>
-<div class="col-md-12 well" style="position:absolute; top:10%; left:5%; width:90%;">
+<body>
+<div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
     <table width="100%">
-        <caption>Clients</caption>
+        <tr>
+            <td colspan="10" style="padding-bottom: 20px;"><h4>Clients</h4></td>
+        </tr>
         <tr>
             <th>Card Number</th>
             <th>Name</th>
@@ -41,8 +45,10 @@ if (isset($manageClients)) {
                 <td><?php echo $c->email_address ?></td>
                 <td><?php echo $c->phone_number ?></td>
                 <td><?php echo $c->branch_id ?></td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $c->client_id;?>">Edit</button></td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete<?php echo $c->client_id;?>">Delete</button></td>
+                <td align="right" width="180px">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $c->client_id;?>">Edit</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete<?php echo $c->client_id;?>">Delete</button>
+                </td>
             </tr>
 
             <!-- Update client modal opens when clicking edit button -->
@@ -132,4 +138,5 @@ if (isset($manageClients)) {
     </table>
 
 </div>
+</body>
 </html>

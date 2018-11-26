@@ -84,7 +84,7 @@ class ManageEmployees
             $employee_id = $this->db_connection->real_escape_string(strip_tags($_POST['employee_id'], ENT_QUOTES));
 
             $schedule_sql = "DELETE FROM schedule WHERE employee_id = '" . $employee_id . "';";
-            $this->$this->db_connection->query($schedule_sql);
+            $this->db_connection->query($schedule_sql);
             $sql = "DELETE FROM employee WHERE employee_id = '" . $employee_id . "';";
             $query_employees = $this->db_connection->query($sql);
             if ($query_employees->num_rows == 0) {

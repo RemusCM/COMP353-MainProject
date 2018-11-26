@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="col-md-12">
+    <div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
         <?php
         /**
          * Created by PhpStorm.
@@ -12,7 +12,6 @@
          * Date: 2018-11-22
          * Time: 10:41
          */
-        session_start();
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         // Check connection
@@ -22,13 +21,12 @@
 
         $account_number = $_GET['id'];
 
-
         //Account details
         $sql_account = "SELECT DISTINCT account_number, account_type, client_id FROM account WHERE client_id = '" . $_SESSION['client_id'] . "' AND account_number = '" .$account_number."'; ";
         $result_account = $conn->query($sql_account);
         $row_account = $result_account->fetch_assoc();
 
-        echo "<h3>Transactions for ".$row_account['account_type']." account # ".$row_account['account_number']."</h3>";
+        echo "<h4>Transactions for ".$row_account['account_type']." account # ".$row_account['account_number']."</h4>";
 
         //Transactions
         $sql_transactions = "SELECT * FROM account, transaction WHERE transaction.account_number = account.account_number AND transaction.account_number = '" .$account_number."' AND (SELECT DATEDIFF(NOW(), date)/365)<=10;";
