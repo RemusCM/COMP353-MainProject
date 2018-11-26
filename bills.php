@@ -113,7 +113,7 @@ include("views/menu.php");
                         echo"<br>";
                         $bill_id = $row["bill_id"];
                         $amount = $row["amount"];
-                        echo "<input type=\"checkbox\" name=\"bills_list[]\" value='$bill_id|$amount'> ".$bill_id."----".$amount." ";
+                        echo "<input type=\"checkbox\" name=\"bills_list[]\" value='$bill_id|$amount'> Bill ID:".$bill_id."   ----    ".$amount."\$ ";
 
                     }
 
