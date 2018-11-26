@@ -145,11 +145,11 @@ class PayBills
         }
 
         if($accountTypeFrom == 'loan'){
-            $sql_credit_limit = "SELECT loan_limit FROM loan WHERE account_number = '".$accountNumberFrom."'";
-            $result_loan_limit = $conn->query($sql_credit_limit);
+            $sql_loan_limit = "SELECT loan_limit FROM loan WHERE account_number = '".$accountNumberFrom."'";
+            $result_loan_limit = $conn->query($sql_loan_limit);
             if($result_loan_limit -> num_rows > 0){
                 while($row = $result_loan_limit->fetch_assoc()){
-                    $loan_limit = $row["credit_limit"];
+                    $loan_limit = $row["loan_limit"];
                 }
             }
             if($balance+$amountToPay > $loan_limit){
