@@ -3,6 +3,7 @@
 if (isset($manageEmployees)) {
     $employees = $manageEmployees->fetchAllEmployees();
     $branches = $manageEmployees->fetchBranchesForForm();
+    $schedules = $manageEmployees->fetchSchedules();
 }
 ?>
 <head>
@@ -11,7 +12,7 @@ if (isset($manageEmployees)) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        td, th { padding:5px 15px 0 15px; }
+        td, th { padding:5px 13px 0 15px; }
     </style>
 </head>
 <html>
@@ -49,6 +50,7 @@ if (isset($manageEmployees)) {
                 <td><?php echo $e->branch_id ?></td>
                 <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $e->employee_id;?>">Edit</button></td>
                 <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete<?php echo $e->employee_id;?>">Delete</button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#schedule<?php echo $e->employee_id;?>">Schedule</button></td>
             </tr>
 
             <!-- Update employee modal opens when clicking edit button -->
@@ -204,12 +206,36 @@ if (isset($manageEmployees)) {
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
         <?php }?>
     </table>
-
+    <div class="modal fade" id="schedule<?php echo $e->employee_id;?>" role="dialog">
+        <div class="modal-dialog" style="width:30%;">
+            <div class="modal-content">
+                <div class="modal-body" style="padding:40px 50px;">
+                    <table class="table">
+                        <caption>Schedule for employee <?php echo $e->employee_id;?></caption>
+                        <tr>
+                            <th>Day</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                        <?php foreach($schedules as $s) { ?>
+                           <tr>
+                               <td><?php echo $s->day ?></td>
+                               <td><?php echo $s->start_time ?></td>
+                               <td><?php echo $s->end_time ?></td>
+                           </tr>
+                        <?php }?>
+                    </table>
+                    <div style="padding-top: 10px;">
+                        <input type="submit" data-dismiss="modal" value="Close">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </html>
