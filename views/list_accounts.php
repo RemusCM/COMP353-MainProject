@@ -181,7 +181,7 @@
             <select name='notified' id='notified'>
                 <option value='yes'<?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'yes' && $_SESSION['is_notified'] == 1)) ? 'selected="selected"' : ''; ?>>Yes</option>
                 <option value='no' <?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'no' && $_SESSION['is_notified'] == 0)) ? 'selected="selected"' : ''; ?> >No</option>
-            </select><br>
+            </select><br><br>
             <input type='submit' name='submit' id='submit' class ="btn btn-primary" value="Save"></form>
 
     </div>
@@ -294,7 +294,7 @@
             </div>
 
 
-
+            <br>
             <button type="submit" class="btn btn-primary" id="transfer" name="transfer">Transfer Money</button>
 
 
