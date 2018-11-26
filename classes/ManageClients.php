@@ -78,6 +78,7 @@ class ManageClients
         if (!$this->db_connection->connect_errno) {
             $client_id = $this->db_connection->real_escape_string(strip_tags($_POST['client_id'], ENT_QUOTES));
 
+            // Find and delete client accounts
             $accounts_query = "SELECT account_number, account_type FROM account WHERE client_id = '" . $client_id . "';";
             $accounts = $this->db_connection->query($accounts_query);
             while($row = mysqli_fetch_object($accounts)) {
@@ -110,10 +111,21 @@ class ManageClients
             $acc_to_delete = "DELETE FROM account WHERE client_id = '" . $client_id . "';";
             $this->db_connection->query($acc_to_delete);
 
+            // Find and delete client bills
+            $bills_query = "SELECT bill_id FROM bills WHERE client_id = '" . $client_id . "';";
+            $bills = $this->db_connection->query($bills_query);
+            while($row = mysqli_fetch_object($bills)) {
+                $reoccurring_bills_to_delete = "DELETE FROM reoccurringbills WHERE bill_id = '" . $row->bill_id . "';";
+                $this->db_connection->query($reoccurring_bills_to_delete);
+            }
+            $bills_to_delete = "DELETE FROM bills WHERE client_id = '" . $client_id . "';";
+            $this->db_connection->query($bills_to_delete);
+
+            // Delete client
             $sql = "DELETE FROM client WHERE client_id = '" . $client_id . "';";
             $query_clients = $this->db_connection->query($sql);
             if ($query_clients->num_rows == 0) {
-                $this->messages[] = "Client was deleted.";
+                $this->messages[] = "Client was deleted";
             } else {
                 $this->errors[] = "Client was not deleted.";
             }
