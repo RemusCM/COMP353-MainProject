@@ -16,7 +16,7 @@ if (isset($manageEmployees)) {
     </style>
 </head>
 <html>
-<div class="col-md-12 well" style="position:absolute; top:10%; left:5%; width:90%;">
+<div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
     <table width="100%">
         <tr>
             <td colspan="10">Employees</td>
