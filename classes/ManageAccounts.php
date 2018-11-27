@@ -88,7 +88,7 @@ class ManageAccounts
             $account_number = $this->db_connection->real_escape_string(strip_tags($_POST['account_number'], ENT_QUOTES));
 
             // Find the account
-            $sql_account = "SELECT account_number, client_id, balance, account_type, service_type, level, interest_rate FROM account;";
+            $sql_account = "SELECT account_number, account_type FROM account WHERE account_number = '" . $account_number . "';";
             $query_accounts = $this->db_connection->query($sql_account);
             $result_row_account = $query_accounts->fetch_object();
 
@@ -102,7 +102,7 @@ class ManageAccounts
                 $account_type = 'credit';
             } else if($result_row_account->account_type == 'Foreign Currency'){
                 $account_type = 'foreigncurrency';
-            } else if($result_row_account->account_type == 'Loan'){
+            } else if($result_row_account->account_type == 'Loan' || $result_row_account->account_type == 'Mortgage' || $result_row_account->account_type == 'Line of Credit'){
                 $account_type = 'loan';
             }
             $sql_type_delete = "DELETE FROM " . $account_type . " WHERE account_number = '" . $account_number . "';";

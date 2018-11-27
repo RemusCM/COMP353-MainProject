@@ -31,7 +31,8 @@
     </style>
 </head>
 <body>
-    <div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
+<div>
+    <div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:62.5%;">
         <?php
         /**
          * Created by PhpStorm.
@@ -103,8 +104,6 @@
         //Loan accounts query
         $sql_loan_to = "SELECT DISTINCT loan.account_number, balance, account_type, type FROM account, loan WHERE client_id = '" . $_SESSION['client_id'] . "' AND loan.account_number = account.account_number;";
         $result_loan_to = $conn->query($sql_loan_to);
-
-
 
         echo "<h4>My Accounts</h4><br>";
 
@@ -182,17 +181,18 @@
             <select name='notified' id='notified'>
                 <option value='yes'<?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'yes' && $_SESSION['is_notified'] == 1)) ? 'selected="selected"' : ''; ?>>Yes</option>
                 <option value='no' <?php echo (isset($_POST['submit']) && ($_POST['notified'] == 'no' && $_SESSION['is_notified'] == 0)) ? 'selected="selected"' : ''; ?> >No</option>
-            </select><br>
+            </select><br><br>
             <input type='submit' name='submit' id='submit' class ="btn btn-primary" value="Save"></form>
 
+    </div>
 
 
-
-        <form method='post' action="#" id="transfer" name="transfer"><h1>Fast Transfers</h1>
+    <div class="col-md-12 well" style="position: absolute; top: 10%; right: 2.5%; width:30%;">
+        <form method='post' action="#" id="transfer" name="transfer"><h4>Fast Transfers</h4>
             <hr>
                 <div id="fromRow" class="form-group row">
-                    <label for="from" class="col-sm-1 col-form-label">From:</label>
-                    <div class="col-sm-2">
+                    <label for="from" class="col-sm-4 col-form-label">From:</label>
+                    <div class="col-sm-8">
                 <select name='from' id="from" class="form-control" required>
                     <option value="" disabled selected hidden>Select an Account</option>
                     <?php
@@ -236,8 +236,8 @@
 
             </div>
             <div id="toRow" class="form-group row">
-                <label for="to" class="col-sm-1 col-form-label">To:</label>
-                <div class="col-sm-2">
+                <label for="to" class="col-sm-4 col-form-label">To:</label>
+                <div class="col-sm-8">
                     <select name='to' id="to" class="form-control" required>
                         <option value="" disabled selected hidden>Select an Account</option>
 
@@ -286,21 +286,22 @@
             </div>
 
             <div id="amountRow" class="form-group row">
-                <label for="amount" class="col-sm-1 col-form-label">Amount($):</label>
-                <div class="col-sm-2">
+                <label for="amount" class="col-sm-4 col-form-label">Amount($):</label>
+                <div class="col-sm-8">
                     <input class="form-control" type="text" placeholder="Enter amount here" id="amount" name="amount"required>
                 </div>
 
             </div>
 
 
-
+            <br>
             <button type="submit" class="btn btn-primary" id="transfer" name="transfer">Transfer Money</button>
 
 
             </form>
 
     </div>
+</div>
 <script>
 
     document.getElementById('transfer').to.onchange = function() {
