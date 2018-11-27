@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <div class="col-md-12">
+    <div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
         <?php
         /**
          * Created by PhpStorm.
@@ -105,9 +105,12 @@
         $result_loan_to = $conn->query($sql_loan_to);
 
 
+
+        echo "<h4>My Accounts</h4><br>";
+
         //Displaying checking accounts
         if ($result_checking->num_rows > 0) {
-            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Checking accounts details</h3></a>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Checking accounts details</h5></a>";
             echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th scope=\"col\">Transaction Details</th>";
             // output data of each row
             while($row = $result_checking->fetch_assoc()) {
@@ -118,11 +121,9 @@
             echo "<hr class='style2'>";
         }
 
-
-
         //Displaying savings accounts
         if ($result_savings->num_rows > 0 ) {
-            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Savings accounts details</h3></a>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Savings accounts details</h5></a>";
             echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Option</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_savings->fetch_assoc()) {
@@ -133,11 +134,9 @@
             echo "<hr class='style2'>";
         }
 
-
-
         //Displaying credit accounts
         if ($result_credit->num_rows > 0) {
-            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Credit accounts details</h3></a>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Credit accounts details</h5></a>";
             echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Credit Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th scope=\"col\">Minimal Payment</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_credit->fetch_assoc()) {
@@ -148,11 +147,9 @@
             echo "<hr class='style2'>";
         }
 
-
-
         //Displaying foreign currency accounts
         if ($result_foreignCurrency->num_rows > 0) {
-            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Foreign Currency accounts details</h3></a>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Foreign Currency accounts details</h5></a>";
             echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Balance</th><th scope=\"col\">Currency Type</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_foreignCurrency->fetch_assoc()) {
@@ -165,7 +162,7 @@
 
         //Displaying loan accounts
         if ($result_loan->num_rows > 0) {
-            echo "<a href='#' class = 'hidden-content-reveal'><h3 class='toggler'>Loan accounts details</h3></a>";
+            echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Loan accounts details</h5></a>";
             echo "<table class='table'><tr><th scope=\"col\">Account Number</th><th scope=\"col\">Loan type</th><th scope=\"col\">Loan Limit</th><th scope=\"col\">Service Type</th><th scope=\"col\">Level</th><th>Transaction Details</th>";
             // output data of each row
             while($row = $result_loan->fetch_assoc()) {
