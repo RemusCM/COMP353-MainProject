@@ -27,18 +27,6 @@ include("views/menu.php");
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <title>Interac Transfer</title>
-</head>
-<body>
-
-    <form method = "post" action="index.php" id="e-transfer"  name="e-transfer"><h1>Interac Transfer</h1>
-        <hr>
-        <div id="fromRow" class="form-group row">
-            <label name="from" id="from" class="col-sm-2 col-form-label" value = <?php echo "'$from'"; ?>>From Account #: <?php echo "$from"?></label>
-            <input type="hidden" name="fromTable" id="fromTable"value = <?php echo "'$from'"; ?>>
-        </div>
-        <div id="amountRow" class="form-group row">
-            <label name="amountToTransfer" id="amountToTransfer" class="col-sm-2 col-form-label" value = <?php echo "'$amount'"; ?>>Amount to transfer: <?php echo "$amount"?></label>
             <input type="hidden" name="amountToTransfer" id="amountToTransfer" value = <?php echo "'$amount'"; ?>>
 
         </div>
@@ -54,8 +42,6 @@ include("views/menu.php");
         else{
 
             echo" <div id=\"emailRow\" class=\"form-group row\">
-                <label for=\"mail\" class=\"col-sm-1 col-form-label\">Email:</label>
-                <div class=\"col-sm-2\">
                     <input class=\"form-control\" type=\"email\" placeholder=\"Enter recipient's email here\" id=\"mail\" name=\"mail\">
                 </div>
 
@@ -65,8 +51,6 @@ include("views/menu.php");
             <p>OR</p>
             <br>
             <div id=\"mobileRow\" class=\"form-group row\">
-            <label for=\"mobile\"class=\"col-sm-1 col-form-label\">Cellphone Number</label>
-                <div class=\"col-sm-2\">
             <input id=\"mobile\" type=\"tel\" pattern=\"[1-9]\d{2}-\d{3}-\d{4}\" name=\"mobile\" placeholder=\"###-###-####\"  />
                 </div>
             </div>";
