@@ -49,7 +49,7 @@ if ($login->isUserLoggedIn() == true) {
         $clientNotified = new ClientNotified();
         $clientMoneyTransfer = new AccountMoneyTransfer();
         $clientInteracTransfer = new InteracTransfer();
-        $clientPayBills = new payBills;
+        $clientPayBills = new PayBills();
         include("views/list_accounts.php");
     }
 
