@@ -54,9 +54,9 @@ include("views/menu.php");
 </head>
 <body>
 
-
+<div class="col-md-12 well" style="position:absolute; top:10%; left:30%; width:40%;">
 <form method="post" action="index.php" id="pay-bills" name="pay-bills">
-    <h1>Pay your bills</h1>
+    <h4>Pay your bills</h4>
     <hr>
     <div id="fromRow" class="form-group row">
         <label for="from" class="col-sm-2 col-form-label">Select account to pay from:</label>
@@ -98,9 +98,7 @@ include("views/menu.php");
                 }
                 ?>
             </select>
-
         </div>
-
     </div>
 
     <div id="bills-list-row" name="bills-list-row" class="form-group row">
@@ -114,25 +112,17 @@ include("views/menu.php");
                         $bill_id = $row["bill_id"];
                         $amount = $row["amount"];
                         echo "<input type=\"checkbox\" name=\"bills_list[]\" value='$bill_id|$amount'> Bill ID:".$bill_id."   ----    ".$amount."\$ ";
-
                     }
-
-
                 }
 
                 ?>
 
             </div>
-
-
-
     </div>
-
-
-
                 <button type="submit" class="btn btn-primary" id="pay-bills" name="pay-bills">Pay Bills</button>
 
 </form>
+</div>
 
 </body>
 </html>
