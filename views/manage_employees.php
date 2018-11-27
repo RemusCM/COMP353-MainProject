@@ -19,7 +19,7 @@ if (isset($manageEmployees)) {
 <div class="col-md-12 well" style="position:absolute; top:10%; left:2.5%; width:95%;">
     <table width="100%">
         <tr>
-            <td colspan="10">Employees</td>
+            <td colspan="10"><h4>Employees</h4></td>
             <td></td>
             <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add">Add</button></td>
         </tr>
