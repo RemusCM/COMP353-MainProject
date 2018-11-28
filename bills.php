@@ -54,13 +54,13 @@ include("views/menu.php");
 </head>
 <body>
 
-<div class="col-md-12 well" style="position:absolute; top:10%; left:30%; width:40%;">
+<div class="col-md-12 well" style="position:absolute; top:10%; left:40%; width:20%;">
 <form method="post" action="index.php" id="pay-bills" name="pay-bills">
     <h4>Pay your bills</h4>
     <hr>
     <div id="fromRow" class="form-group row">
-        <label for="from" class="col-sm-2 col-form-label">Select account to pay from:</label>
-        <div class="col-sm-2">
+        <label for="from" class="col-sm-12 col-form-label">Select account to pay from:</label>
+        <div class="col-sm-8">
             <select name='from' id="from" class="form-control" required>
                 <option value="" disabled selected hidden>Select an Account</option>
                 <?php
@@ -102,16 +102,15 @@ include("views/menu.php");
     </div>
 
     <div id="bills-list-row" name="bills-list-row" class="form-group row">
-        <label for="list-of-bills" class="col-sm-2 col-form-label">List of bills to be paid<hr></label>
-
-            <div class="col-sm-2">
+        <label for="list-of-bills" class="col-sm-12 col-form-label">List of bills to be paid</label>
+            <div class="col-sm-12">
                 <?php
                 if($result_client_bills -> num_rows >0){
                     while($row = $result_client_bills->fetch_assoc()){
-                        echo"<br>";
                         $bill_id = $row["bill_id"];
                         $amount = $row["amount"];
                         echo "<input type=\"checkbox\" name=\"bills_list[]\" value='$bill_id|$amount'> Bill ID:".$bill_id."   ----    ".$amount."\$ ";
+                        echo "<br>";
                     }
                 }
 
@@ -119,7 +118,7 @@ include("views/menu.php");
 
             </div>
     </div>
-                <button type="submit" class="btn btn-primary" id="pay-bills" name="pay-bills">Pay Bills</button>
+    <button type="submit" class="btn btn-primary" id="pay-bills" name="pay-bills">Pay Bills</button>
 
 </form>
 </div>
