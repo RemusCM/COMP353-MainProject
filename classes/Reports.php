@@ -155,22 +155,11 @@ class Reports
     public function fetchEmployeeSalariesByCity($city) {
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if (!$this->db_connection->connect_errno) {
-
-            $sql = "SELECT branch_id FROM branch WHERE city = '" . $city . "';";
+            $sql = "SELECT SUM(salary) AS salarySum FROM employee AS e, branch AS b WHERE b.branch_id = e.branch_id AND b.city = '".$city."'";
             $query = $this->db_connection->query($sql);
-            $sum = 0;
-            if ($query->num_rows == 0) {
-                $this->errors[] = "No branches exist in this city.";
-            } else {
-                while($row = mysqli_fetch_object($query)) {
-                    $sql = "SELECT SUM(salary) AS salarySum FROM employee WHERE branch_id='" . $row->branch_id . "';";
-                    $query = $this->db_connection->query($sql);
-                    $result = $query->fetch_object();
-                    $sum = $sum + $result->salarySum;
-                }
-            }
+            $result = $query->fetch_object();
             mysqli_close($this->db_connection);
-            return $sum;
+            return $result->salarySum;
         }
     }
 }
