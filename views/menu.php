@@ -52,6 +52,7 @@ if($isAdmin){
         <a class="navbar-brand" href="../index.php">Bank of Concordia</a>
         <div class="navigationLinks">
             <a class="nav-item nav-link active" href="../index.php">Accounts</a>
+            <a class="nav-item nav-link" href="bills.php">Your Bills</a>
             <a class="nav-item nav-link" href="create_account.php">Create an Account</a>
             <a class="nav-item nav-link" href="../index.php?logout">Logout</a>
         </div>
