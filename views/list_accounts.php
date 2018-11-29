@@ -188,7 +188,7 @@
 
 
     <div class="col-md-12 well" style="position: absolute; top: 10%; right: 2.5%; width:30%;">
-        <form method='post' action="#" id="transfer" name="transfer"><h4>Fast Transfers</h4>
+        <form method='post' action="index.php" id="transfer" name="transfer"><h4>Fast Transfers</h4>
             <hr>
                 <div id="fromRow" class="form-group row">
                     <label for="from" class="col-sm-4 col-form-label">From:</label>
