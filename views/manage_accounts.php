@@ -5,7 +5,11 @@ if (isset($manageAccounts)) {
 }
 
 if (isset($_POST['clientSelection'])) {
-    $accounts = array_filter($accounts, "selectedClientAccount");
+    if($_POST['clientSelection'] == 'all') {
+        $accounts = $manageAccounts->fetchAccounts();
+    } else{
+        $accounts = array_filter($accounts, "selectedClientAccount");
+    }
 }
 
 function selectedClientAccount($accounts) {
@@ -42,6 +46,9 @@ function selectedClientAccount($accounts) {
                                 Select Client
                             <?php } ?>
                         </option>
+                        <?php if(isset($_POST['clientSelection'])){ ?>
+                                <option value="all">All</option>;
+                         <?php } ?>
                         <?php foreach($clients as $c) { ?>
                             <option value="<?php echo $c->client_id ?>"><?php echo $c->client_id?></option>
                         <?php }?>
@@ -51,7 +58,7 @@ function selectedClientAccount($accounts) {
         </tr>
         <tr>
             <th>Account Number</th>
-            <th>Client</th>
+            <th>Client ID</th>
             <th>Balance</th>
             <th>Type</th>
             <th>Service</th>

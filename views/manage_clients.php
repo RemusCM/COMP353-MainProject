@@ -23,7 +23,7 @@ if (isset($manageClients)) {
             <td colspan="10" style="padding-bottom: 20px;"><h4>Clients</h4></td>
         </tr>
         <tr>
-            <th>Card Number</th>
+            <th>ID</th>
             <th>Name</th>
             <th>DOB</th>
             <th>Joined</th>
