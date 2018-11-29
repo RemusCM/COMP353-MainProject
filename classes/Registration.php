@@ -111,9 +111,6 @@ class Registration
             && !empty($_POST['charge-plan'])
         ) {
 
-            /*
-             * TODO: This part needs to be taken care of. Form validation is correct.
-             * */
             // create a database connection
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -141,11 +138,6 @@ class Registration
 
                 $password = $_POST['password_new'];
 
-                // crypt the user's password with PHP 5.5's password_hash() function, results in a 60 character
-                // hash string. the PASSWORD_DEFAULT constant is defined by the PHP 5.5, or if you are using
-                // PHP 5.3/5.4, by the password hashing compatibility library
-                $password_hash = password_hash($password, PASSWORD_DEFAULT);
-
                 // check if user or email address already exists
                 $sql = "SELECT * FROM client WHERE name = '" . $name . "' OR email_address = '" . $email . "' OR phone_number = '".$phone."';";
                 $query_check_exists = $this->db_connection->query($sql);
@@ -155,7 +147,7 @@ class Registration
                 } else {
                     // Write new user's data into database
                     $sql = "INSERT INTO client(name, date_of_birth, joining_date, address, category, email_address, password, phone_number, branch_id)
-                            VALUES('" . $name . "', '" . $dob . "', '" . date("Y-m-d") . "', '" . $address . "', '" . $category . "', '" . $email . "', '" . $password_hash . "', '" . $phone . "', '" . $branch . "');";
+                            VALUES('" . $name . "', '" . $dob . "', '" . date("Y-m-d") . "', '" . $address . "', '" . $category . "', '" . $email . "', '" . $password . "', '" . $phone . "', '" . $branch . "');";
 
                     // if user has been added successfully
                     if (mysqli_query($this->db_connection,$sql)) {

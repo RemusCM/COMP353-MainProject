@@ -22,14 +22,11 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 // include the configs / constants for the database connection
 require_once("config/db.php");
 
-// load the login class
 require_once("classes/Login.php");
-
 require_once("classes/ClientNotified.php");
-
 require_once("classes/AccountMoneyTransfer.php");
-
 require_once("classes/InteracTransfer.php");
+require_once ("classes/Reports.php");
 
 require_once("classes/PayBills.php");
 
@@ -41,7 +38,6 @@ $login = new Login();
 if ($login->isUserLoggedIn() == true) {
     // the user is logged in.
 
-
     include("views/menu.php");
     include("views/home_page.php");
 
@@ -51,6 +47,9 @@ if ($login->isUserLoggedIn() == true) {
         $clientInteracTransfer = new InteracTransfer();
         $clientPayBills = new PayBills();
         include("views/list_accounts.php");
+    } else {
+        $reports = new Reports();
+        include("views/reports.php");
     }
 
 } else {
