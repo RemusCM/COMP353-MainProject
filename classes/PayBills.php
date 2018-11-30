@@ -56,7 +56,7 @@ class PayBills
 
 
         //Check if the bills can be paid in totality, make transaction, adjust the balance accordingly, make a transaction, and set is_paid to 1.
-        if($accountTypeFrom == 'checking'  || $accountTypeFrom == 'savings'){
+        if($accountTypeFrom == 'Checking'  || $accountTypeFrom == 'Savings'){
             if($balance < $amountToPay){
                 echo "Your balance does not support the amount that you want to pay. Try <a href='bills.php'>again</a>.";
             }
@@ -92,7 +92,7 @@ class PayBills
             }
         }
 
-        if($accountTypeFrom == 'credit'){
+        if($accountTypeFrom == 'Credit Card'){
 
             //must first check if balance+amount to pay < credit_limit
             $sql_credit_limit = "SELECT credit_limit FROM credit WHERE account_number = '".$accountNumberFrom."'";
@@ -144,7 +144,7 @@ class PayBills
 
         }
 
-        if($accountTypeFrom == 'loan'){
+        if($accountTypeFrom == 'Loan'){
             $sql_loan_limit = "SELECT loan_limit FROM loan WHERE account_number = '".$accountNumberFrom."'";
             $result_loan_limit = $conn->query($sql_loan_limit);
             if($result_loan_limit -> num_rows > 0){

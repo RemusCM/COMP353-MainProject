@@ -25,6 +25,7 @@ class AccountMoneyTransfer
             die("Connection failed: " . mysqli_connect_error());
         }
 
+
         //[0] is account number [1] is balance [2] account type [3] type (if  a loan, says which type of loan)
         $resultFrom = $_POST['from'];
         $result_explode_from = explode('|', $resultFrom);
@@ -38,12 +39,13 @@ class AccountMoneyTransfer
 
 
         $accountNumberTo = (int)($result_explode_to[0]);
-        $accountTypeTo = (string)$result_explode_from[2];
+        $accountTypeTo = (string)$result_explode_to[2];
         $amount = number_format(floatval($_POST['amount']), 2, '.', '');
 
 
         //First possible path is if account type is checking or savings.
-        if ($accountTypeFrom == 'checking' || $accountTypeFrom == 'savings') {
+        if ($accountTypeFrom == 'Checking' || $accountTypeFrom == 'Savings') {
+            echo $balanceFrom;
             if ($balanceFrom < $amount) {
                 echo "You can't transfer more money than you own.";
                 return;
@@ -52,7 +54,7 @@ class AccountMoneyTransfer
             if ($balanceFrom >= $amount) {
                 //we can successfully transfer money from that account.
                 //Now it depends to what type of account we transfer (checking/savings or credit/loan)
-                if ($accountTypeTo == 'checking' || $accountTypeTo == 'savings') {
+                if ($accountTypeTo == 'Checking' || $accountTypeTo == 'Savings') {
                     //we add this to their balance
                     $sql_target_balance = "UPDATE account SET balance = balance +'" . $amount . "' WHERE account_number = '" . $accountNumberTo . "'";
                     $sql_origin_balance = "UPDATE account SET balance = balance - '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
@@ -77,7 +79,7 @@ class AccountMoneyTransfer
                     }
 
 
-                } elseif ($accountTypeTo == 'credit' || $accountTypeTo == 'loan') {
+                } elseif ($accountTypeTo == 'Credit Card' || $accountTypeTo == 'Loan') {
                     //we remove the amount from their balance.
                     $sql_target_balance = "UPDATE account SET balance = balance -'" . $amount . "' WHERE account_number = '" . $accountNumberTo . "'";
                     $sql_origin_balance = "UPDATE account SET balance = balance - '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
@@ -114,16 +116,16 @@ class AccountMoneyTransfer
 
         //other path is transfering from credit/loan.
         //Must check if the balance + the limit of loan/credit is
-        elseif ($accountTypeFrom == 'credit') {
+        elseif ($accountTypeFrom == 'Credit Card') {
 
             //First, need to find the credit limit for the account_number in credit.
             $sql_credit_limit = "SELECT credit_limit FROM credit WHERE account_number = '" . $accountNumberFrom . "'";
             $result_credit_limit = $conn->query($sql_credit_limit);
             $rowCreditLimit = $result_credit_limit->fetch_assoc();
-            $credit_limit = number_format(floatval($rowCreditLimit["credit_limit"]));
+            $credit_limit = number_format(floatval($rowCreditLimit["credit_limit"]), 2, '.', '');
 
             //then we need to compare if balance of the account + the amount to transfer is bigger than the limit or not.
-            if (($balanceFrom + $amount) > $credit_limit) {
+            if (($balanceFrom+$amount) > $credit_limit) {
                 echo "You're trying to transfer over your limit.";
                 return;
 
@@ -131,7 +133,7 @@ class AccountMoneyTransfer
             elseif (($balanceFrom + $amount) <= $credit_limit) {
 
                 //now we can insert accordingly, different type of insertions depending on type of receiving account.
-                if ($accountTypeTo == 'checking' || $accountTypeTo == 'savings') {
+                if ($accountTypeTo == 'Checking' || $accountTypeTo == 'Savings') {
                     //we add this to their balance
                     $sql_target_balance = "UPDATE account SET balance = balance +'" . $amount . "' WHERE account_number = '" . $accountNumberTo . "'";
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
@@ -158,7 +160,7 @@ class AccountMoneyTransfer
                     }
 
 
-                } elseif ($accountTypeTo == 'credit' || $accountTypeTo == 'loan') {
+                } elseif ($accountTypeTo == 'Credit Card' || $accountTypeTo == 'Loan') {
                     //we remove the amount from their balance.
                     $sql_target_balance = "UPDATE account SET balance = balance -'" . $amount . "' WHERE account_number = '" . $accountNumberTo . "'";
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
@@ -191,23 +193,23 @@ class AccountMoneyTransfer
 
         }
 
-        elseif($accountTypeFrom =='loan'){
+        elseif($accountTypeFrom =='Loan'){
             //First, need to find the credit limit for the account_number in credit.
-            $sql_loan_limit = "SELECT loan_limit FROM credit WHERE account_number = '" . $accountNumberFrom . "'";
+            $sql_loan_limit = "SELECT loan_limit FROM loan WHERE account_number = '" . $accountNumberFrom . "'";
             $result_loan_limit = $conn->query($sql_loan_limit);
             $rowLoanLimit = $result_loan_limit->fetch_assoc();
-            $loan_limit = number_format(floatval($rowLoanLimit["credit_limit"]));
+            $loan_limit = number_format(floatval($rowLoanLimit["loan_limit"]), 2, '.', '');
 
+            $total= number_format(floatval($balanceFrom+$amount), 2, '.', '');
             //then we need to compare if balance of the account + the amount to transfer is bigger than the limit or not.
-            if (($balanceFrom + $amount) > $loan_limit) {
+            if (($balanceFrom+$amount) > $loan_limit) {
                 echo "You're trying to transfer over your limit.";
                 return;
-
             } //if his balance+ amount is less than his limit, he can transfer safely.
             elseif (($balanceFrom + $amount) <= $loan_limit) {
 
                 //now we can insert accordingly, different type of insertions depending on type of receiving account.
-                if ($accountTypeTo == 'checking' || $accountTypeTo == 'savings') {
+                if ($accountTypeTo == 'Checking' || $accountTypeTo == 'Savings') {
                     //we add this to their balance
                     $sql_target_balance = "UPDATE account SET balance = balance +'" . $amount . "' WHERE account_number = '" . $accountNumberTo . "'";
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";
@@ -235,7 +237,7 @@ class AccountMoneyTransfer
                     }
 
 
-                } elseif ($accountTypeTo == 'credit' || $accountTypeTo == 'loan') {
+                } elseif ($accountTypeTo == 'Credit Card' || $accountTypeTo == 'Loan') {
                     //we remove the amount from their balance.
                     $sql_target_balance = "UPDATE account SET balance = balance -'" . $amount . "' WHERE account_number = '" . $accountNumberTo . "'";
                     $sql_origin_balance = "UPDATE account SET balance = balance + '" . $amount . "' WHERE account_number = '" . $accountNumberFrom . "'";

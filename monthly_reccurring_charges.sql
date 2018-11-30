@@ -7,7 +7,7 @@ DO
 UPDATE account a
 	JOIN checking c ON a.account_number = c.account_number
 	JOIN chargeplan cp on c.opt = cp.opt
-SET a.balance = balance - cp.charge WHERE a.account_type = 'checking';
+SET a.balance = balance - cp.charge WHERE a.account_type = 'Checking';
 
 
 CREATE EVENT IF NOT EXISTS monthly_charge_savings
@@ -17,7 +17,7 @@ DO
 UPDATE account a
 	JOIN savings s ON a.account_number = s.account_number
 	JOIN chargeplan cp on s.opt = cp.opt
-SET a.balance = balance - cp.charge WHERE a.account_type = 'savings';
+SET a.balance = balance - cp.charge WHERE a.account_type = 'Savings';
 
 
 
@@ -30,7 +30,7 @@ UPDATE account a
 JOIN checking c ON a.account_number = c.account_number
 JOIN chargeplan cp on c.opt = cp.opt
 SET a.balance = a.balance-cp.additional_charge
-WHERE a.account_type = 'checking' AND a.account_number = NEW.account_number AND NEW.account_number IN (SELECT account_number
+WHERE a.account_type = 'Checking' AND a.account_number = NEW.account_number AND NEW.account_number IN (SELECT account_number
 FROM( SELECT t.account_number, COUNT(*), cp.lim
 FROM account a
 INNER JOIN checking c ON a.account_number = c.account_number
@@ -43,7 +43,7 @@ UPDATE account a
 JOIN savings s ON a.account_number = s.account_number
 JOIN chargeplan cp on s.opt = cp.opt
 SET a.balance = a.balance-cp.additional_charge
-WHERE a.account_type = 'savings' AND a.account_number = NEW.account_number AND NEW.account_number IN (SELECT account_number
+WHERE a.account_type = 'Savings' AND a.account_number = NEW.account_number AND NEW.account_number IN (SELECT account_number
 FROM( SELECT t.account_number, COUNT(*), cp.lim
 FROM account a
 INNER JOIN savings s ON a.account_number = s.account_number

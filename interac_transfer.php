@@ -43,11 +43,11 @@ include("views/menu.php");
         </div>
 
         <?php
-        if($balance<$amount && ($account_type == 'checking' ||$account_type == 'savings')){
+        if($balance<$amount && ($account_type == 'Checking' ||$account_type == 'Savings')){
             echo "Please go <a href='index.php'>back</a>, you are trying to send more money than you currently own.";
         }
 
-        else if($account_type == 'credit' || $account_type == 'loan'){
+        else if($account_type == 'Credit Card' || $account_type == 'Loan'){
             echo "Can't be giving money you don't own. Go <a href='index.php'>back</a> and pick a checking or savings account. ";
         }
         else{

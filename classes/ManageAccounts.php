@@ -95,15 +95,15 @@ class ManageAccounts
             // Delete the account type instance based on account type.
             $account_type = null;
             if($result_row_account->account_type == 'Savings'){
-                $account_type = 'savings';
+                $account_type = 'Savings';
             } else if($result_row_account->account_type == 'Checking'){
-                $account_type = 'checking';
-            } else if($result_row_account->account_type == 'Credit'){
-                $account_type = 'credit';
+                $account_type = 'Checking';
+            } else if($result_row_account->account_type == 'Credit Card'){
+                $account_type = 'Credit Card';
             } else if($result_row_account->account_type == 'Foreign Currency'){
-                $account_type = 'foreigncurrency';
+                $account_type = 'Foreign Currency';
             } else if($result_row_account->account_type == 'Loan' || $result_row_account->account_type == 'Mortgage' || $result_row_account->account_type == 'Line of Credit'){
-                $account_type = 'loan';
+                $account_type = 'Loan';
             }
             $sql_type_delete = "DELETE FROM " . $account_type . " WHERE account_number = '" . $account_number . "';";
             $this->db_connection->query($sql_type_delete);
