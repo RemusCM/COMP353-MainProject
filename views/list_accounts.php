@@ -6,28 +6,23 @@
         $(document).ready(function() {
             $(".hidden-content-reveal").click(function() {
                 $(this).children().toggleClass('toggler');
-
                 $(this).next('.table').slideToggle();
                 return false;
             });
         });
-
     </script>
     <style>
         table {
             display: none;
         }
-
         a.hidden-content-reveal:link, a.hidden-content-reveal:visited{
-          color:black;
-          text-decoration: none;
+            color:black;
+            text-decoration: none;
         }
-
         a.hidden-content-reveal:hover, a.hidden-content-reveal:active{
             color:darkgray;
             text-decoration: none;
         }
-
     </style>
 </head>
 <body>
@@ -40,8 +35,6 @@
          * Date: 2018-11-19
          * Time: 17:54
          */
-
-
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER,DB_PASS,DB_NAME);
         // Check connection
@@ -51,62 +44,46 @@
         //Checking accounts query
         $sql_checking = "SELECT DISTINCT checking.account_number, client_id, opt, balance, service_type, level FROM account, checking WHERE client_id = '" . $_SESSION['client_id'] . "' AND checking.account_number = account.account_number;";
         $result_checking = $conn->query($sql_checking);
-
         //Savings accounts query
         $sql_savings = "SELECT DISTINCT savings.account_number, client_id, opt, balance, service_type, level FROM account, savings WHERE client_id = '" . $_SESSION['client_id'] . "' AND savings.account_number = account.account_number;";
         $result_savings = $conn->query($sql_savings);
-
         //Credit accounts query
         $sql_credit = "SELECT DISTINCT credit.account_number, client_id, credit_limit, minimal_payment, service_type, balance, level FROM account, credit WHERE client_id = '" . $_SESSION['client_id'] . "' AND credit.account_number = account.account_number;";
         $result_credit = $conn->query($sql_credit);
-
         //Foreign currency accounts query
         $sql_foreignCurrency = "SELECT DISTINCT foreigncurrency.account_number, client_id, currency_type, service_type, level FROM account, foreigncurrency WHERE client_id = '" . $_SESSION['client_id'] . "' AND foreigncurrency.account_number = account.account_number;";
         $result_foreignCurrency = $conn->query($sql_foreignCurrency);
-
         //Loan accounts query
         $sql_loan = "SELECT DISTINCT loan.account_number, client_id, type, loan_limit, service_type,  level FROM account, loan WHERE client_id = '" . $_SESSION['client_id'] . "' AND loan.account_number = account.account_number;";
         $result_loan = $conn->query($sql_loan);
-
-
         //Here are the queries to use for transferring money from an account to another.
         //From: All accounts except foreign currency and Mortgage type loans, and loans and credits balance<lent limit
         //From Checkings accounts query
         $sql_checking_from = "SELECT DISTINCT checking.account_number, balance, account_type FROM account, checking WHERE client_id = '" . $_SESSION['client_id'] . "' AND checking.account_number = account.account_number AND balance > 0.00;";
         $result_checking_from = $conn->query($sql_checking_from);
-
         //From Savings accounts query
         $sql_savings_from = "SELECT DISTINCT savings.account_number, balance, account_type FROM account, savings WHERE client_id = '" . $_SESSION['client_id'] . "' AND savings.account_number = account.account_number AND balance>0.00;";
         $result_savings_from = $conn->query($sql_savings_from);
-
         //From Credit accounts query
         $sql_credit_from = "SELECT DISTINCT credit.account_number, balance, account_type FROM account, credit WHERE client_id = '" . $_SESSION['client_id'] . "' AND credit.account_number = account.account_number AND balance < credit_limit;";
         $result_credit_from = $conn->query($sql_credit_from);
-
         //From Loan accounts query
         $sql_loan_from = "SELECT DISTINCT loan.account_number, balance, account_type, type FROM account, loan WHERE client_id = '" . $_SESSION['client_id'] . "' AND loan.account_number = account.account_number AND balance< loan_limit AND type<>'mortgage';";
         $result_loan_from = $conn->query($sql_loan_from);
-
-
         //To: All accounts except foreign currency
         //Checking accounts query
         $sql_checking_to = "SELECT DISTINCT checking.account_number, balance, account_type FROM account, checking WHERE client_id = '" . $_SESSION['client_id'] . "' AND checking.account_number = account.account_number;";
         $result_checking_to = $conn->query($sql_checking_to);
-
         //Savings accounts query
         $sql_savings_to = "SELECT DISTINCT savings.account_number, balance, account_type FROM account, savings WHERE client_id = '" . $_SESSION['client_id'] . "' AND savings.account_number = account.account_number;";
         $result_savings_to = $conn->query($sql_savings_to);
-
         //Credit accounts query
         $sql_credit_to = "SELECT DISTINCT credit.account_number, balance, account_type FROM account, credit WHERE client_id = '" . $_SESSION['client_id'] . "' AND credit.account_number = account.account_number;";
         $result_credit_to = $conn->query($sql_credit_to);
-
         //Loan accounts query
         $sql_loan_to = "SELECT DISTINCT loan.account_number, balance, account_type, type FROM account, loan WHERE client_id = '" . $_SESSION['client_id'] . "' AND loan.account_number = account.account_number;";
         $result_loan_to = $conn->query($sql_loan_to);
-
         echo "<h4>My Accounts</h4><br>";
-
         //Displaying checking accounts
         if ($result_checking->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Checking accounts details</h5></a>";
@@ -119,7 +96,6 @@
             echo "</table>";
             echo "<hr class='style2'>";
         }
-
         //Displaying savings accounts
         if ($result_savings->num_rows > 0 ) {
             echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Savings accounts details</h5></a>";
@@ -132,7 +108,6 @@
             echo "</table>";
             echo "<hr class='style2'>";
         }
-
         //Displaying credit accounts
         if ($result_credit->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Credit accounts details</h5></a>";
@@ -145,7 +120,6 @@
             echo "</table>";
             echo "<hr class='style2'>";
         }
-
         //Displaying foreign currency accounts
         if ($result_foreignCurrency->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Foreign Currency accounts details</h5></a>";
@@ -158,7 +132,6 @@
             echo "</table>";
             echo "<hr class='style2'>";
         }
-
         //Displaying loan accounts
         if ($result_loan->num_rows > 0) {
             echo "<a href='#' class = 'hidden-content-reveal'><h5 class='toggler'>Loan accounts details</h5></a>";
@@ -171,7 +144,6 @@
             echo "</table>";
             echo "<hr class='style2'>";
         }
-
         $conn->close();
         ?>
 
@@ -190,36 +162,38 @@
     <div class="col-md-12 well" style="position: absolute; top: 10%; right: 2.5%; width:30%;">
         <form method='post' action="#" id="transfer" name="transfer"><h4>Fast Transfers</h4>
             <hr>
-                <div id="fromRow" class="form-group row">
-                    <label for="from" class="col-sm-4 col-form-label">From:</label>
-                    <div class="col-sm-8">
-                <select name='from' id="from" class="form-control" required>
-                    <option value="" disabled selected hidden>Select an Account</option>
-                    <?php
-                    if($result_checking_from -> num_rows >0) {
-                        while ($row = $result_checking_from->fetch_assoc()) {
-                            $account_number = $row["account_number"];
-                            $balance = $row["balance"];
-                            $account_type = $row["account_type"];
-                            echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type</option>";
+            <div id="fromRow" class="form-group row">
+                <label for="from" class="col-sm-4 col-form-label">From:</label>
+                <div class="col-sm-8">
+                    <select name='from' id="from" class="form-control" required>
+                        <option value="" disabled selected hidden>Select an Account</option>
+                        <?php
+                        if($result_checking_from -> num_rows >0) {
+                            while ($row = $result_checking_from->fetch_assoc()) {
+                                $account_number = $row["account_number"];
+                                $balance = $row["balance"];
+                                $account_type = $row["account_type"];
+                                echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type</option>";
+                            }
                         }
-                    }
-                    if($result_savings_from -> num_rows >0) {
-                        while ($row = $result_savings_from->fetch_assoc()) {
-                            $account_number = $row["account_number"];
-                            $balance = $row["balance"];
-                            $account_type = $row["account_type"];
-                            echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type</option>";
+                        if($result_savings_from -> num_rows >0) {
+                            while ($row = $result_savings_from->fetch_assoc()) {
+                                $account_number = $row["account_number"];
+                                $balance = $row["balance"];
+                                $account_type = $row["account_type"];
+                                echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type</option>";
+                            }
                         }
-                    }
-                    if($result_credit_from -> num_rows >0) {
-                        while ($row = $result_credit_from->fetch_assoc()) {
-                            $account_number = $row["account_number"];
-                            $balance = $row["balance"];
-                            $account_type = $row["account_type"];
-                            echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type</option>";
+                        if($result_credit_from -> num_rows >0) {
+                            while ($row = $result_credit_from->fetch_assoc()) {
+                                $account_number = $row["account_number"];
+                                $balance = $row["balance"];
+                                $account_type = $row["account_type"];
+                                echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type</option>";
+                            }
                         }
-                    }
+
+
                     if($result_loan_from -> num_rows >0) {
                         while ($row = $result_loan_from->fetch_assoc()) {
                             $account_number = $row["account_number"];
@@ -227,13 +201,15 @@
                             $account_type = $row["account_type"];
 
                             echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type --- " . $row["type"] . "</option>";
+
                         }
+
                     }
-                    ?>
+                        ?>
 
 
-                </select>
-                    </div>
+                    </select>
+                </div>
 
             </div>
             <div id="toRow" class="form-group row">
@@ -299,12 +275,11 @@
             <button type="submit" class="btn btn-primary" id="transfer" name="transfer">Transfer Money</button>
 
 
-            </form>
+        </form>
 
     </div>
 </div>
 <script>
-
     document.getElementById('transfer').to.onchange = function() {
         var newaction = this.value;
         if(newaction == "interac_transfer.php") {

@@ -78,19 +78,19 @@ include("views/menu.php");
 
     </form>
 </div>
-    <script type="text/javascript">
-        function validateForm()
-        {
-            let a=document.forms["e-transfer"]["mail"].value;
-            let b=document.forms["e-transfer"]["mobile"].value;
+<script type="text/javascript">
+    function validateForm()
+    {
+        let a=document.forms["e-transfer"]["mail"].value;
+        let b=document.forms["e-transfer"]["mobile"].value;
 
-            if (a=="" && b=="")
-            {
-                alert("Please Fill One of Two Fields");
-                return false;
-            }
+        if (a=="" && b=="")
+        {
+            alert("Please Fill One of Two Fields");
+            return false;
         }
-    </script>
+    }
+</script>
 </body>
 </html>
 

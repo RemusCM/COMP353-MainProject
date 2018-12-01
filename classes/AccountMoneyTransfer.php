@@ -45,7 +45,6 @@ class AccountMoneyTransfer
 
         //First possible path is if account type is checking or savings.
         if ($accountTypeFrom == 'Checking' || $accountTypeFrom == 'Savings') {
-            echo $balanceFrom;
             if ($balanceFrom < $amount) {
                 echo "You can't transfer more money than you own.";
                 return;
