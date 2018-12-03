@@ -131,10 +131,10 @@ class Registration
                 $category = $this->db_connection->real_escape_string(strip_tags($_POST['category'], ENT_QUOTES));
                 $branch = $this->db_connection->real_escape_string(strip_tags($_POST['branch'], ENT_QUOTES));
 
-                $account_type = $this->db_connection->real_escape_string(strip_tags($_POST['account-type'], ENT_QUOTES));
-                $service_type = $this->db_connection->real_escape_string(strip_tags($_POST['service-type'], ENT_QUOTES));
-                $level = $this->db_connection->real_escape_string(strip_tags($_POST['level'], ENT_QUOTES));
-                $charge_plan = $this->db_connection->real_escape_string(strip_tags($_POST['charge-plan'], ENT_QUOTES));
+                $account_type = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['account-type']), ENT_QUOTES));
+                $service_type = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['service-type']), ENT_QUOTES));
+                $level = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['level']), ENT_QUOTES));
+                $charge_plan = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['charge-plan']), ENT_QUOTES));
 
                 $password = $_POST['password_new'];
 
@@ -155,13 +155,13 @@ class Registration
 
                         // Create the account for the new client
                         $balance = 0.00;
-                        $interestRate = $account_type == 'checking' ? 0.0 : 2.0;
+                        $interestRate = $account_type == 'Checking' ? 0.0 : 2.0;
                         $sql = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
                           VALUES('$client_id', '$balance', '$account_type', '$service_type', '$level', '$interestRate');";
 
                         if(mysqli_query($this->db_connection,$sql)) {
                             $account_number = mysqli_insert_id($this->db_connection);
-                            if ($account_type == 'checking') {
+                            if ($account_type == 'Checking') {
                                 $sql1 = "INSERT INTO checking(account_number, opt) VALUES('$account_number', '$charge_plan');";
                                 $this->db_connection->query($sql1);
                             } else {

@@ -98,7 +98,7 @@ class ManageAccounts
                 $account_type = 'savings';
             } else if($result_row_account->account_type == 'Checking'){
                 $account_type = 'checking';
-            } else if($result_row_account->account_type == 'Credit'){
+            } else if($result_row_account->account_type == 'Credit Card'){
                 $account_type = 'credit';
             } else if($result_row_account->account_type == 'Foreign Currency'){
                 $account_type = 'foreigncurrency';

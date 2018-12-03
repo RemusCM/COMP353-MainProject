@@ -26,19 +26,19 @@ class AccountCreated
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $level = $_POST['level'];
-        $serviceType = $_POST['service-type'];
-        $accountType = $_POST['account-type'];
+        $level = ucfirst($_POST['level']);
+        $serviceType = ucfirst($_POST['service-type']);
+        $accountType = ucfirst($_POST['account-type']);
         $interestRate = 0.0;
         $balance = 0.00;
         $client_id = $_SESSION['client_id'];
         $clientJoiningDate = $_SESSION['joining_date'];
 
         // Course of action if user picks Checkings or savings
-        if ($accountType == 'checking' || $accountType == 'savings') {
-            if ($accountType == 'checking') {
+        if ($accountType == 'Checking' || $accountType == 'Savings') {
+            if ($accountType == 'Checking') {
                 $interestRate = 0.0;
-                $chargePlan = $_POST['charge-plan'];
+                $chargePlan = ucfirst($_POST['charge-plan']);
 
                 //Insert new record into Account and Checking
                 $query = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
@@ -53,9 +53,10 @@ class AccountCreated
                     mysqli_query($connect, $query1);
                 }
 
-            } elseif ($accountType == 'savings') {
+            } elseif ($accountType == 'Savings') {
                 $interestRate = 2.0;
-                $chargePlan = $_POST['charge-plan'];
+                $chargePlan = ucfirst($_POST['charge-plan']);
+
 
                 //Insert new record into account
                 $query = "INSERT INTO account(client_id, balance, account_type, service_type, level, interest_rate)
@@ -66,17 +67,18 @@ class AccountCreated
                 //The if statement actually executes the query, no need to execute before
                 if (mysqli_query($connect, $query)) {
                     $accountNumber = mysqli_insert_id($connect);
+
                     $query1 = "INSERT INTO savings(account_number, opt) VALUES('$accountNumber', '$chargePlan');";
                     mysqli_query($connect, $query1);
-                    echo 'success?';
+
                 }
 
             }
 
         } //Course of action for foreign currency
 
-        elseif ($accountType == 'foreign-currency') {
-
+        elseif ($accountType == 'Foreign-currency') {
+            $accountType='Foreign Currency';
 
             $currency = $_POST['currency'];
 
@@ -93,15 +95,16 @@ class AccountCreated
 
         } //Course of action for credit
 
-        elseif ($accountType == 'credit') {
+        elseif ($accountType == 'Credit') {
+            $accountType="Credit Card";
             $creditLimit = $_POST['credit-limit'];
 
             //For every limit amount and service type, there's a different interest rate
-            if ($serviceType == 'banking') {
+            if ($serviceType == 'Banking') {
                 $interestRate += 2.0;
-            } elseif ($serviceType == 'investment') {
+            } elseif ($serviceType == 'Investment') {
                 $interestRate += 1.0;
-            } elseif ($serviceType == 'insurance') {
+            } elseif ($serviceType == 'Insurance') {
                 $interestRate += 0.5;
             }
             if ($creditLimit == '500.00') {
@@ -129,7 +132,7 @@ class AccountCreated
             }
         } //Course of action for loan
 
-        elseif ($accountType == 'loan') {
+        elseif ($accountType == 'Loan') {
             $loanType = $_POST['loan-type'];
             $loanLimit = $_POST['loan-limit'];
 
@@ -137,11 +140,11 @@ class AccountCreated
             $interestRate = 2.0;
 
             //For different amounts of limit, service type, loan type we have different interest rates
-            if ($serviceType == 'banking') {
+            if ($serviceType == 'Banking') {
                 $interestRate += 2.0;
-            } elseif ($serviceType == 'investment') {
+            } elseif ($serviceType == 'Investment') {
                 $interestRate += 1.0;
-            } elseif ($serviceType == 'insurance') {
+            } elseif ($serviceType == 'Insurance') {
                 $interestRate += 0.5;
             }
 
@@ -156,12 +159,15 @@ class AccountCreated
             }
 
             if ($loanType == 'loan') {
+                $loanType='Loan';
                 $interestRate += 1.5;
 
             } elseif ($loanType == 'mortgage') {
+                $loanType='Mortgage';
                 $interestRate += 1.0;
 
             } elseif ($loanType == 'line-of-credit') {
+                $loanType='Line of Credit';
                 $interestRate += 0.5;
             }
 

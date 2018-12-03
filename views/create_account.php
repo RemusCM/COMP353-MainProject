@@ -121,7 +121,7 @@ $clientJoiningDate = $_SESSION['joining_date'];
             <select name="loan-type" id="loan-type">
                 <option value="loan"> Loan</option>
                 <option value="mortgage"> Mortgage</option>
-                <option value="line-of-credit"> Line of credit</option>
+                <option value="line-of-credit"> Line of Credit</option>
             </select><br>
 
             <br><label>Select a limit</label><br>

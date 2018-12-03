@@ -68,7 +68,7 @@
         $sql_credit_from = "SELECT DISTINCT credit.account_number, balance, account_type FROM account, credit WHERE client_id = '" . $_SESSION['client_id'] . "' AND credit.account_number = account.account_number AND balance < credit_limit;";
         $result_credit_from = $conn->query($sql_credit_from);
         //From Loan accounts query
-        $sql_loan_from = "SELECT DISTINCT loan.account_number, balance, account_type FROM account, loan WHERE client_id = '" . $_SESSION['client_id'] . "' AND loan.account_number = account.account_number AND balance< loan_limit AND type<>'mortgage';";
+        $sql_loan_from = "SELECT DISTINCT loan.account_number, balance, account_type, type FROM account, loan WHERE client_id = '" . $_SESSION['client_id'] . "' AND loan.account_number = account.account_number AND balance< loan_limit AND type<>'mortgage';";
         $result_loan_from = $conn->query($sql_loan_from);
         //To: All accounts except foreign currency
         //Checking accounts query
@@ -192,14 +192,19 @@
                                 echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type</option>";
                             }
                         }
-                        if($result_loan_from -> num_rows >0) {
-                            while ($row = $result_loan_from->fetch_assoc()) {
-                                $account_number = $row["account_number"];
-                                $balance = $row["balance"];
-                                $account_type = $row["account_type"];
-                                echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type --- " . $row["type"] . "</option>";
-                            }
+
+
+                    if($result_loan_from -> num_rows >0) {
+                        while ($row = $result_loan_from->fetch_assoc()) {
+                            $account_number = $row["account_number"];
+                            $balance = $row["balance"];
+                            $account_type = $row["account_type"];
+
+                            echo "<option value='$account_number|$balance|$account_type'>$account_number --- $balance --- $account_type --- " . $row["type"] . "</option>";
+
                         }
+
+                    }
                         ?>
 
 
