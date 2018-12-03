@@ -171,7 +171,6 @@ class ManageEmployees
     {
         // create a database connection
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
         // change character set to utf8 and check it
         if (!$this->db_connection->set_charset("utf8")) {
             $this->errors[] = $this->db_connection->error;
@@ -180,7 +179,7 @@ class ManageEmployees
 
         // if no connection errors (= working database connection)
         if (!$this->db_connection->connect_errno) {
-            $sql = "SELECT day, start_time, end_time FROM schedule";
+            $sql = "SELECT employee_id, day, start_time, end_time FROM schedule";
             $query_schedules = $this->db_connection->query($sql);
             $schedules = array();
             if ($query_schedules->num_rows == 0) {

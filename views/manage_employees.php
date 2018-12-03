@@ -151,37 +151,46 @@ if (isset($manageEmployees)) {
                 </div>
 
             </div>
+            </div>
+            <div class="modal fade" id="schedule<?php echo $e->employee_id;?>" role="dialog">
+                <div class="modal-dialog" style="width:30%;">
+                    <div class="modal-content">
+                        <div class="modal-body" style="padding:40px 50px;">
+                        <legend>Schedule for Employee <?php echo $e->employee_id;?></legend>
+
+                                <?php foreach($schedules as $s) { ?>
+                                        <?php if($s->employee_id == $e->employee_id){?>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                        <?php echo $s->day ?>
+                                            </div>
+                                            <div class="col-sm-4">
+
+                                            <?php echo "Start Time:". $s->start_time ?>
+                                            </div>
+
+                                                <div class="col-sm-4">
+
+                                                <?php echo "End Time:". $s->end_time ?>
+                                                </div>
+                                        </div>
+                                        <br>
+                                    <?php }?>
+                                <?php }?>
+
+                            <div style="padding-top: 10px;">
+                                <input type="submit" data-dismiss="modal" value="Close">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
             <?php }?>
     </table>
-    <div class="modal fade" id="schedule<?php echo $e->employee_id;?>" role="dialog">
-        <div class="modal-dialog" style="width:30%;">
-            <div class="modal-content">
-                <div class="modal-body" style="padding:40px 50px;">
-                    <table class="table">
-                        <caption>Schedule for employee <?php echo $e->employee_id;?></caption>
-                        <tr>
-                            <th>Day</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
-                        </tr>
-                        <?php foreach($schedules as $s) { ?>
-                            <tr>
-                                <td><?php echo $s->day ?></td>
-                                <td><?php echo $s->start_time ?></td>
-                                <td><?php echo $s->end_time ?></td>
-                            </tr>
-                        <?php }?>
-                    </table>
-                    <div style="padding-top: 10px;">
-                        <input type="submit" data-dismiss="modal" value="Close">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Add employee modal opens when clicking add button -->
     <div class="modal fade" id="add" role="dialog">
         <div class="modal-dialog" style="width:30%;">
