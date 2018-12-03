@@ -131,10 +131,10 @@ class Registration
                 $category = $this->db_connection->real_escape_string(strip_tags($_POST['category'], ENT_QUOTES));
                 $branch = $this->db_connection->real_escape_string(strip_tags($_POST['branch'], ENT_QUOTES));
 
-                $account_type = $this->db_connection->real_escape_string(strip_tags($_POST['account-type'], ENT_QUOTES));
-                $service_type = $this->db_connection->real_escape_string(strip_tags($_POST['service-type'], ENT_QUOTES));
-                $level = $this->db_connection->real_escape_string(strip_tags($_POST['level'], ENT_QUOTES));
-                $charge_plan = $this->db_connection->real_escape_string(strip_tags($_POST['charge-plan'], ENT_QUOTES));
+                $account_type = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['account-type']), ENT_QUOTES));
+                $service_type = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['service-type']), ENT_QUOTES));
+                $level = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['level']), ENT_QUOTES));
+                $charge_plan = $this->db_connection->real_escape_string(strip_tags(ucfirst($_POST['charge-plan']), ENT_QUOTES));
 
                 $password = $_POST['password_new'];
 
